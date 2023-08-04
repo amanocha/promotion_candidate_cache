@@ -1,0 +1,1 @@
+# promotion_candidate_cache
