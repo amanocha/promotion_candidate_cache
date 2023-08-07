@@ -1,0 +1,46 @@
+Nodes: 2097152, Edges: 63537176
+reading byte length of:    8388612
+reading byte length of:    254148704
+reading byte length of:    254148704
+Reading graph elapsed time: 2.39705s
+
+
+starting kernel
+-- epoch 1 1 --> push
+-- epoch 2 8 --> push
+-- epoch 3 23529 --> push
+-- epoch 4 989678 --> push
+-- epoch 5 228767 --> push
+-- epoch 6 1181 --> push
+-- epoch 7 2 --> push
+ending kernel
+
+Memory Regions:
+NODE_ARRAY: starting base = 1ffff, ending base = 20000
+	base = 1ffff, reuse dist = 2, n = 61054449, std dev = 0.000244257, true std dev = 0.324404
+combined average reuse dist = 2
+
+EDGE_ARRAY: starting base = 1ffff, ending base = 20000
+	base = 1ffff, reuse dist = 2, n = 61054449, std dev = 0.000244257, true std dev = 0.324404
+combined average reuse dist = 2
+
+PROP_ARRAY: starting base = 1fffe, ending base = 1ffff
+	base = 1fffe, reuse dist = 2, n = 63603419, std dev = 0.113822, true std dev = 0.325439
+combined average reuse dist = 2
+
+IN_WL: starting base = 1fffe, ending base = 1ffff
+	base = 1fffe, reuse dist = 2, n = 63603419, std dev = 0.113822, true std dev = 0.325439
+combined average reuse dist = 2
+
+OUT_WL: starting base = 1fffe, ending base = 1ffff
+	base = 1fffe, reuse dist = 2, n = 63603419, std dev = 0.113822, true std dev = 0.325439
+combined average reuse dist = 2
+
+
+total kernel computation time: 262.022721
+user time: -36315258795665012901015860076292781683493175101781100627692137176883962994761138897420288.000000
+kernel time: 0.000000
+footprint: start = 1029096KB, end = 1038720KB, diff = 9624KB
+page reclaims: 2381
+page faults: 0
+swaps: 0
