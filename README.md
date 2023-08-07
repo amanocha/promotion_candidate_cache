@@ -1,4 +1,4 @@
-# The Implications of Page Size Management on Graph Analytics
+# Architectural Support for Optimizing Huge Page Selection Within the OS
 
 ## Graph Applications
 
