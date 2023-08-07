@@ -1,14 +1,17 @@
 #!/bin/bash
 
+HOME_DIR=/home/aninda/promotion_candidate_cache # EDIT THIS VALUE (WORKFLOW DIRECTORY)
 NUMA_NODE=0 # EDIT THIS VALUE (NUMA NODE)
 
-HOME_DIR=~/promotion_candidate_cache
 DATA_DIR=data
 DATA_URL="https://decades.cs.princeton.edu/datasets/big"
+DATA_URL="https://decades.cs.princeton.edu/datasets/medium_networks"
 
 datasets=(Kronecker_25 Twitter Sd1_Arc DBG_Kronecker_25 DBG_Twitter DBG_Sd1_Arc)
+datasets=(Kronecker_21)
 files=(num_nodes_edges.txt node_array.bin edge_array.bin edge_values.bin)
 
+# DATASET PREPARATION
 download_files() {
     dataset=$1
 
@@ -66,3 +69,13 @@ else
 fi
 
 sudo echo 0 > /proc/sys/kernel/randomize_va_space
+
+# WORKFLOW PREPARATION
+cd ${HOME_DIR}/numactl
+bash make.sh
+
+cd ${HOME_DIR}/utils
+make
+
+cd ${HOME_DIR}
+mkdir results
