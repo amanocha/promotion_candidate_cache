@@ -6,9 +6,9 @@ import time
 
 from subprocess import Popen, PIPE
 
-HOME_DIR = "~/promotion_candidate_cache/"
+HOME_DIR = "/home/aninda/promotion_candidate_cache/"
 LAUNCH_DIR = HOME_DIR + "applications/launch/" 
-MAIN_DIR = HOME_DIR + "applications/results/"
+MAIN_DIR = HOME_DIR + "results/"
 GRAPH_DIR = HOME_DIR + "data/"
 PROMOTION_CACHE_DIR = HOME_DIR + "pin3.7/source/tools/PromotionCache/output/promotion_data/"
 DEMOTION_CACHE_DIR = HOME_DIR + "pin3.7/source/tools/PromotionCache/output/demotion_data/"
