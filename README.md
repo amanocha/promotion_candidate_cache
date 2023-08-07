@@ -86,3 +86,12 @@ You can configure TLB size by modifying line 4 in `run.sh`:
     TLB_SIZE=1024
 
 Then execute `bash run.sh`. 
+
+## Results
+
+If the experiment scripts were used, all results are stored in the `results/` folder. The folder organization can be summarized as follows:
+
+	- single_thread
+     	- frag50
+      	- frag90
+       	- multithread
