@@ -1,0 +1,11 @@
+prefix=/usr/local
+exec_prefix=/usr/local
+libdir=/usr/local/lib
+includedir=/usr/local/include
+
+Name: numa
+Description: NUMA policy library
+Version: 2.0.14
+Cflags: -I${includedir}
+Libs: -L${libdir} -lnuma
+Libs.Private: -latomic 
