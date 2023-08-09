@@ -95,3 +95,39 @@ If the experiment scripts were used, all results are stored in the `results/` fo
      	- frag50
       	- frag90
        	- multithread
+
+Within each application/dataset experiment folder, the following files are generated:
+
+    - compiler_output.txt (compilation standard output)
+    - compiler_err.txt (compilation standard error output)
+    - access_output_x_i.txt (number of anonymous and huge pages over time)
+    - app_output_x_i.txt (application standard output)
+    - err_output_x_i.txt (application standard error output)
+    - measurements_output_i.txt (metric values from perf)
+    - perf_output_x_i.txt (perf output)
+    - pf_output_x_i.txt (page faults over time)
+    - results_output_i.txt (results output)
+    - results.txt (average results output)     
+
+`x` represents the huge page setting (e.g. 0 for baseline and THP, 1 for HawkEye and PCC) and `i` is the iteration number (each experiment is run 3 times). 
+
+The runtimes for a given execution will be at the bottom of `app_output_x_i.txt` and appear as follows:
+
+    total kernel computation time: [TIME_IN_SECONDS]
+    user time: [USER_TIME_IN_SECONDS]
+    kernel time: [KERNEL_TIME_IN_SECONDS]
+
+The TLB miss rates for a given execution will be at the top of `results_i.txt` and appear as follows:
+
+    TLB:
+    TLB Miss Rate: [%]
+    STLB Miss Rate: [%]
+    Page Fault Rate: [%]
+    Percent of TLB Accesses with PT Walks: [%]
+    Percent of TLB Accesses with Completed PT Walks: [%]
+    Percent of TLB Accesses with Page Faults: [%]
+
+The average TLB statistics will be recorded in `results.txt`.
+
+## Contact
+Aninda Manocha: amanocha@princeton.edu
