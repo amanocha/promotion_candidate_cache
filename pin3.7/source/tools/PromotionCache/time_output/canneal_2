@@ -1,0 +1,49 @@
+PARSEC Benchmark Suite
+netlist filename: /home/aninda/graph_data/native
+Threadcount: 1
+15000 swaps per temperature step
+start temperature: 2000
+number of temperature steps: 6000
+locs created
+locs assigned
+Just saw element: 100000
+Just saw element: 200000
+Just saw element: 300000
+Just saw element: 400000
+Just saw element: 500000
+Just saw element: 600000
+Just saw element: 700000
+Just saw element: 800000
+Just saw element: 900000
+Just saw element: 1000000
+Just saw element: 1100000
+Just saw element: 1200000
+Just saw element: 1300000
+Just saw element: 1400000
+Just saw element: 1500000
+Just saw element: 1600000
+Just saw element: 1700000
+Just saw element: 1800000
+Just saw element: 1900000
+Just saw element: 2000000
+Just saw element: 2100000
+Just saw element: 2200000
+Just saw element: 2300000
+Just saw element: 2400000
+Just saw element: 2500000
+netlist created. 2500000 elements.
+THP tracking process spawned! cpid 0 waiting to run
+cpid 0 running
+
+
+starting kernel
+ending kernel
+
+total kernel computation time: 142.584496
+user time: 142.320000
+kernel time: 0.150000
+footprint: start = 30211232KB, end = 30211876KB, diff = 644KB
+page reclaims: 62134
+page faults: 0
+swaps: 0
+Final routing is: 9.03315e+09

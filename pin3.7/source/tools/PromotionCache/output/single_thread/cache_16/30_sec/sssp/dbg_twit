@@ -1,0 +1,230 @@
+12 arguments, path = /home/aninda/optimizing-huge-page-utility/applications/pin_source/sssp/main, exec = main
+ACCESS INTERVAL = 1096522560, PROMOTION CACHE SIZE = 16, FACTOR = 30
+Routine = _Z9pin_startv
+Routine = _Z7pin_endv
+Nodes: 52579682, Edges: 1963263821
+reading byte length of:    210318732
+reading byte length of:    7853055284
+reading byte length of:    7853055284
+Reading graph elapsed time: 4428.55s
+
+Memory Regions:
+NODE_ARRAY: starting base = 3fffe34, ending base = 3fffefd
+EDGE_ARRAY: starting base = 3ffe0f3, ending base = 3fffe35
+EDGE_VALUES: starting base = 3ffc3b1, ending base = 3ffe0f4
+PROP_ARRAY: starting base = 3ffc2e9, ending base = 3ffc3b2
+IN_WL: starting base = 3ffbefe, ending base = 3ffc2ea
+OUT_WL: starting base = 3ffbb13, ending base = 3ffbeff
+
+
+1096522560: Memory Regions:
+	base = 3ffc2ed, 31.3521, 444, 175
+	base = 3ffc2eb, 43.4662, 720, 140
+	base = 3ffc2ee, 35.4751, 1673, 139
+	base = 3ffc2ea, 34.2403, 303, 101
+	base = 3ffc2f1, 30.8396, 3313, 100
+	base = 3ffc2e9, 685.829, 37, 99
+	base = 3ffc2ec, 49.336, 807, 86
+	base = 3ffc2f2, 51.9505, 1151, 78
+	base = 3ffc326, 35.3144, 25, 72
+	base = 3ffc327, 29.3239, 18, 65
+	base = 3ffc33a, 38, 5, 65
+	base = 3ffc343, 36.9065, 5, 65
+	base = 3ffe217, 11825.5, 2, 64
+	base = 3ffc4d6, 11825.5, 2, 64
+	base = 3ffc345, 38, 2, 63
+	base = 3ffbb13, 0, 0, 62
+
+33992199360: Memory Regions:
+	base = 3ffd80a, 3471.84, 188, 223
+	base = 3ffc2f6, 6641.03, 40095, 206
+	base = 3fff54b, 2691.06, 150, 182
+	base = 3ffc300, 11606.6, 23360, 149
+	base = 3ffc2f3, 16648.7, 21765, 141
+	base = 3fff54c, 3447.35, 42, 128
+	base = 3ffc2f7, 17490.8, 14159, 118
+	base = 3ffc2f8, 17161.7, 3945, 114
+	base = 3ffc2f4, 17653.3, 281, 103
+	base = 3ffc354, 7682.55, 24, 99
+	base = 3ffc2f0, 16071.2, 20, 99
+	base = 3ffc328, 14435.4, 13, 97
+	base = 3ffc2ef, 23, 3, 93
+	base = 3ffc355, 6919.76, 3, 93
+	base = 3ffc30d, 12654.7, 9, 91
+	base = 3ffc2fe, 0, 0, 90
+
+66887876160: Memory Regions:
+	base = 3ffc2f9, 8592.07, 2312, 170
+	base = 3ffc301, 5665.44, 1937, 150
+	base = 3ffc2fa, 11204.2, 2000, 140
+	base = 3ffc2fb, 9381.61, 166, 123
+	base = 3ffc329, 1533.88, 11, 114
+	base = 3ffeb3b, 5374.72, 12, 114
+	base = 3ffcdfa, 5374.72, 12, 114
+	base = 3ffc32a, 1702.83, 8, 111
+	base = 3ffc2fc, 9677.7, 21, 108
+	base = 3ffc32b, 4346.52, 6, 108
+	base = 3ffc304, 9758.41, 20, 106
+	base = 3ffc32d, 23, 3, 106
+	base = 3ffc32c, 23, 1, 106
+	base = 3ffc33c, 23, 1, 106
+	base = 3ffc36a, 0, 0, 105
+	base = 3ffc360, 0, 0, 105
+
+99783552960: Memory Regions:
+	base = 3ffc306, 10398.2, 191, 243
+	base = 3ffc305, 4006.02, 12, 241
+	base = 3ffe718, 7321.56, 5, 239
+	base = 3ffc9d7, 7321.56, 5, 239
+	base = 3ffc32f, 4819.39, 8, 238
+	base = 3ffc332, 23, 3, 238
+	base = 3ffc340, 23, 4, 237
+	base = 3ffc308, 23, 2, 237
+	base = 3ffc30a, 23, 2, 237
+	base = 3ffc333, 23, 2, 237
+	base = 3ffc337, 23, 1, 237
+	base = 3ffc344, 0, 0, 236
+	base = 3ffc341, 0, 0, 236
+	base = 3ffc33d, 0, 0, 236
+	base = 3ffc33b, 0, 0, 236
+	base = 3ffc347, 23, 3, 236
+
+132679229760: Memory Regions:
+	base = 3ffc303, 6809.64, 58, 191
+	base = 3ffc2fd, 12731.7, 42, 182
+	base = 3ffc302, 10048, 48, 179
+	base = 3ffc307, 13570.1, 34, 174
+	base = 3ffc32e, 9011.72, 16, 172
+	base = 3ffc2ff, 10005.7, 13, 167
+	base = 3ffc30b, 9081.1, 13, 167
+	base = 3fffe41, 1138, 4, 164
+	base = 3ffc30c, 400.605, 4, 164
+	base = 3ffc331, 4042.59, 6, 164
+	base = 3ffc338, 3753.78, 5, 163
+	base = 3ffc342, 951.71, 3, 163
+	base = 3fffe36, 12366.8, 6, 161
+	base = 3fff6b7, 184, 1, 161
+	base = 3ffd976, 184, 1, 161
+	base = 3ffc3b3, 0, 0, 160
+
+165574906560: Memory Regions:
+	base = 3ffc309, 21098.5, 1164, 187
+	base = 3ffc330, 12437.1, 729, 124
+	base = 3ffc2f5, 58594.9, 1210, 117
+	base = 3ffc335, 26284.3, 42, 99
+	base = 3fffe3d, 2626.43, 9, 85
+	base = 3fffe39, 5508.72, 8, 82
+	base = 3fffe38, 5360.88, 8, 80
+	base = 3ffc311, 80237.6, 82, 79
+	base = 3ffc34e, 9753.45, 3, 78
+	base = 3ffc361, 23, 4, 77
+	base = 3ffc33e, 2847, 1, 77
+	base = 3fff538, 690, 1, 77
+	base = 3ffd7f7, 690, 1, 77
+	base = 3ffc334, 23, 1, 77
+	base = 3ffd81b, 0, 0, 76
+	base = 3fff55c, 0, 0, 76
+
+198470583360: Memory Regions:
+	base = 3ffc325, 174.846, 212, 171
+	base = 3ffc3aa, 784.83, 110, 134
+	base = 3ffc321, 27.8261, 25, 115
+	base = 3ffc339, 7945.52, 6, 113
+	base = 3fffe37, 9074.49, 4, 112
+	base = 3ffc30f, 16899.4, 7, 111
+	base = 3ffc33f, 2925.86, 3, 111
+	base = 3ffef91, 7686.61, 3, 111
+	base = 3ffd24f, 7686.61, 3, 111
+	base = 3ffc336, 7774.6, 4, 110
+	base = 3ffc3ab, 27.14, 11, 109
+	base = 3ffef73, 1012, 1, 109
+	base = 3ffd232, 1012, 1, 109
+	base = 3ffef85, 7682, 1, 109
+	base = 3ffd244, 7682, 1, 109
+	base = 3ffd258, 0, 0, 108
+
+231366260160: Memory Regions:
+	base = 3ffc310, 20350.4, 150, 159
+	base = 3ffc312, 10773.9, 11, 155
+	base = 3fffe3c, 2565.47, 7, 154
+	base = 3ffc313, 22443.8, 17, 153
+	base = 3ffc31b, 52447.8, 51, 152
+	base = 3fffe3e, 2530.7, 2, 151
+	base = 3ffc31d, 24.5, 2, 151
+	base = 3fff5ca, 2935.9, 2, 151
+	base = 3ffd889, 2935.9, 2, 151
+	base = 3fff598, 1702.1, 2, 150
+	base = 3ffd856, 1702.1, 2, 150
+	base = 3fff5be, 2516, 1, 150
+	base = 3ffc35b, 46, 1, 150
+	base = 3ffc35c, 23, 1, 150
+	base = 3ffd8b1, 0, 0, 149
+	base = 3fff5f2, 0, 0, 149
+
+264261936960: Memory Regions:
+	base = 3ffc379, 3033.99, 48, 213
+	base = 3ffc385, 129.72, 17, 199
+	base = 3ffc377, 2638.09, 19, 198
+	base = 3ffc376, 1957.47, 19, 197
+	base = 3ffc35f, 6790.35, 38, 195
+	base = 3ffc378, 3810.83, 12, 192
+	base = 3ffc319, 56.948, 4, 191
+	base = 3ffc34d, 27.37, 3, 191
+	base = 3ffc356, 25.07, 3, 191
+	base = 3ffc36b, 39.767, 4, 190
+	base = 3ffc349, 23, 2, 190
+	base = 3ffc34a, 23, 2, 190
+	base = 3ffc350, 23, 2, 190
+	base = 3ffc35d, 46, 1, 190
+	base = 3ffc364, 23, 1, 190
+	base = 3ffc363, 0, 0, 189
+
+297157613760: Memory Regions:
+	base = 3ffc317, 11952.7, 104, 238
+	base = 3ffc320, 27415, 109, 235
+	base = 3ffc318, 22465.4, 74, 218
+	base = 3ffc30e, 9477.74, 174, 217
+	base = 3ffc316, 19235.4, 83, 216
+	base = 3ffc31e, 24966.3, 90, 215
+	base = 3ffc31f, 20786.8, 86, 212
+	base = 3ffc315, 24768, 80, 209
+	base = 3ffc31a, 21150.6, 72, 207
+	base = 3ffc314, 20294.1, 53, 197
+	base = 3ffc31c, 29422.2, 42, 191
+	base = 3fffe7d, 93.67, 4, 175
+	base = 3fffe79, 205.68, 3, 174
+	base = 3fffeb6, 18, 1, 174
+	base = 3ffd687, 0, 0, 173
+	base = 3fff3c9, 0, 0, 173
+
+
+starting kernel
+-- epoch 1 1 --> push
+-- epoch 2 1 --> push
+-- epoch 3 3049 --> push
+-- epoch 4 5873355 --> push
+-- epoch 5 61842247 --> push
+-- epoch 6 82214648 --> push
+-- epoch 7 6127771 --> push
+-- epoch 8 609926 --> push
+-- epoch 9 130407 --> push
+-- epoch 10 45266 --> push
+-- epoch 11 17370 --> push
+-- epoch 12 6247 --> push
+-- epoch 13 1730 --> push
+-- epoch 14 283 --> push
+-- epoch 15 239 --> push
+-- epoch 16 34 --> push
+-- epoch 17 10 --> push
+-- epoch 18 4 --> push
+ending kernel
+
+total kernel computation time: 18454.230277
+user time: 17896.410000
+kernel time: 11.070000
+footprint: start = 31558776KB, end = 32681832KB, diff = 1123056KB
+page reclaims: 330639
+page faults: 41159
+swaps: 0
+Writing output to file!
+Total Accesses = 322873290211

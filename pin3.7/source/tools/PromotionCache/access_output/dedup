@@ -1,0 +1,15 @@
+8 arguments
+ACCESS INTERVAL = 10000000
+Routine = _Z9pin_startv
+Routine = _Z7pin_endv
+PARSEC Benchmark Suite
+Total input size:                      671.58 MB
+Total output size:                     633.57 MB
+Effective compression factor:            1.06x
+
+Mean data chunk size:                    1.88 KB (stddev: 2031.51 KB)
+Amount of duplicate chunks:             55.00%
+Data size after deduplication:         655.16 MB (compression factor: 1.03x)
+Data size after compression:           626.52 MB (compression factor: 1.05x)
+Output overhead:                         1.11%
+Total Accesses = 75861723943

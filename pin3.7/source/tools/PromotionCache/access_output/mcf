@@ -1,0 +1,215 @@
+8 arguments
+ACCESS INTERVAL = 10000000
+Routine = pin_start
+Routine = pin_end
+
+MCF SPEC CPU version 1.11
+Copyright (c) 1998-2000 Zuse Institut Berlin (ZIB)
+Copyright (c) 2000-2002 Andreas Loebel & ZIB
+Copyright (c) 2003-2005 Andreas Loebel
+Copyright (c) 2006-2010 Dres. Loebel, Borndoerfer & Weider GbR (LBW)
+
+nodes                      : 25137
+pin_start()
+active arcs                : 260767
+simplex iterations         : 186941
+objective value            : 15887540369
+new implicit arcs          : 24900000
+active arcs                : 25160767
+simplex iterations         : 910670
+objective value            : 12149258952
+erased arcs                : 24879927
+new implicit arcs          : 24879927
+active arcs                : 25160767
+simplex iterations         : 1602744
+objective value            : 11190089623
+erased arcs                : 24865961
+new implicit arcs          : 24865961
+active arcs                : 25160767
+simplex iterations         : 2037871
+objective value            : 11117842678
+erased arcs                : 24863099
+new implicit arcs          : 24863099
+active arcs                : 25160767
+simplex iterations         : 2571954
+objective value            : 10973400330
+erased arcs                : 24856474
+new implicit arcs          : 24856474
+active arcs                : 25160767
+simplex iterations         : 2848325
+objective value            : 10941929690
+erased arcs                : 24855075
+new implicit arcs          : 24855075
+active arcs                : 25160767
+simplex iterations         : 3119034
+objective value            : 10930801300
+erased arcs                : 24852293
+new implicit arcs          : 24852293
+active arcs                : 25160767
+simplex iterations         : 3222238
+objective value            : 10900737970
+erased arcs                : 24851921
+new implicit arcs          : 10692330
+active arcs                : 11001176
+simplex iterations         : 3254309
+objective value            : 10870751560
+erased arcs                : 10693073
+new implicit arcs          : 2674507
+active arcs                : 2982610
+simplex iterations         : 3272271
+objective value            : 10830739950
+erased arcs                : 2674399
+new implicit arcs          : 3274293
+active arcs                : 3582504
+simplex iterations         : 3274536
+objective value            : 10830734910
+erased arcs                : 3274083
+new implicit arcs          : 4272
+active arcs                : 312693
+simplex iterations         : 3275714
+objective value            : 10810737850
+erased arcs                : 4988
+new implicit arcs          : 22220299
+active arcs                : 22528004
+simplex iterations         : 3290089
+objective value            : 10790735340
+erased arcs                : 22219641
+new implicit arcs          : 263324
+active arcs                : 571687
+simplex iterations         : 3290490
+objective value            : 10790734340
+erased arcs                : 263180
+new implicit arcs          : 2604
+active arcs                : 311111
+simplex iterations         : 3294939
+objective value            : 10760755250
+erased arcs                : 5797
+new implicit arcs          : 12456506
+active arcs                : 12761820
+simplex iterations         : 3314430
+objective value            : 10740734340
+erased arcs                : 12454714
+new implicit arcs          : 13513
+active arcs                : 320619
+simplex iterations         : 3321014
+objective value            : 10710779070
+erased arcs                : 16245
+new implicit arcs          : 24856393
+active arcs                : 25160767
+simplex iterations         : 3342920
+objective value            : 10700734370
+erased arcs                : 24852861
+new implicit arcs          : 192455
+active arcs                : 500361
+simplex iterations         : 3343079
+objective value            : 10700734340
+erased arcs                : 192474
+new implicit arcs          : 1430
+active arcs                : 309317
+simplex iterations         : 3344535
+objective value            : 10690737070
+erased arcs                : 2477
+new implicit arcs          : 21678146
+active arcs                : 21984986
+simplex iterations         : 3350975
+objective value            : 10690734340
+erased arcs                : 21677479
+new implicit arcs          : 4137
+active arcs                : 311644
+simplex iterations         : 3351006
+objective value            : 10690734340
+erased arcs                : 4131
+new implicit arcs          : 410
+active arcs                : 307923
+simplex iterations         : 3352523
+objective value            : 10680737460
+erased arcs                : 1621
+new implicit arcs          : 13908801
+active arcs                : 14215103
+simplex iterations         : 3361973
+objective value            : 10670734910
+erased arcs                : 13907466
+new implicit arcs          : 162824
+active arcs                : 470461
+simplex iterations         : 3362344
+objective value            : 10670734340
+erased arcs                : 162809
+new implicit arcs          : 2034
+active arcs                : 309686
+simplex iterations         : 3362404
+objective value            : 10670734340
+erased arcs                : 2030
+new implicit arcs          : 1079
+active arcs                : 308735
+simplex iterations         : 3362433
+objective value            : 10670734340
+erased arcs                : 1079
+new implicit arcs          : 361
+active arcs                : 308017
+simplex iterations         : 3363035
+objective value            : 10660738330
+erased arcs                : 801
+new implicit arcs          : 12537096
+active arcs                : 12844312
+simplex iterations         : 3365534
+objective value            : 10660734340
+erased arcs                : 12536730
+new implicit arcs          : 5984
+active arcs                : 313566
+simplex iterations         : 3365574
+objective value            : 10660734340
+erased arcs                : 5983
+new implicit arcs          : 4247
+active arcs                : 311830
+simplex iterations         : 3365626
+objective value            : 10660734340
+erased arcs                : 4244
+new implicit arcs          : 946
+active arcs                : 308532
+simplex iterations         : 3366658
+objective value            : 10650739260
+erased arcs                : 1658
+new implicit arcs          : 15021075
+active arcs                : 15327949
+simplex iterations         : 3369381
+objective value            : 10650734340
+erased arcs                : 15020452
+new implicit arcs          : 660
+active arcs                : 308157
+simplex iterations         : 3370156
+objective value            : 10640736920
+erased arcs                : 1250
+new implicit arcs          : 16305429
+active arcs                : 16612336
+simplex iterations         : 3371933
+objective value            : 10640734340
+erased arcs                : 16304937
+new implicit arcs          : 4906
+active arcs                : 312305
+simplex iterations         : 3371977
+objective value            : 10640734340
+erased arcs                : 4903
+new implicit arcs          : 2168
+active arcs                : 309570
+simplex iterations         : 3372003
+objective value            : 10640734340
+erased arcs                : 2166
+new implicit arcs          : 1058
+active arcs                : 308462
+simplex iterations         : 3373383
+objective value            : 10630742500
+erased arcs                : 2117
+new implicit arcs          : 11433214
+active arcs                : 11739559
+simplex iterations         : 3377666
+objective value            : 10630734340
+erased arcs                : 11431887
+new implicit arcs          : 314
+active arcs                : 307986
+simplex iterations         : 3377674
+objective value            : 10630734340
+erased arcs                : 314
+checksum                   : 10630734340
+pin_end()
+done
+Total Accesses = 769761377227

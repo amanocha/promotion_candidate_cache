@@ -99,6 +99,7 @@ def parse_args():
 
 def run(cmd, tmp_output, output):
   print(cmd)
+  sys.exit(1)
   exit = os.system(cmd)
   if not exit and "screen" not in cmd:
     if tmp_output != output:
@@ -282,18 +283,18 @@ def main():
   if args.experiment == 0:
     RESULT_DIR += "single_thread/"
     if not os.path.isdir(RESULT_DIR):
-      os.mkdir(RESULT_DIR)
+      os.makedirs(RESULT_DIR)
     run_two("cache", 0, 512)
   elif args.experiment == 1:
     RESULT_DIR += "madvise_prop/"
     if not os.path.isdir(RESULT_DIR):
-      os.mkdir(RESULT_DIR)
+      os.makedirs(RESULT_DIR)
     for i in range(0, 21):
       run_one(i)
   elif args.experiment == 2:
     RESULT_DIR += "single_thread/"
     if not os.path.isdir(RESULT_DIR):
-      os.mkdir(RESULT_DIR)
+      os.makedirs(RESULT_DIR)
     run_two("hawkeye", 0, 512)
     for i in range(NUM_PERCENTAGES):
       percentage = int(math.pow(2, i))
@@ -302,7 +303,7 @@ def main():
   elif args.experiment == 3:
     RESULT_DIR += + "single_thread/"
     if not os.path.isdir(RESULT_DIR):
-      os.mkdir(RESULT_DIR)
+      os.makedirs(RESULT_DIR)
     run_two("cache", 0, 512, access_time=ACCESS_TIME)
     for i in range(NUM_PERCENTAGES):
       percentage = int(math.pow(2, i))
@@ -316,7 +317,7 @@ def main():
   elif args.experiment == 4:
     RESULT_DIR += "multithread/"
     if not os.path.isdir(RESULT_DIR):
-      os.mkdir(RESULT_DIR)
+      os.makedirs(RESULT_DIR)
     for policy in range(2):
       for t in range(1, NUM_THREADS+1):
         num_threads = int(math.pow(2, t))
@@ -330,7 +331,7 @@ def main():
   elif args.experiment == 5:
     RESULT_DIR += "frag50/"
     if not os.path.isdir(RESULT_DIR):
-      os.mkdir(RESULT_DIR)
+      os.makedirs(RESULT_DIR)
     run_two("cache", 0, PCC_SIZE)
     run_two("cache", 100, PCC_SIZE)
     run_two("hawkeye", 100, PCC_SIZE)
@@ -338,7 +339,7 @@ def main():
   elif args.experiment == 6:
     RESULT_DIR += "multiprocess/"
     if not os.path.isdir(RESULT_DIR):
-      os.mkdir(RESULT_DIR)
+      os.makedirs(RESULT_DIR)
     run_three("cache", 0, 512)
     for policy in range(2, 3):
       for i in range(NUM_PERCENTAGES):

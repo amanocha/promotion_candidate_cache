@@ -1,10 +1,18 @@
-from params import *
+from go import *
+from metrics import *
+
+NUMA_NODE = 1
+CPU = 8
+CPU_LIST = [8, 9, 10, 11, 12, 13, 14, 15, 24, 25, 26, 27, 28, 29, 30, 31]
+FREQ = 2.1e9
+
+
 
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("-x", "--num_samples", type=int, default=5, help="Number of experiment samples")
-    parser.add_argument("-s", "--source", type=str, help="Path to source code file")
-    parser.add_argument("-d", "--data", type=str, help="Path to data file")
+    parser.add_argument("-s", "--source", type=str, required=True, help="Path to source code file")
+    parser.add_argument("-d", "--data", type=str, required=True, help="Path to data file")
     parser.add_argument("-rp", "--relative_path", type=int, default=0, help="Use relative data file path")
     parser.add_argument("-ss", "--start_seed", type=int, default=-1, help="Start seed for BFS and SSSP")
     parser.add_argument("-t", "--num_threads", type=int, default=1, help="Number of threads")
@@ -31,10 +39,7 @@ def compile():
 
 def execute(run_kernel, iteration=""):
     print("Executing application...")
-    if (relative):
-        input_path = os.path.relpath(data, new_dir)
-    else:
-        input_path = data
+    input_path = os.path.relpath(data, new_dir) if relative else data
 
     output_perf = output + "perf_output_" + run_kernel + "_" + iteration + ".txt" if iteration != "" else output + "perf_output_" + run_kernel + ".txt"
     if (os.path.isfile(output_perf)):
@@ -43,6 +48,8 @@ def execute(run_kernel, iteration=""):
     perf_name = "perf_output_" + run_kernel + "_" + iteration + ".txt" if iteration != "" else "perf_output_" + run_kernel + ".txt"
     app_out_name = "app_output_" + run_kernel + "_" + iteration + ".txt" if iteration != "" else "app_output_" + run_kernel + ".txt"
     err_name = "err_output_" + run_kernel + "_" + iteration + ".txt" if iteration != "" else "err_output_" + run_kernel + ".txt"
+    access_name = "access_output_" + run_kernel + "_" + iteration + ".txt" if iteration != "" else "access_output_" + run_kernel + ".txt"
+    pf_name = "pf_output_" + run_kernel + "_" + iteration + ".txt" if iteration != "" else "pf_output_" + run_kernel + ".txt"
 
     cmd_args = ["\"perf", "stat", "-p", "%d", "-B", "-v", "-o", perf_name]
     for metric in metrics:
@@ -54,7 +61,7 @@ def execute(run_kernel, iteration=""):
     cmd_args = ["numactl", "-C", cpu_list, "--membind", str(NUMA_NODE), "sudo", "./main"] if threads > 1 else ["numactl", "-C", str(CPU_LIST[start_idx]), "--membind", str(NUMA_NODE), "sudo", "./main"]
     if app_name.replace("_multiprocess", "") not in vp:
       os.chdir(LAUNCH_DIR)
-      cmd_args += ["/".join(source.split("/")[1:3])] #[app_name + "/" + app_name]
+      cmd_args += ["/".join(source.split("/")[1:3])]
     cmd_args += [input_path] 
     if threads > 1:
       cmd_args += [str(threads)]
@@ -63,11 +70,7 @@ def execute(run_kernel, iteration=""):
     if start_seed != -1:
         cmd_args += [str(start_seed)]
 
-    cmd_args += [perf_cmd]
-
-    access_name = "access_output_" + run_kernel + "_" + iteration + ".txt" if iteration != "" else "access_output_" + run_kernel + ".txt"
-    pf_name = "pf_output_" + run_kernel + "_" + iteration + ".txt" if iteration != "" else "pf_output_" + run_kernel + ".txt"
-    cmd_args += [access_name, pf_name]
+    cmd_args += [perf_cmd, access_name, pf_name]
 
     if promotion_data != "":
         cmd_args += [promotion_data]
@@ -75,23 +78,16 @@ def execute(run_kernel, iteration=""):
     if demotion_data != "":
         cmd_args += [demotion_data]
 
-    cmd_args += [">", app_out_name]
-    cmd_args += ["2>", err_name]
+    cmd_args += [">", app_out_name, "2>", err_name]
 
     cmd = " ".join(cmd_args)
     print(cmd)
     os.system(cmd)
     time.sleep(10)
 
-    os.system("sudo chmod 777 " + perf_name)
-    os.system("sudo chmod 777 " + access_name)
-    os.system("sudo chmod 777 " + pf_name)
-
-    os.system("mv " + perf_name + " " + output)
-    os.system("mv " + access_name + " " + output)
-    os.system("mv " + pf_name + " " + output)
-    os.system("mv " + err_name + " " + output)
-    os.system("mv " + app_out_name + " " + output)
+    for filename in [perf_name, app_out_name, err_name, access_name, pf_name]:
+      os.system("sudo chmod 777 " + filename)
+      os.system("mv " + filename + " " + output)
 
 def measure(run_kernel, iteration=""):
     global metric_vals
@@ -100,20 +96,16 @@ def measure(run_kernel, iteration=""):
     filename = output + "perf_output_" + run_kernel + "_" + iteration + ".txt" if iteration != "" else output + "perf_output_" + run_kernel + ".txt"
     if (not os.path.isfile(filename)):
         return
+    
     perf_output = open(filename, "r+")
     measurements = open(output + "measurements_" + iteration + ".txt", "w+")
 
     for line1 in perf_output:
       line1 = line1.replace(",","").replace("-", "")
-      #match1 = re.match("\s*(\w+\.?\w*\.?\w*\.?\w*\.?\w*):\s+(\d+)", line1)
       match1 = re.match("\s*(\d+)\s+(\w+\.?\w*\.?\w*\.?\w*\.?\w*)", line1)
 
-      if match1 != None:
-        metric1 = match1.group(2)
-        value1 = int(match1.group(1))
-      else:
-        metric1 = ""
-        value1 = 0
+      metric1 = match1.group(2) if match1 != None else ""
+      value1 = int(match1.group(1)) if match1 != None else 0
 
       if metric1 != "":
         if metric1 in metric_vals:
@@ -138,182 +130,6 @@ def avg(N):
     for metric in metric_vals:
       metric_vals[metric] = round(float(metric_vals[metric])/N, 2)
       measurements.write(metric + ": " + str(metric_vals[metric]) + "\n")
-
-    measurements.close()
-
-def parse_results(run_kernel, iteration=""):
-    if iteration != "":
-      results_file = "results_" + iteration + ".txt"
-      measurements_file = "measurements_" + iteration + ".txt"
-    else:
-      results_file = "results.txt"
-      measurements_file = "measurements.txt"
-
-    measurements = open(output + results_file, "w+")
-
-    if (measure_only):
-      measure = False
-      if os.path.isfile(output + measurements_file):
-        averages = open(output + measurements_file, "r+")
-        measure = True
-      elif os.path.isfile(output + "perf_output_" + run_kernel + ".txt"):
-        averages = open(output + "perf_output_" + run_kernel + ".txt", "r+")
-      else:
-        return
-      for line in averages:
-        line = line.replace(",","").replace("-", "")
-        if measure:
-          match = re.match("\s*(\w+\.?\w*\.?\w*\.?\w*\.?\w*):\s+(\d+\.*\d*e*\+*\d*)", line)
-          if (match != None):
-            metric = match.group(1)
-            value = float(match.group(2))
-            if metric in metric_vals:
-              metric_vals[metric] += value
-            else:
-              metric_vals[metric] = value
-            print(metric, value)
-        else:
-          match = re.match("\s*(\d+)\s+(\w+\.?\w*\.?\w*\.?\w*\.?\w*)", line)
-          if (match != None):
-            metric = match.group(2)
-            value = int(match.group(1))
-            if metric in metric_vals:
-              metric_vals[metric] += value
-            else:
-              metric_vals[metric] = value
-            print(metric, value)
-      averages.close()
-
-    measurements.write("RESULTS:\n")
-    measurements.write("----------\n")
-    measurements.write("\n")
-
-    cycles = metric_vals["cpucycles"]
-
-    l1_ld_misses = metric_vals["L1dcacheloadmisses"]
-    l1_lds = metric_vals["L1dcacheloads"]
-    l1_st_misses = 0 #metric_vals["L1dcachestoremisses"]
-    l1_sts = metric_vals["L1dcachestores"]
-    l1_misses = l1_ld_misses + l1_st_misses
-    l1_refs = l1_lds + l1_sts
-
-    llc_ld_misses = metric_vals["LLCloadmisses"]
-    llc_lds = metric_vals["LLCloads"]
-    llc_st_misses = metric_vals["LLCstoremisses"]
-    llc_sts = metric_vals["LLCstores"]
-    llc_misses = llc_ld_misses + llc_st_misses
-    llc_refs = llc_lds + llc_sts
-
-    measurements.write("CACHE:\n")
-    measurements.write("L1 Miss Rate: " + str(l1_misses*100.0/l1_refs) + "\n")
-    measurements.write("LLC Miss Rate: " + str(llc_misses*100.0/llc_refs) + "\n")
-    measurements.write("L3 Miss: " + str(llc_misses*100.0/l1_refs) + "\n")
-
-    measurements.write("\n")
-
-    #tlb_ld_misses = metric_vals["dTLBloadmisses"]
-    tlb_lds = metric_vals["dTLBloads"]
-    #tlb_st_misses = metric_vals["dTLBstoremisses"]
-    if metric_vals["dTLBstores"] > 0:
-      tlb_sts = metric_vals["dTLBstores"]
-    else:
-      tlb_sts = 0
-    tlb_refs = tlb_lds + tlb_sts
-    #tlb_misses = tlb_ld_misses + tlb_st_misses
-
-    tlb_ld_stlb = metric_vals["dtlb_load_misses.stlb_hit"]
-    tlb_ld_walks = metric_vals["dtlb_load_misses.miss_causes_a_walk"]
-    tlb_ld_walk_cycles = metric_vals["dtlb_load_misses.walk_duration"]
-    tlb_ld_walk_completed = metric_vals["dtlb_load_misses.walk_completed"]
-    tlb_ld_walk_completed_4k = metric_vals["dtlb_load_misses.walk_completed_4k"]
-    tlb_ld_walk_completed_2m = metric_vals["dtlb_load_misses.walk_completed_2m_4m"]
-    tlb_ld_walk_completed_1g = metric_vals["dtlb_load_misses.walk_completed_1g"]
-    tlb_st_stlb = metric_vals["dtlb_store_misses.stlb_hit"]
-    tlb_st_walks = metric_vals["dtlb_store_misses.miss_causes_a_walk"]
-    tlb_st_walk_cycles = metric_vals["dtlb_store_misses.walk_duration"]
-    tlb_st_walk_completed = metric_vals["dtlb_store_misses.walk_completed"]
-    tlb_st_walk_completed_4k = metric_vals["dtlb_store_misses.walk_completed_4k"]
-    tlb_st_walk_completed_2m = metric_vals["dtlb_store_misses.walk_completed_2m_4m"]
-    tlb_st_walk_completed_1g = metric_vals["dtlb_store_misses.walk_completed_1g"]
-    page_faults = metric_vals["pagefaults"]
-    tlb_stlb = tlb_ld_stlb + tlb_st_stlb
-    tlb_walks = tlb_ld_walks + tlb_st_walks
-    tlb_misses = tlb_stlb + tlb_walks
-    tlb_walk_cycles = tlb_ld_walk_cycles + tlb_st_walk_cycles
-    tlb_walk_completed = tlb_ld_walk_completed + tlb_st_walk_completed
-    tlb_walk_completed_4k = tlb_ld_walk_completed_4k + tlb_st_walk_completed_4k
-    tlb_walk_completed_2m = tlb_ld_walk_completed_2m + tlb_st_walk_completed_2m
-    tlb_walk_completed_1g = tlb_ld_walk_completed_1g + tlb_st_walk_completed_1g
-    tlb_walk_completed_tot = tlb_walk_completed_4k + tlb_walk_completed_2m + tlb_walk_completed_1g
-    tlb_miss_rate = tlb_misses*100.0/tlb_refs if (tlb_refs > 0) else 0
-
-    tlb_ld_stlb_4k = metric_vals["dtlb_load_misses.stlb_hit_4k"]
-    tlb_ld_stlb_2m = metric_vals["dtlb_load_misses.stlb_hit_2m"]
-    tlb_st_stlb_4k = metric_vals["dtlb_store_misses.stlb_hit_4k"]
-    tlb_st_stlb_2m = metric_vals["dtlb_store_misses.stlb_hit_2m"]
-    tlb_stlb_4k = tlb_ld_stlb_4k + tlb_st_stlb_4k
-    tlb_stlb_2m = tlb_ld_stlb_2m + tlb_st_stlb_2m
-    walker_loads_l1 = metric_vals["page_walker_loads.dtlb_l1"]
-    walker_loads_l2 = metric_vals["page_walker_loads.dtlb_l2"]
-    walker_loads_l3 = metric_vals["page_walker_loads.dtlb_l3"]
-    walker_loads_mem = metric_vals["page_walker_loads.dtlb_memory"]
-    measurements.write("4KB STLB Hit: " + str(tlb_stlb_4k*100.0/tlb_stlb) + "\n")
-    measurements.write("2MB STLB Hit: " + str(tlb_stlb_2m*100.0/tlb_stlb) + "\n")
-    measurements.write("Page Walker L1 Loads: " + str(walker_loads_l1*100.0/tlb_walks) + "\n")
-    measurements.write("Page Walker L2 Loads: " + str(walker_loads_l2*100.0/tlb_walks) + "\n")
-    measurements.write("Page Walker L3 Loads: " + str(walker_loads_l3*100.0/tlb_walks) + "\n")
-    measurements.write("Page Walker Mem Loads: " + str(walker_loads_mem*100.0/tlb_walks) + "\n")
-    measurements.write("\n")
-
-    measurements.write("TLB:\n")
-    measurements.write("TLB Miss Rate: " + str(tlb_miss_rate) + "\n")
-    if (tlb_walks > 0):
-      measurements.write("STLB Miss Rate: " + str(tlb_walks*100.0/(tlb_walks+tlb_stlb)) + "\n")
-      measurements.write("Page Fault Rate: " + str(page_faults*100.0/tlb_walks) + "\n")
-    if (tlb_refs > 0):
-      measurements.write("Percent of TLB Accesses with PT Walks: " + str(tlb_walks*100.0/tlb_refs) + "\n")
-      measurements.write("Percent of TLB Accesses with Completed PT Walks: " + str(tlb_walk_completed*100.0/tlb_refs) + "\n")
-      measurements.write("Percent of TLB Accesses with Page Faults: " + str(page_faults*100.0/tlb_refs) + "\n")
-    measurements.write("Percent of Cycles Spent on PT Walks: " + str(tlb_walk_cycles*100.0/cycles) + "\n")
-    measurements.write("Average Cycles Spent on PT Walk: " + str(tlb_walk_cycles*100.0/tlb_walk_completed) + "\n")
-    if (tlb_walk_completed_tot > 0):
-      measurements.write("4KB Page Table Walks: " + str(tlb_walk_completed_4k*100.0/tlb_walk_completed_tot) + "\n")
-      measurements.write("2MB/4MB Page Table Walks: " + str(tlb_walk_completed_2m*100.0/tlb_walk_completed_tot) + "\n")
-      measurements.write("1GB Page Table Walks: " + str(tlb_walk_completed_1g*100.0/tlb_walk_completed_tot) + "\n")
-    measurements.write("\n")
-
-    l1_stalls = metric_vals["cycle_activity.stalls_l1d_pending"] if "cycle_activity.stalls_l1d_pending" in metric_vals else 0
-    l2_stalls = metric_vals["cycle_activity.stalls_l2_pending"] if "cycle_activity.stalls_l2_pending" in metric_vals else 0
-    l3_stalls = 0
-    mem_stalls = metric_vals["cycle_activity.stalls_ldm_pending"] if "cycle_activity.stalls_ldm_pending" in metric_vals else 0
-    tot_stalls = metric_vals["cycle_activity.cycles_no_execute"] if "cycle_activity.cycles_no_execute" in metric_vals else 0
-
-    instructions = metric_vals["instructions"]
-    memory_ops = l1_refs
-    compute_ops = instructions - memory_ops
-    ratio = compute_ops/memory_ops
-    avg_bw = llc_misses*64*4/(1024*1024*1024)/(cycles/FREQ)
-    ipc = float(instructions)/cycles
-
-    measurements.write("PIPELINE:\n")
-    measurements.write("Cycles: " + str(cycles) + "\n")
-    if (cycles > 0):
-      measurements.write("Percent of Cycles Spent on L1 Miss Stalls: " + str(l1_stalls*100.0/cycles) + "\n")
-      measurements.write("Percent of Cycles Spent on L2 Miss Stalls: " + str(l2_stalls*100.0/cycles) + "\n")
-      measurements.write("Percent of Cycles Spent on L3 Miss Stalls: " + str(l3_stalls*100.0/cycles) + "\n")
-      measurements.write("Percent of Cycles Spent on Mem Subsystem Stalls: " + str(mem_stalls*100.0/cycles) + "\n")
-      measurements.write("Percent of Cycles Spent on All Stalls: " + str(tot_stalls*100.0/cycles) + "\n")
-      measurements.write("Calculated IPC: " + str(ipc) + "\n")
-    measurements.write("Calculated Compute to Memory Ratio: " + str(ratio) + "\n")
-    measurements.write("Average BW: " + str(avg_bw) + "\n")
-    measurements.write("Total Number of Memory Instructions: " + str(round((tlb_lds+tlb_sts),3)) + "\n")
-    measurements.write("\n")
-    measurements.write("Percent of Instructions Spent on Memory: " + str(round((tlb_lds+tlb_sts)*100.0/instructions,3)) + "\n")
-    measurements.write("Percent of Instructions Spent on Loads: " + str(round(tlb_lds*100.0/instructions,3)) + "\n")
-    measurements.write("Percent of Instructions Spent on Stores: " + str(round(tlb_sts*100.0/instructions,3)) + "\n")
-    measurements.write("Percent of Memory Instructions Spent on Loads: " + str(round(tlb_lds*100.0/(tlb_lds+tlb_sts),3)) + "\n")
-    measurements.write("Percent of Memory Instructions Spent on Stores: " + str(round(tlb_sts*100.0/(tlb_lds+tlb_sts),3)) + "\n")
-    measurements.write("\n")
 
     measurements.close()
 

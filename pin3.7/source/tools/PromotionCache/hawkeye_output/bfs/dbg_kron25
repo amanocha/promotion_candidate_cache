@@ -1,0 +1,805 @@
+ACCESS INTERVAL = 1379256614
+Routine = _Z9pin_startv
+Routine = _Z7pin_endv
+Custom malloc called with size 72712, using 18 blocks
+Custom malloc called with size 96, using 1 blocks
+Custom malloc called with size 96, using 1 blocks
+Custom malloc called with size 74, using 1 blocks
+Custom malloc called with size 37, using 1 blocks
+Custom malloc called with size 43, using 1 blocks
+Custom malloc called with size 53, using 1 blocks
+Custom malloc called with size 115, using 1 blocks
+Custom malloc called with size 576, using 1 blocks
+Custom malloc called with size 8200, using 3 blocks
+Nodes: 33554431, Edges: 1047218258
+Custom malloc called with size 268435464, using 65537 blocks
+Custom malloc called with size 8377746072, using 2045349 blocks
+Custom malloc called with size 115, using 1 blocks
+Custom malloc called with size 576, using 1 blocks
+reading byte length of:    134217728
+Custom malloc called with size 115, using 1 blocks
+Custom malloc called with size 576, using 1 blocks
+reading byte length of:    4188873032
+Reading graph elapsed time: 313.568s
+Custom malloc called with size 268435456, using 65536 blocks
+Custom malloc called with size 536870904, using 131072 blocks
+Custom malloc called with size 536870904, using 131072 blocks
+Custom malloc called with size 43, using 1 blocks
+Custom malloc called with size 43, using 1 blocks
+Custom malloc called with size 43, using 1 blocks
+Custom malloc called with size 38, using 1 blocks
+Custom malloc called with size 39, using 1 blocks
+Custom malloc called with size 48, using 1 blocks
+Custom malloc called with size 24, using 1 blocks
+Custom malloc called with size 40, using 1 blocks
+Custom malloc called with size 72, using 1 blocks
+Custom malloc called with size 136, using 1 blocks
+
+Memory Regions:
+NODE_ARRAY: starting base = 2ff, ending base = 380
+EDGE_ARRAY: starting base = 37f, ending base = 131b
+PROP_ARRAY: starting base = 131a, ending base = 139b
+IN_WL: starting base = 139a, ending base = 149b
+OUT_WL: starting base = 149a, ending base = 159b
+
+
+
+starting kernel
+Custom malloc called with size 576, using 1 blocks
+Custom malloc called with size 336, using 1 blocks
+Custom malloc called with size 336, using 1 blocks
+Custom malloc called with size 37, using 1 blocks
+Custom malloc called with size 16, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 39, using 1 blocks
+Custom malloc called with size 24, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 40, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 37, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 36, using 1 blocks
+Custom malloc called with size 72, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 38, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 38, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 36, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 40, using 1 blocks
+Custom malloc called with size 136, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 40, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 37, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 38, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 36, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 264, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 35, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 41, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 44, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 40, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 53, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 40, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 40, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 48, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 520, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 43, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 35, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 35, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 40, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 40, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 41, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 48, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 48, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 48, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 48, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 35, using 1 blocks
+
+1379256614: Memory Regions:
+	base = c2e, 476, bucket = 9
+	base = 42d, 470, bucket = 9
+	base = 48c, 454, bucket = 9
+	base = 4ff, 452, bucket = 9
+	base = 131a, 476, bucket = 9
+	base = 131b, 512, bucket = 9
+	base = 131c, 512, bucket = 9
+	base = 131d, 512, bucket = 9
+	base = 131e, 512, bucket = 9
+	base = 131f, 512, bucket = 9
+	base = 1320, 512, bucket = 9
+	base = 1321, 512, bucket = 9
+	base = 1322, 512, bucket = 9
+	base = 1323, 512, bucket = 9
+	base = 1324, 512, bucket = 9
+	base = 1325, 512, bucket = 9
+	base = 1326, 512, bucket = 9
+	base = 1327, 512, bucket = 9
+	base = 1328, 512, bucket = 9
+	base = 1329, 512, bucket = 9
+	base = 132a, 512, bucket = 9
+	base = 132b, 512, bucket = 9
+	base = 132c, 512, bucket = 9
+	base = 132d, 512, bucket = 9
+	base = 132e, 512, bucket = 9
+	base = 132f, 512, bucket = 9
+	base = 1330, 512, bucket = 9
+	base = 1331, 512, bucket = 9
+	base = 1332, 512, bucket = 9
+	base = 1333, 512, bucket = 9
+	base = 1334, 512, bucket = 9
+	base = 1335, 512, bucket = 9
+	base = 1336, 512, bucket = 9
+	base = 1337, 512, bucket = 9
+	base = 1338, 512, bucket = 9
+	base = 1339, 512, bucket = 9
+	base = 133a, 512, bucket = 9
+	base = 133b, 512, bucket = 9
+	base = 133c, 512, bucket = 9
+	base = 133d, 512, bucket = 9
+	base = 133e, 512, bucket = 9
+	base = 133f, 512, bucket = 9
+	base = 1340, 512, bucket = 9
+	base = 1341, 512, bucket = 9
+	base = 1342, 512, bucket = 9
+	base = 1343, 512, bucket = 9
+	base = 1344, 512, bucket = 9
+	base = 1345, 512, bucket = 9
+	base = 1346, 512, bucket = 9
+	base = 1347, 512, bucket = 9
+	base = 1348, 512, bucket = 9
+	base = 1349, 512, bucket = 9
+	base = 134a, 512, bucket = 9
+	base = 134b, 512, bucket = 9
+	base = 134c, 512, bucket = 9
+	base = 134d, 512, bucket = 9
+	base = 134e, 512, bucket = 9
+	base = 134f, 512, bucket = 9
+	base = 1350, 512, bucket = 9
+	base = 1351, 512, bucket = 9
+	base = 1352, 512, bucket = 9
+	base = 1353, 512, bucket = 9
+	base = 1354, 512, bucket = 9
+	base = 1355, 512, bucket = 9
+	base = 1356, 512, bucket = 9
+	base = 1357, 512, bucket = 9
+	base = 1358, 512, bucket = 9
+	base = 1359, 512, bucket = 9
+	base = 135a, 512, bucket = 9
+	base = 135b, 512, bucket = 9
+	base = 135c, 512, bucket = 9
+	base = 135d, 512, bucket = 9
+	base = 135e, 512, bucket = 9
+	base = 135f, 512, bucket = 9
+	base = 1360, 512, bucket = 9
+	base = 1361, 512, bucket = 9
+	base = 1362, 512, bucket = 9
+	base = 1363, 512, bucket = 9
+	base = 1364, 512, bucket = 9
+	base = 1365, 512, bucket = 9
+	base = 1366, 512, bucket = 9
+	base = 1367, 512, bucket = 9
+	base = 1368, 512, bucket = 9
+	base = 1369, 512, bucket = 9
+	base = 136a, 512, bucket = 9
+	base = 136b, 512, bucket = 9
+	base = 136c, 512, bucket = 9
+	base = 136d, 512, bucket = 9
+	base = 136e, 512, bucket = 9
+	base = 136f, 512, bucket = 9
+	base = 1370, 512, bucket = 9
+	base = 1371, 512, bucket = 9
+	base = 1372, 512, bucket = 9
+	base = 1373, 512, bucket = 9
+	base = 1374, 512, bucket = 9
+	base = 1375, 512, bucket = 9
+	base = 1376, 512, bucket = 9
+	base = 1377, 512, bucket = 9
+	base = 1378, 512, bucket = 9
+	base = 1379, 512, bucket = 9
+	base = 137a, 512, bucket = 9
+	base = 137b, 512, bucket = 9
+	base = 137c, 512, bucket = 9
+	base = 137d, 512, bucket = 9
+	base = 137e, 512, bucket = 9
+	base = 137f, 512, bucket = 9
+	base = 1380, 512, bucket = 9
+	base = 1381, 512, bucket = 9
+	base = 1382, 512, bucket = 9
+	base = 1383, 512, bucket = 9
+	base = 1384, 512, bucket = 9
+	base = 1385, 512, bucket = 9
+	base = 1386, 512, bucket = 9
+	base = 1387, 512, bucket = 9
+	base = 1388, 512, bucket = 9
+	base = 1389, 512, bucket = 9
+	base = 138a, 512, bucket = 9
+	base = 138b, 512, bucket = 9
+	base = 138c, 512, bucket = 9
+	base = 138d, 512, bucket = 9
+	base = 138e, 512, bucket = 9
+	base = 138f, 512, bucket = 9
+	base = 1390, 512, bucket = 9
+	base = 1391, 512, bucket = 9
+	base = 1392, 512, bucket = 9
+	base = 1393, 512, bucket = 9
+	base = 1394, 512, bucket = 9
+	base = 1395, 512, bucket = 9
+	base = 1396, 512, bucket = 9
+	base = 1397, 512, bucket = 9
+	base = 1398, 512, bucket = 9
+	base = 1399, 512, bucket = 9
+	base = 848, 512, bucket = 9
+	base = 849, 512, bucket = 9
+	base = 149a, 475, bucket = 9
+	base = 149b, 512, bucket = 9
+	base = 149c, 512, bucket = 9
+	base = 149d, 512, bucket = 9
+	base = 149e, 512, bucket = 9
+	base = 149f, 512, bucket = 9
+	base = 14a0, 512, bucket = 9
+	base = 14a1, 512, bucket = 9
+	base = 14a2, 512, bucket = 9
+	base = 14a3, 512, bucket = 9
+	base = 14a4, 512, bucket = 9
+	base = 14a5, 512, bucket = 9
+	base = 14a6, 512, bucket = 9
+	base = 14a7, 512, bucket = 9
+	base = 14a8, 512, bucket = 9
+	base = 14a9, 512, bucket = 9
+	base = 14aa, 512, bucket = 9
+	base = 14ab, 512, bucket = 9
+	base = 14ac, 512, bucket = 9
+	base = 14ad, 512, bucket = 9
+	base = 14ae, 512, bucket = 9
+	base = 14af, 512, bucket = 9
+	base = 14b0, 512, bucket = 9
+	base = 14b1, 512, bucket = 9
+	base = 14b2, 512, bucket = 9
+	base = 14b3, 512, bucket = 9
+	base = 14b4, 512, bucket = 9
+	base = 14b5, 512, bucket = 9
+	base = 14b6, 512, bucket = 9
+	base = 14b7, 512, bucket = 9
+	base = 9b0, 488, bucket = 9
+	base = c92, 401, bucket = 8
+	base = 3bd, 406, bucket = 8
+	base = 3c6, 401, bucket = 8
+	base = 3f3, 401, bucket = 8
+	base = 6d3, 425, bucket = 8
+	base = 84f, 429, bucket = 8
+	base = ba2, 442, bucket = 8
+	base = 2ff, 388, bucket = 7
+	base = 4c5, 388, bucket = 7
+	base = 5ad, 365, bucket = 7
+	base = 64c, 354, bucket = 7
+	base = 6a1, 391, bucket = 7
+	base = 6aa, 390, bucket = 7
+	base = 6d2, 350, bucket = 7
+	base = 139a, 353, bucket = 7
+	base = 3bf, 333, bucket = 6
+	base = 3d5, 307, bucket = 6
+	base = 42c, 328, bucket = 6
+	base = 485, 317, bucket = 6
+	base = 48b, 322, bucket = 6
+	base = 495, 315, bucket = 6
+	base = 4ea, 312, bucket = 6
+	base = 4f3, 309, bucket = 6
+	base = 506, 328, bucket = 6
+	base = 51a, 328, bucket = 6
+	base = 524, 326, bucket = 6
+	base = 54c, 309, bucket = 6
+	base = 585, 317, bucket = 6
+	base = 5c8, 338, bucket = 6
+	base = 5e0, 307, bucket = 6
+	base = 600, 304, bucket = 6
+	base = 643, 324, bucket = 6
+	base = 707, 338, bucket = 6
+	base = c9a, 261, bucket = 5
+	base = 300, 274, bucket = 5
+	base = 384, 293, bucket = 5
+	base = 38c, 296, bucket = 5
+	base = 394, 262, bucket = 5
+	base = 3af, 283, bucket = 5
+	base = 3c1, 257, bucket = 5
+	base = 3d1, 258, bucket = 5
+	base = 3d3, 269, bucket = 5
+	base = 3f0, 271, bucket = 5
+	base = 3f2, 255, bucket = 5
+	base = 42f, 265, bucket = 5
+	base = 44e, 269, bucket = 5
+	base = 472, 264, bucket = 5
+	base = 4af, 264, bucket = 5
+	base = 4de, 253, bucket = 5
+	base = 4df, 262, bucket = 5
+	base = 4eb, 265, bucket = 5
+	base = 4ec, 286, bucket = 5
+	base = 4f2, 260, bucket = 5
+	base = 51b, 291, bucket = 5
+	base = 531, 258, bucket = 5
+	base = 537, 251, bucket = 5
+	base = 54e, 298, bucket = 5
+	base = 590, 251, bucket = 5
+	base = 5b5, 252, bucket = 5
+	base = 5eb, 262, bucket = 5
+	base = 5f3, 294, bucket = 5
+	base = 5f7, 277, bucket = 5
+	base = 62a, 256, bucket = 5
+	base = 62d, 253, bucket = 5
+	base = 64d, 289, bucket = 5
+	base = 68d, 252, bucket = 5
+	base = 690, 257, bucket = 5
+	base = 695, 275, bucket = 5
+	base = 69c, 282, bucket = 5
+	base = 6a9, 265, bucket = 5
+	base = 6b9, 261, bucket = 5
+	base = 6bd, 250, bucket = 5
+	base = 712, 295, bucket = 5
+	base = 717, 290, bucket = 5
+	base = 720, 250, bucket = 5
+	base = 739, 284, bucket = 5
+	base = 740, 264, bucket = 5
+	base = 74b, 266, bucket = 5
+	base = 753, 260, bucket = 5
+	base = 76b, 285, bucket = 5
+	base = 7a0, 254, bucket = 5
+	base = 7be, 270, bucket = 5
+	base = 91c, 269, bucket = 5
+	base = b19, 258, bucket = 5
+	base = b3c, 261, bucket = 5
+	base = b81, 295, bucket = 5
+	base = b82, 265, bucket = 5
+	base = c9b, 236, bucket = 4
+	base = 301, 208, bucket = 4
+	base = 37f, 231, bucket = 4
+	base = 38a, 225, bucket = 4
+	base = 38f, 208, bucket = 4
+	base = 39b, 226, bucket = 4
+	base = 3ab, 200, bucket = 4
+	base = 3bb, 227, bucket = 4
+	base = 3be, 207, bucket = 4
+	base = 3c4, 221, bucket = 4
+	base = 3c5, 245, bucket = 4
+	base = 3d2, 249, bucket = 4
+	base = 3e7, 221, bucket = 4
+	base = 3eb, 215, bucket = 4
+	base = 3f9, 231, bucket = 4
+	base = 409, 236, bucket = 4
+	base = 419, 225, bucket = 4
+	base = 424, 235, bucket = 4
+	base = 432, 243, bucket = 4
+	base = 43b, 230, bucket = 4
+	base = 444, 246, bucket = 4
+	base = 45c, 245, bucket = 4
+	base = 468, 223, bucket = 4
+	base = 46b, 212, bucket = 4
+	base = 46d, 212, bucket = 4
+	base = 470, 220, bucket = 4
+	base = 47a, 230, bucket = 4
+	base = 481, 243, bucket = 4
+	base = 48a, 213, bucket = 4
+	base = 493, 214, bucket = 4
+	base = 497, 208, bucket = 4
+	base = 4a1, 231, bucket = 4
+	base = 4b8, 211, bucket = 4
+	base = 4c0, 223, bucket = 4
+	base = 4d4, 240, bucket = 4
+	base = 4f0, 209, bucket = 4
+	base = 4fa, 232, bucket = 4
+	base = 507, 240, bucket = 4
+	base = 50a, 225, bucket = 4
+	base = 50d, 244, bucket = 4
+	base = 525, 211, bucket = 4
+	base = 52b, 219, bucket = 4
+	base = 55a, 218, bucket = 4
+	base = 55c, 201, bucket = 4
+	base = 561, 220, bucket = 4
+	base = 562, 214, bucket = 4
+	base = 568, 209, bucket = 4
+	base = 583, 239, bucket = 4
+	base = 5a8, 208, bucket = 4
+	base = 5c1, 228, bucket = 4
+	base = 5c4, 214, bucket = 4
+	base = 5e1, 239, bucket = 4
+	base = 5e8, 227, bucket = 4
+	base = 5fc, 233, bucket = 4
+	base = 5fd, 239, bucket = 4
+	base = 618, 211, bucket = 4
+	base = 623, 241, bucket = 4
+	base = 651, 218, bucket = 4
+	base = 657, 203, bucket = 4
+	base = 65e, 217, bucket = 4
+	base = 66d, 204, bucket = 4
+	base = 672, 231, bucket = 4
+	base = 67c, 200, bucket = 4
+	base = 68f, 210, bucket = 4
+	base = 697, 202, bucket = 4
+	base = 698, 227, bucket = 4
+	base = 69d, 215, bucket = 4
+	base = 6a2, 221, bucket = 4
+	base = 6a6, 237, bucket = 4
+	base = 6c5, 242, bucket = 4
+	base = 6cb, 214, bucket = 4
+	base = 6d1, 231, bucket = 4
+	base = 6d8, 225, bucket = 4
+	base = 6db, 235, bucket = 4
+	base = 6e1, 222, bucket = 4
+	base = 6ef, 228, bucket = 4
+	base = 6f2, 216, bucket = 4
+	base = 702, 244, bucket = 4
+	base = 70a, 202, bucket = 4
+	base = 713, 224, bucket = 4
+	base = 71a, 208, bucket = 4
+	base = 71e, 218, bucket = 4
+	base = 722, 221, bucket = 4
+	base = 72b, 207, bucket = 4
+	base = 755, 209, bucket = 4
+	base = 75b, 227, bucket = 4
+	base = 770, 242, bucket = 4
+	base = 771, 239, bucket = 4
+	base = 79f, 242, bucket = 4
+	base = 7bd, 226, bucket = 4
+	base = 813, 205, bucket = 4
+	base = 847, 203, bucket = 4
+	base = 8ca, 206, bucket = 4
+	base = 8e0, 223, bucket = 4
+	base = 9e1, 235, bucket = 4
+	base = a1a, 206, bucket = 4
+	base = a9f, 201, bucket = 4
+	base = b25, 213, bucket = 4
+	base = b3d, 236, bucket = 4
+	base = c0e, 182, bucket = 3
+	base = c3b, 177, bucket = 3
+	base = c88, 168, bucket = 3
+	base = cc0, 184, bucket = 3
+	base = 381, 166, bucket = 3
+	base = 382, 180, bucket = 3
+	base = 383, 166, bucket = 3
+	base = 385, 176, bucket = 3
+	base = 386, 155, bucket = 3
+	base = 387, 187, bucket = 3
+	base = 388, 158, bucket = 3
+	base = 38e, 153, bucket = 3
+	base = 395, 160, bucket = 3
+	base = 399, 158, bucket = 3
+	base = 39f, 198, bucket = 3
+	base = 3a7, 184, bucket = 3
+	base = 3b4, 169, bucket = 3
+	base = 3b5, 173, bucket = 3
+	base = 3b7, 196, bucket = 3
+	base = 3cb, 152, bucket = 3
+	base = 3cc, 156, bucket = 3
+	base = 3cd, 182, bucket = 3
+	base = 3ce, 171, bucket = 3
+	base = 3d7, 178, bucket = 3
+	base = 3d9, 186, bucket = 3
+	base = 3dc, 185, bucket = 3
+	base = 3e8, 180, bucket = 3
+	base = 3e9, 184, bucket = 3
+	base = 3ea, 165, bucket = 3
+	base = 3ec, 180, bucket = 3
+	base = 3ed, 174, bucket = 3
+	base = 3ee, 192, bucket = 3
+	base = 3fa, 170, bucket = 3
+	base = 3fe, 156, bucket = 3
+	base = 401, 196, bucket = 3
+	base = 40f, 195, bucket = 3
+	base = 410, 154, bucket = 3
+	base = 412, 185, bucket = 3
+	base = 414, 154, bucket = 3
+	base = 415, 175, bucket = 3
+	base = 41c, 179, bucket = 3
+	base = 41d, 187, bucket = 3
+	base = 41e, 150, bucket = 3
+	base = 420, 156, bucket = 3
+	base = 421, 199, bucket = 3
+	base = 423, 156, bucket = 3
+	base = 425, 153, bucket = 3
+	base = 428, 160, bucket = 3
+	base = 434, 186, bucket = 3
+	base = 437, 179, bucket = 3
+	base = 44a, 172, bucket = 3
+	base = 44b, 168, bucket = 3
+	base = 450, 164, bucket = 3
+	base = 467, 198, bucket = 3
+	base = 46a, 155, bucket = 3
+	base = 474, 153, bucket = 3
+	base = 475, 177, bucket = 3
+	base = 476, 159, bucket = 3
+	base = 477, 193, bucket = 3
+	base = 482, 158, bucket = 3
+	base = 483, 169, bucket = 3
+	base = 489, 188, bucket = 3
+	base = 48f, 152, bucket = 3
+	base = 490, 177, bucket = 3
+	base = 491, 156, bucket = 3
+	base = 499, 159, bucket = 3
+	base = 49b, 198, bucket = 3
+	base = 4a3, 166, bucket = 3
+	base = 4ae, 163, bucket = 3
+	base = 4b1, 174, bucket = 3
+	base = 4b7, 158, bucket = 3
+	base = 4b9, 196, bucket = 3
+	base = 4bc, 160, bucket = 3
+	base = 4bf, 151, bucket = 3
+	base = 4c1, 192, bucket = 3
+	base = 4c3, 153, bucket = 3
+	base = 4c6, 172, bucket = 3
+	base = 4cc, 191, bucket = 3
+	base = 4d2, 165, bucket = 3
+	base = 4d3, 165, bucket = 3
+	base = 4d6, 171, bucket = 3
+	base = 4dd, 187, bucket = 3
+	base = 4e1, 181, bucket = 3
+	base = 4e8, 172, bucket = 3
+	base = 4f8, 150, bucket = 3
+	base = 4fb, 154, bucket = 3
+	base = 4fc, 162, bucket = 3
+	base = 4fd, 192, bucket = 3
+	base = 500, 172, bucket = 3
+	base = 509, 190, bucket = 3
+	base = 50b, 155, bucket = 3
+	base = 50e, 187, bucket = 3
+	base = 516, 160, bucket = 3
+	base = 518, 162, bucket = 3
+	base = 523, 157, bucket = 3
+	base = 528, 184, bucket = 3
+	base = 52c, 172, bucket = 3
+	base = 534, 193, bucket = 3
+	base = 536, 184, bucket = 3
+	base = 538, 178, bucket = 3
+	base = 53a, 173, bucket = 3
+	base = 542, 179, bucket = 3
+	base = 544, 167, bucket = 3
+	base = 545, 160, bucket = 3
+	base = 549, 183, bucket = 3
+	base = 551, 198, bucket = 3
+	base = 554, 180, bucket = 3
+	base = 555, 160, bucket = 3
+	base = 55f, 159, bucket = 3
+	base = 56a, 180, bucket = 3
+	base = 57b, 154, bucket = 3
+	base = 584, 153, bucket = 3
+	base = 587, 150, bucket = 3
+	base = 588, 169, bucket = 3
+	base = 58b, 162, bucket = 3
+	base = 58d, 192, bucket = 3
+	base = 595, 160, bucket = 3
+	base = 59a, 189, bucket = 3
+	base = 5a1, 183, bucket = 3
+	base = 5a2, 168, bucket = 3
+	base = 5a5, 153, bucket = 3
+	base = 5ac, 181, bucket = 3
+	base = 5b7, 164, bucket = 3
+	base = 5bc, 164, bucket = 3
+	base = 5c2, 186, bucket = 3
+	base = 5cc, 154, bucket = 3
+	base = 5cd, 188, bucket = 3
+	base = 5d2, 186, bucket = 3
+	base = 5d9, 171, bucket = 3
+	base = 5ec, 172, bucket = 3
+	base = 5ef, 159, bucket = 3
+	base = 5f9, 173, bucket = 3
+	base = 5fa, 198, bucket = 3
+	base = 5fb, 152, bucket = 3
+	base = 60d, 174, bucket = 3
+	base = 60f, 166, bucket = 3
+	base = 615, 156, bucket = 3
+	base = 61d, 184, bucket = 3
+	base = 61e, 166, bucket = 3
+	base = 625, 179, bucket = 3
+	base = 62e, 186, bucket = 3
+	base = 633, 153, bucket = 3
+	base = 634, 154, bucket = 3
+	base = 636, 167, bucket = 3
+	base = 63b, 152, bucket = 3
+	base = 642, 191, bucket = 3
+	base = 644, 190, bucket = 3
+	base = 648, 177, bucket = 3
+	base = 650, 186, bucket = 3
+	base = 659, 182, bucket = 3
+	base = 664, 190, bucket = 3
+	base = 667, 176, bucket = 3
+	base = 66a, 154, bucket = 3
+	base = 674, 158, bucket = 3
+	base = 684, 198, bucket = 3
+	base = 689, 184, bucket = 3
+	base = 68a, 179, bucket = 3
+	base = 696, 193, bucket = 3
+	base = 69b, 171, bucket = 3
+	base = 6a0, 154, bucket = 3
+	base = 6a4, 157, bucket = 3
+-- epoch 1 1 --> push
+-- epoch 2 19 --> push
+-- epoch 3 161756 --> push
+-- epoch 4 13132073 --> push
+-- epoch 5 3737530 --> push
+-- epoch 6 16692 --> push
+-- epoch 7 62 --> push
+-- epoch 8 1 --> push
+Custom malloc called with size 576, using 1 blocks
+Custom malloc called with size 336, using 1 blocks
+Custom malloc called with size 336, using 1 blocks
+Custom malloc called with size 37, using 1 blocks
+Custom malloc called with size 16, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 39, using 1 blocks
+Custom malloc called with size 24, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 40, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 37, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 36, using 1 blocks
+Custom malloc called with size 72, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 38, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 38, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 36, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 40, using 1 blocks
+Custom malloc called with size 136, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 40, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 37, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 38, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 36, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 264, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 35, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 41, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 44, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 40, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 53, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 40, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 40, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 48, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 520, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 43, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 35, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 35, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 40, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 40, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 41, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 48, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 48, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 48, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 48, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 35, using 1 blocks
+ending kernel
+
+total kernel computation time: 234.125113
+user time: 233.910000
+kernel time: 0.080000
+footprint: start = 8761492KB, end = 8894248KB, diff = 132756KB
+page reclaims: 43078
+page faults: 0
+swaps: 0
+Total Accesses = 16270703711
