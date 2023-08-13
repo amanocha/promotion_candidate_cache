@@ -1,0 +1,165 @@
+8 arguments, path = /home/aninda/optimizing-huge-page-utility/applications/launch/dedup/dedup, exec = dedup
+ACCESS INTERVAL = 2602817674
+Routine = _Z9pin_startv
+Routine = _Z7pin_endv
+
+2602817674: Memory Regions:
+	base = 3fffd7f, 512, bucket = 9
+	base = 3fffd80, 512, bucket = 9
+	base = 3fffd81, 512, bucket = 9
+	base = 3fffd82, 512, bucket = 9
+	base = 3fffd83, 512, bucket = 9
+	base = 3fffd84, 512, bucket = 9
+	base = 3fffd85, 512, bucket = 9
+	base = 3fffd86, 512, bucket = 9
+	base = 3fffd87, 512, bucket = 9
+	base = 3fffd88, 512, bucket = 9
+	base = 3fffd89, 512, bucket = 9
+	base = 3fffd8a, 512, bucket = 9
+	base = 3fffd8b, 512, bucket = 9
+	base = 3fffd8c, 512, bucket = 9
+	base = 3fffd8d, 512, bucket = 9
+	base = 3fffd8e, 512, bucket = 9
+	base = 3fffd8f, 512, bucket = 9
+	base = 3fffd90, 512, bucket = 9
+	base = 3fffd91, 512, bucket = 9
+	base = 3fffd92, 512, bucket = 9
+	base = 3fffd93, 512, bucket = 9
+	base = 3fffd94, 512, bucket = 9
+	base = 3fffd95, 512, bucket = 9
+	base = 3fffd96, 512, bucket = 9
+	base = 3fffd97, 512, bucket = 9
+	base = 3fffd98, 512, bucket = 9
+	base = 3fffd99, 512, bucket = 9
+	base = 3fffd9a, 512, bucket = 9
+	base = 3fffd9b, 512, bucket = 9
+	base = 3fffd9c, 512, bucket = 9
+	base = 3fffd9d, 512, bucket = 9
+	base = 3fffd9e, 512, bucket = 9
+	base = 3fffd9f, 512, bucket = 9
+	base = 3fffda0, 512, bucket = 9
+	base = 3fffda1, 512, bucket = 9
+	base = 3fffda2, 512, bucket = 9
+	base = 3fffda3, 512, bucket = 9
+	base = 3fffda4, 512, bucket = 9
+	base = 3fffda5, 512, bucket = 9
+	base = 3fffda6, 512, bucket = 9
+	base = 3fffda7, 512, bucket = 9
+	base = 3fffda8, 512, bucket = 9
+	base = 3fffda9, 512, bucket = 9
+	base = 3fffdaa, 512, bucket = 9
+	base = 3fffdab, 512, bucket = 9
+	base = 3fffdac, 512, bucket = 9
+	base = 3fffdad, 512, bucket = 9
+	base = 3fffdae, 512, bucket = 9
+	base = 3fffdaf, 512, bucket = 9
+	base = 3fffdb0, 512, bucket = 9
+	base = 3fffdb1, 512, bucket = 9
+	base = 3fffdb2, 512, bucket = 9
+	base = 3fffdb3, 512, bucket = 9
+	base = 3fffdb4, 512, bucket = 9
+	base = 3fffdb5, 512, bucket = 9
+	base = 3fffdb6, 512, bucket = 9
+	base = 3fffdb7, 512, bucket = 9
+	base = 3fffdb8, 512, bucket = 9
+	base = 3fffdb9, 512, bucket = 9
+	base = 3fffdba, 512, bucket = 9
+	base = 3fffdbb, 512, bucket = 9
+	base = 3fffdbc, 512, bucket = 9
+	base = 3fffdbd, 512, bucket = 9
+	base = 3fffdbe, 512, bucket = 9
+	base = 3fffdbf, 512, bucket = 9
+	base = 3fffdc0, 512, bucket = 9
+	base = 3fffdc1, 512, bucket = 9
+	base = 3fffdc2, 512, bucket = 9
+	base = 3fffdc3, 512, bucket = 9
+	base = 3fffdc4, 512, bucket = 9
+	base = 3fffdc5, 512, bucket = 9
+	base = 3fffdc6, 512, bucket = 9
+	base = 3fffdc7, 512, bucket = 9
+	base = 3fffdc8, 512, bucket = 9
+	base = 3fffdc9, 512, bucket = 9
+	base = 3fffdca, 512, bucket = 9
+	base = 3fffdcb, 512, bucket = 9
+	base = 3fffdcc, 512, bucket = 9
+	base = 3fffdcd, 512, bucket = 9
+	base = 3fffdce, 512, bucket = 9
+	base = 3fffdcf, 512, bucket = 9
+	base = 3fffdd0, 512, bucket = 9
+	base = 3fffdd1, 512, bucket = 9
+	base = 3fffdd2, 512, bucket = 9
+	base = 3fffdd3, 512, bucket = 9
+	base = 3fffdd4, 512, bucket = 9
+	base = 3fffdd5, 512, bucket = 9
+	base = 3fffdd6, 512, bucket = 9
+	base = 3fffdd7, 512, bucket = 9
+	base = 3fffdd8, 512, bucket = 9
+	base = 3fffdd9, 512, bucket = 9
+	base = 3fffdda, 512, bucket = 9
+	base = 3fffddb, 512, bucket = 9
+	base = 3fffddc, 512, bucket = 9
+	base = 3fffddd, 512, bucket = 9
+	base = 3fffdde, 512, bucket = 9
+	base = 3fffddf, 512, bucket = 9
+	base = 3fffde0, 512, bucket = 9
+	base = 3fffde1, 512, bucket = 9
+	base = 3fffde2, 512, bucket = 9
+	base = 3fffde3, 512, bucket = 9
+	base = 3fffde4, 512, bucket = 9
+	base = 3fffde5, 512, bucket = 9
+	base = 3fffde6, 512, bucket = 9
+	base = 3fffde7, 512, bucket = 9
+	base = 3fffde8, 512, bucket = 9
+	base = 3fffde9, 512, bucket = 9
+	base = 3fffdea, 512, bucket = 9
+	base = 3fffdeb, 512, bucket = 9
+	base = 3fffdec, 512, bucket = 9
+	base = 3fffded, 512, bucket = 9
+	base = 3fffdee, 512, bucket = 9
+	base = 3fffdef, 512, bucket = 9
+	base = 3fffdf0, 506, bucket = 9
+	base = 3fffd71, 512, bucket = 9
+	base = 3fffd72, 512, bucket = 9
+	base = 3fffd73, 512, bucket = 9
+	base = 3fffd74, 512, bucket = 9
+	base = 3fffd75, 512, bucket = 9
+	base = 3fffd76, 512, bucket = 9
+	base = 3fffd77, 512, bucket = 9
+	base = 3fffd78, 512, bucket = 9
+	base = 3fffd79, 512, bucket = 9
+	base = 3fffd7a, 512, bucket = 9
+	base = 3fffd7b, 512, bucket = 9
+	base = 3fffd7c, 512, bucket = 9
+	base = 3fffd7d, 512, bucket = 9
+	base = 3fffd7e, 512, bucket = 9
+	base = 3, 281, bucket = 5
+	base = 3ffff19, 193, bucket = 3
+	base = 3ffff20, 127, bucket = 2
+	base = 2, 3, bucket = 0
+	base = 3ffff1a, 1, bucket = 0
+	base = 3ffff1c, 36, bucket = 0
+	base = 3ffff1d, 5, bucket = 0
+	base = 3ffff1e, 13, bucket = 0
+	base = 3ffff1f, 8, bucket = 0
+	base = 3ffff21, 25, bucket = 0
+	base = 3ffff22, 22, bucket = 0
+	base = 3ffff23, 26, bucket = 0
+	base = 3ffff24, 1, bucket = 0
+	base = 3ffffff, 3, bucket = 0
+	base = 3fffd70, 8, bucket = 0
+	base = 3ffffbe, 5, bucket = 0
+	base = 3ffffbf, 4, bucket = 0
+PROMOTED ALL DATA!
+PARSEC Benchmark Suite
+cache addr = 6336832
+Total input size:                      671.58 MB
+Total output size:                     633.57 MB
+Effective compression factor:            1.06x
+
+Mean data chunk size:                    1.88 KB (stddev: 2031.51 KB)
+Amount of duplicate chunks:             55.00%
+Data size after deduplication:         655.16 MB (compression factor: 1.03x)
+Data size after compression:           626.52 MB (compression factor: 1.05x)
+Output overhead:                         1.11%
+Total Accesses = 75861724237
+footprint: start = 857696KB, end = 857696KB, diff = 0KB

@@ -1,0 +1,30 @@
+8 arguments
+ACCESS INTERVAL = 10000000
+Routine = _GLOBAL__sub_I__Z9pin_startv
+Routine = _Z9pin_startv
+Routine = _Z7pin_endv
+OMNeT++ Discrete Event Simulation  (C) 1992-2008 Andras Varga, OpenSim Ltd.
+Version: 4.0, build: 090310-10709, edition: Academic Public License -- NOT FOR COMMERCIAL USE
+See the license for distribution terms and warranty disclaimer
+Setting up Cmdenv...
+pin_start()
+Loading NED files from a SPEC directory 13
+
+Preparing for running configuration General, run #0...
+Scenario: $repetition=0
+Assigned runID=speccpu-runid
+Setting up network `largeNet'...
+Initializing...
+
+Running simulation...
+** Event #1   T=0   Elapsed: 0.000s (0m 00s)  0% completed   ev/sec=0
+** Event #467312603   T=2.25   Elapsed: 0.000s (0m 00s)  100% completed   ev/sec=0
+
+<!> Simulation time limit reached -- simulation stopped.
+
+
+Calling finish() at end of Run #0...
+pin_end()
+
+End.
+Total Accesses = 522641627855

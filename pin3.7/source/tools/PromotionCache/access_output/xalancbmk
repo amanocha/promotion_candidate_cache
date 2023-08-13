@@ -1,0 +1,9 @@
+8 arguments
+ACCESS INTERVAL = 10000000
+Routine = _GLOBAL__sub_I__Z9pin_startv
+Routine = _Z9pin_startv
+Routine = _Z7pin_endv
+Done parsing args! theParams.m_inFileName: /home/aninda/graph_data/xalancbmk/t5.xml, theParams.m_xslFileName: /home/aninda/graph_data/xalancbmk/xalanc.xsl
+pin_start()
+pin_end()
+Total Accesses = 385770370036

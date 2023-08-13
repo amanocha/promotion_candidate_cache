@@ -1,0 +1,62 @@
+12 arguments, path = /home/aninda/optimizing-huge-page-utility/applications/pin_source/bfs/main, exec = main
+ACCESS INTERVAL = 1093269888, PROMOTION CACHE SIZE = 16, FACTOR = 30
+Routine = _Z9pin_startv
+Routine = _Z7pin_endv
+Nodes: 52579682, Edges: 1963263821
+reading byte length of:    210318732
+reading byte length of:    7853055284
+Reading graph elapsed time: 1496.14s
+
+Memory Regions:
+NODE_ARRAY: starting base = 3fffe34, ending base = 3fffefd
+EDGE_ARRAY: starting base = 3ffe0f3, ending base = 3fffe35
+PROP_ARRAY: starting base = 3ffe02a, ending base = 3ffe0f4
+IN_WL: starting base = 3ffde99, ending base = 3ffe02b
+OUT_WL: starting base = 3ffdd08, ending base = 3ffde9a
+
+
+1093269888: Memory Regions:
+	base = 3ffe031, 43.1224, 569, 250
+	base = 3ffe030, 37.9961, 1955, 241
+	base = 3ffe032, 27.2983, 207, 208
+	base = 3ffe035, 62.9105, 202, 203
+	base = 3ffe033, 23.2795, 184, 185
+	base = 3ffe034, 23.4475, 166, 167
+	base = 3ffe036, 23.3359, 163, 164
+	base = 3ffe039, 25.2969, 160, 163
+	base = 3ffe02f, 51.2365, 894, 159
+	base = 3ffe03c, 24.2231, 127, 158
+	base = 3ffe03a, 29.7633, 145, 155
+	base = 3ffe03b, 21.2057, 141, 151
+	base = 3ffe037, 17.517, 140, 141
+	base = 3ffe02e, 23.6161, 1035, 95
+	base = 3ffe038, 23.8403, 65, 66
+	base = 3ffe3a2, 0, 0, 57
+
+
+starting kernel
+-- epoch 1 1 --> push
+-- epoch 2 1 --> push
+-- epoch 3 3049 --> push
+-- epoch 4 4067065 --> push
+-- epoch 5 20738927 --> push
+-- epoch 6 23620241 --> push
+-- epoch 7 756666 --> push
+-- epoch 8 41624 --> push
+-- epoch 9 2571 --> push
+-- epoch 10 172 --> push
+-- epoch 11 10 --> push
+-- epoch 12 2 --> push
+-- epoch 13 1 --> push
+-- epoch 14 1 --> push
+-- epoch 15 1 --> push
+ending kernel
+
+total kernel computation time: 4506.328372
+user time: 4499.790000
+kernel time: 0.550000
+footprint: start = 16220576KB, end = 16569540KB, diff = 348964KB
+page reclaims: 98853
+page faults: 0
+swaps: 0
+Total Accesses = 30513870464

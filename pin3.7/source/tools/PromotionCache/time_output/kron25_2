@@ -1,0 +1,32 @@
+Nodes: 33554431, Edges: 1047218258
+reading byte length of:    134217728
+reading byte length of:    4188873032
+Reading graph elapsed time: 19.5801s
+
+Memory Regions:
+NODE_ARRAY: starting base = 3ff09cb, ending base = 3ff0a4c
+EDGE_ARRAY: starting base = 3fefa30, ending base = 3ff09cc
+PROP_ARRAY: starting base = 3fef9b0, ending base = 3fefa31
+IN_WL: starting base = 3fef8b0, ending base = 3fef9b1
+OUT_WL: starting base = 3fef7b0, ending base = 3fef8b1
+
+
+
+starting kernel
+-- epoch 1 1 --> push
+-- epoch 2 19 --> push
+-- epoch 3 161756 --> push
+-- epoch 4 13132073 --> push
+-- epoch 5 3737530 --> push
+-- epoch 6 16692 --> push
+-- epoch 7 62 --> push
+-- epoch 8 1 --> push
+ending kernel
+
+total kernel computation time: 22.040957
+user time: 21.960000
+kernel time: 0.060000
+footprint: start = 8709172KB, end = 8840968KB, diff = 131796KB
+page reclaims: 32951
+page faults: 0
+swaps: 0

@@ -1,0 +1,35 @@
+Routine = _Z9pin_startv
+Routine = _Z7pin_endv
+Nodes: 33554431, Edges: 1047218258
+reading byte length of:    134217728
+reading byte length of:    4188873032
+Reading graph elapsed time: 312.296s
+
+Memory Regions:
+NODE_ARRAY: starting base = 3f8b5d4, ending base = 3f8b655
+EDGE_ARRAY: starting base = 3f8a639, ending base = 3f8b5d5
+PROP_ARRAY: starting base = 3f8a5b9, ending base = 3f8a63a
+IN_WL: starting base = 3f8a4b9, ending base = 3f8a5ba
+OUT_WL: starting base = 3f8a3b9, ending base = 3f8a4ba
+
+
+
+starting kernel
+-- epoch 1 1 --> push
+-- epoch 2 19 --> push
+-- epoch 3 161756 --> push
+-- epoch 4 13132073 --> push
+-- epoch 5 3737530 --> push
+-- epoch 6 16692 --> push
+-- epoch 7 62 --> push
+-- epoch 8 1 --> push
+ending kernel
+
+total kernel computation time: 82.904334
+user time: 82.750000
+kernel time: 0.110000
+footprint: start = 8761796KB, end = 8894180KB, diff = 132384KB
+page reclaims: 44057
+page faults: 0
+swaps: 0
+Total Accesses = 16270703540

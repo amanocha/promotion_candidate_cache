@@ -1,0 +1,1204 @@
+ACCESS INTERVAL = 1604682443
+Routine = _Z9pin_startv
+Routine = _Z7pin_endv
+Custom malloc called with size 72712, using 18 blocks
+Custom malloc called with size 96, using 1 blocks
+Custom malloc called with size 96, using 1 blocks
+Custom malloc called with size 71, using 1 blocks
+Custom malloc called with size 37, using 1 blocks
+Custom malloc called with size 43, using 1 blocks
+Custom malloc called with size 53, using 1 blocks
+Custom malloc called with size 109, using 1 blocks
+Custom malloc called with size 576, using 1 blocks
+Custom malloc called with size 8200, using 3 blocks
+Nodes: 12150976, Edges: 378142420
+Custom malloc called with size 97207824, using 23733 blocks
+Custom malloc called with size 3025139368, using 738560 blocks
+Custom malloc called with size 109, using 1 blocks
+Custom malloc called with size 576, using 1 blocks
+reading byte length of:    48603908
+Custom malloc called with size 109, using 1 blocks
+Custom malloc called with size 576, using 1 blocks
+reading byte length of:    1512569680
+Reading graph elapsed time: 112.799s
+Custom malloc called with size 97207816, using 23733 blocks
+Custom malloc called with size 194415624, using 47465 blocks
+Custom malloc called with size 194415624, using 47465 blocks
+Custom malloc called with size 43, using 1 blocks
+Custom malloc called with size 43, using 1 blocks
+Custom malloc called with size 43, using 1 blocks
+Custom malloc called with size 38, using 1 blocks
+Custom malloc called with size 39, using 1 blocks
+Custom malloc called with size 48, using 1 blocks
+Custom malloc called with size 24, using 1 blocks
+Custom malloc called with size 40, using 1 blocks
+Custom malloc called with size 72, using 1 blocks
+Custom malloc called with size 136, using 1 blocks
+
+Memory Regions:
+NODE_ARRAY: starting base = 2ff, ending base = 32e
+EDGE_ARRAY: starting base = 32d, ending base = 8d1
+PROP_ARRAY: starting base = 8d0, ending base = 8ff
+IN_WL: starting base = 8fe, ending base = 95c
+OUT_WL: starting base = 95b, ending base = 9b8
+
+
+
+starting kernel
+Custom malloc called with size 576, using 1 blocks
+Custom malloc called with size 333, using 1 blocks
+Custom malloc called with size 333, using 1 blocks
+Custom malloc called with size 37, using 1 blocks
+Custom malloc called with size 16, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 39, using 1 blocks
+Custom malloc called with size 24, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 40, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 37, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 36, using 1 blocks
+Custom malloc called with size 72, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 38, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 38, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 36, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 40, using 1 blocks
+Custom malloc called with size 136, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 39, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 37, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 38, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 36, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 264, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 35, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 41, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 43, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 39, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 53, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 40, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 40, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 48, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 520, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 43, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 35, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 35, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 40, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 40, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 41, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 48, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 48, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 48, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 48, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 35, using 1 blocks
+
+1604682443: Memory Regions:
+	base = 300, 499, bucket = 9
+	base = 301, 500, bucket = 9
+	base = 302, 506, bucket = 9
+	base = 303, 512, bucket = 9
+	base = 304, 500, bucket = 9
+	base = 305, 506, bucket = 9
+	base = 306, 512, bucket = 9
+	base = 307, 511, bucket = 9
+	base = 308, 507, bucket = 9
+	base = 309, 506, bucket = 9
+	base = 30a, 503, bucket = 9
+	base = 30b, 466, bucket = 9
+	base = 30c, 501, bucket = 9
+	base = 30d, 500, bucket = 9
+	base = 30e, 478, bucket = 9
+	base = 30f, 502, bucket = 9
+	base = 312, 491, bucket = 9
+	base = 313, 510, bucket = 9
+	base = 314, 504, bucket = 9
+	base = 315, 509, bucket = 9
+	base = 316, 499, bucket = 9
+	base = 317, 482, bucket = 9
+	base = 318, 501, bucket = 9
+	base = 31b, 510, bucket = 9
+	base = 31c, 507, bucket = 9
+	base = 31d, 473, bucket = 9
+	base = 31e, 485, bucket = 9
+	base = 31f, 491, bucket = 9
+	base = 320, 493, bucket = 9
+	base = 321, 504, bucket = 9
+	base = 322, 507, bucket = 9
+	base = 323, 455, bucket = 9
+	base = 324, 485, bucket = 9
+	base = 325, 498, bucket = 9
+	base = 326, 498, bucket = 9
+	base = 327, 499, bucket = 9
+	base = 328, 504, bucket = 9
+	base = 329, 508, bucket = 9
+	base = 32a, 507, bucket = 9
+	base = 32b, 505, bucket = 9
+	base = 32c, 481, bucket = 9
+	base = 333, 458, bucket = 9
+	base = 334, 510, bucket = 9
+	base = 351, 504, bucket = 9
+	base = 352, 451, bucket = 9
+	base = 356, 488, bucket = 9
+	base = 357, 468, bucket = 9
+	base = 361, 460, bucket = 9
+	base = 366, 465, bucket = 9
+	base = 373, 464, bucket = 9
+	base = 378, 450, bucket = 9
+	base = 37a, 463, bucket = 9
+	base = 38f, 502, bucket = 9
+	base = 390, 450, bucket = 9
+	base = 3a3, 476, bucket = 9
+	base = 3a4, 493, bucket = 9
+	base = 3b2, 492, bucket = 9
+	base = 3b3, 473, bucket = 9
+	base = 3d0, 506, bucket = 9
+	base = 3d1, 511, bucket = 9
+	base = 3dc, 498, bucket = 9
+	base = 3fd, 512, bucket = 9
+	base = 3fe, 501, bucket = 9
+	base = 40d, 460, bucket = 9
+	base = 413, 488, bucket = 9
+	base = 42c, 492, bucket = 9
+	base = 43c, 493, bucket = 9
+	base = 47f, 477, bucket = 9
+	base = 4c3, 457, bucket = 9
+	base = 4df, 461, bucket = 9
+	base = 4ef, 466, bucket = 9
+	base = 537, 466, bucket = 9
+	base = 898, 462, bucket = 9
+	base = 89e, 454, bucket = 9
+	base = 89f, 472, bucket = 9
+	base = 8a1, 450, bucket = 9
+	base = 8a2, 476, bucket = 9
+	base = 8a3, 467, bucket = 9
+	base = 8a6, 466, bucket = 9
+	base = 8a8, 471, bucket = 9
+	base = 8aa, 465, bucket = 9
+	base = 8ac, 477, bucket = 9
+	base = 8ae, 478, bucket = 9
+	base = 8b1, 458, bucket = 9
+	base = 8b2, 479, bucket = 9
+	base = 8b6, 465, bucket = 9
+	base = 8b7, 504, bucket = 9
+	base = 8b8, 487, bucket = 9
+	base = 8b9, 482, bucket = 9
+	base = 8ba, 470, bucket = 9
+	base = 8bd, 504, bucket = 9
+	base = 8bf, 465, bucket = 9
+	base = 8c0, 505, bucket = 9
+	base = 8c1, 468, bucket = 9
+	base = 8c2, 489, bucket = 9
+	base = 8c3, 505, bucket = 9
+	base = 8c4, 489, bucket = 9
+	base = 8c6, 488, bucket = 9
+	base = 8c7, 496, bucket = 9
+	base = 8c8, 495, bucket = 9
+	base = 8c9, 497, bucket = 9
+	base = 8ca, 498, bucket = 9
+	base = 8cb, 503, bucket = 9
+	base = 8cc, 508, bucket = 9
+	base = 8cd, 498, bucket = 9
+	base = 8ce, 487, bucket = 9
+	base = 8cf, 495, bucket = 9
+	base = 8d0, 508, bucket = 9
+	base = 8d1, 512, bucket = 9
+	base = 8d2, 512, bucket = 9
+	base = 8d3, 512, bucket = 9
+	base = 8d4, 512, bucket = 9
+	base = 8d5, 512, bucket = 9
+	base = 8d6, 512, bucket = 9
+	base = 8d7, 512, bucket = 9
+	base = 8d8, 512, bucket = 9
+	base = 8d9, 512, bucket = 9
+	base = 8da, 512, bucket = 9
+	base = 8db, 511, bucket = 9
+	base = 8dc, 512, bucket = 9
+	base = 8dd, 512, bucket = 9
+	base = 8de, 512, bucket = 9
+	base = 8df, 502, bucket = 9
+	base = 8e0, 512, bucket = 9
+	base = 8e1, 508, bucket = 9
+	base = 8e2, 512, bucket = 9
+	base = 8e3, 512, bucket = 9
+	base = 8e4, 512, bucket = 9
+	base = 8e5, 512, bucket = 9
+	base = 8e6, 512, bucket = 9
+	base = 8e7, 507, bucket = 9
+	base = 8e8, 512, bucket = 9
+	base = 8e9, 512, bucket = 9
+	base = 8ea, 510, bucket = 9
+	base = 8eb, 511, bucket = 9
+	base = 8ec, 512, bucket = 9
+	base = 8ed, 512, bucket = 9
+	base = 8ee, 494, bucket = 9
+	base = 8ef, 512, bucket = 9
+	base = 8f0, 500, bucket = 9
+	base = 8f1, 508, bucket = 9
+	base = 8f2, 512, bucket = 9
+	base = 8f3, 512, bucket = 9
+	base = 8f4, 504, bucket = 9
+	base = 8f5, 511, bucket = 9
+	base = 8f6, 512, bucket = 9
+	base = 8f7, 512, bucket = 9
+	base = 8f8, 497, bucket = 9
+	base = 8f9, 512, bucket = 9
+	base = 8fa, 512, bucket = 9
+	base = 8fb, 512, bucket = 9
+	base = 8fc, 512, bucket = 9
+	base = 8fd, 510, bucket = 9
+	base = 8fe, 512, bucket = 9
+	base = 8ff, 512, bucket = 9
+	base = 900, 512, bucket = 9
+	base = 901, 512, bucket = 9
+	base = 902, 512, bucket = 9
+	base = 903, 512, bucket = 9
+	base = 904, 512, bucket = 9
+	base = 905, 512, bucket = 9
+	base = 906, 512, bucket = 9
+	base = 907, 512, bucket = 9
+	base = 908, 512, bucket = 9
+	base = 95c, 512, bucket = 9
+	base = 95d, 512, bucket = 9
+	base = 95e, 512, bucket = 9
+	base = 95f, 512, bucket = 9
+	base = 310, 430, bucket = 8
+	base = 311, 443, bucket = 8
+	base = 31a, 416, bucket = 8
+	base = 32f, 449, bucket = 8
+	base = 335, 445, bucket = 8
+	base = 338, 404, bucket = 8
+	base = 339, 437, bucket = 8
+	base = 33d, 437, bucket = 8
+	base = 33e, 445, bucket = 8
+	base = 33f, 400, bucket = 8
+	base = 340, 402, bucket = 8
+	base = 34f, 438, bucket = 8
+	base = 353, 411, bucket = 8
+	base = 355, 446, bucket = 8
+	base = 359, 415, bucket = 8
+	base = 35f, 407, bucket = 8
+	base = 36e, 429, bucket = 8
+	base = 36f, 408, bucket = 8
+	base = 370, 447, bucket = 8
+	base = 371, 406, bucket = 8
+	base = 377, 427, bucket = 8
+	base = 37d, 434, bucket = 8
+	base = 37f, 448, bucket = 8
+	base = 380, 400, bucket = 8
+	base = 382, 418, bucket = 8
+	base = 383, 415, bucket = 8
+	base = 384, 413, bucket = 8
+	base = 387, 418, bucket = 8
+	base = 38e, 404, bucket = 8
+	base = 39e, 403, bucket = 8
+	base = 3a1, 408, bucket = 8
+	base = 3b1, 427, bucket = 8
+	base = 3f3, 411, bucket = 8
+	base = 3fc, 420, bucket = 8
+	base = 3ff, 429, bucket = 8
+	base = 401, 425, bucket = 8
+	base = 406, 410, bucket = 8
+	base = 40b, 404, bucket = 8
+	base = 40c, 415, bucket = 8
+	base = 40e, 447, bucket = 8
+	base = 41b, 431, bucket = 8
+	base = 423, 408, bucket = 8
+	base = 427, 410, bucket = 8
+	base = 429, 437, bucket = 8
+	base = 42a, 443, bucket = 8
+	base = 42d, 439, bucket = 8
+	base = 433, 426, bucket = 8
+	base = 442, 401, bucket = 8
+	base = 445, 401, bucket = 8
+	base = 44e, 429, bucket = 8
+	base = 44f, 414, bucket = 8
+	base = 455, 410, bucket = 8
+	base = 456, 416, bucket = 8
+	base = 469, 444, bucket = 8
+	base = 46a, 414, bucket = 8
+	base = 46b, 438, bucket = 8
+	base = 480, 426, bucket = 8
+	base = 481, 408, bucket = 8
+	base = 485, 404, bucket = 8
+	base = 486, 429, bucket = 8
+	base = 487, 431, bucket = 8
+	base = 48f, 408, bucket = 8
+	base = 491, 439, bucket = 8
+	base = 497, 448, bucket = 8
+	base = 499, 423, bucket = 8
+	base = 49f, 431, bucket = 8
+	base = 4ab, 431, bucket = 8
+	base = 4ec, 431, bucket = 8
+	base = 4f6, 434, bucket = 8
+	base = 50f, 413, bucket = 8
+	base = 536, 432, bucket = 8
+	base = 5df, 425, bucket = 8
+	base = 5e7, 430, bucket = 8
+	base = 61e, 408, bucket = 8
+	base = 624, 439, bucket = 8
+	base = 627, 424, bucket = 8
+	base = 62f, 443, bucket = 8
+	base = 83b, 403, bucket = 8
+	base = 860, 401, bucket = 8
+	base = 861, 403, bucket = 8
+	base = 862, 413, bucket = 8
+	base = 867, 407, bucket = 8
+	base = 869, 406, bucket = 8
+	base = 86a, 410, bucket = 8
+	base = 870, 405, bucket = 8
+	base = 882, 425, bucket = 8
+	base = 883, 400, bucket = 8
+	base = 884, 407, bucket = 8
+	base = 889, 443, bucket = 8
+	base = 88a, 424, bucket = 8
+	base = 88c, 424, bucket = 8
+	base = 88e, 403, bucket = 8
+	base = 88f, 418, bucket = 8
+	base = 890, 424, bucket = 8
+	base = 897, 434, bucket = 8
+	base = 899, 403, bucket = 8
+	base = 89c, 440, bucket = 8
+	base = 8a4, 443, bucket = 8
+	base = 8a5, 402, bucket = 8
+	base = 8a7, 423, bucket = 8
+	base = 8a9, 430, bucket = 8
+	base = 8ad, 414, bucket = 8
+	base = 8af, 413, bucket = 8
+	base = 8b0, 426, bucket = 8
+	base = 8b3, 435, bucket = 8
+	base = 8bb, 402, bucket = 8
+	base = 8bc, 427, bucket = 8
+	base = 8be, 434, bucket = 8
+	base = 8c5, 428, bucket = 8
+	base = 95b, 430, bucket = 8
+	base = 2ff, 385, bucket = 7
+	base = 32d, 395, bucket = 7
+	base = 330, 353, bucket = 7
+	base = 331, 371, bucket = 7
+	base = 332, 375, bucket = 7
+	base = 33a, 365, bucket = 7
+	base = 33b, 398, bucket = 7
+	base = 33c, 388, bucket = 7
+	base = 34e, 377, bucket = 7
+	base = 35c, 399, bucket = 7
+	base = 360, 377, bucket = 7
+	base = 364, 365, bucket = 7
+	base = 36a, 368, bucket = 7
+	base = 36b, 376, bucket = 7
+	base = 376, 353, bucket = 7
+	base = 37e, 394, bucket = 7
+	base = 381, 383, bucket = 7
+	base = 385, 397, bucket = 7
+	base = 386, 396, bucket = 7
+	base = 388, 374, bucket = 7
+	base = 38a, 397, bucket = 7
+	base = 38b, 383, bucket = 7
+	base = 38c, 372, bucket = 7
+	base = 38d, 394, bucket = 7
+	base = 392, 363, bucket = 7
+	base = 393, 396, bucket = 7
+	base = 394, 371, bucket = 7
+	base = 395, 387, bucket = 7
+	base = 396, 366, bucket = 7
+	base = 399, 369, bucket = 7
+	base = 39d, 388, bucket = 7
+	base = 39f, 370, bucket = 7
+	base = 3a5, 388, bucket = 7
+	base = 3cf, 382, bucket = 7
+	base = 3f6, 367, bucket = 7
+	base = 400, 391, bucket = 7
+	base = 405, 350, bucket = 7
+	base = 407, 386, bucket = 7
+	base = 40f, 359, bucket = 7
+	base = 412, 369, bucket = 7
+	base = 414, 354, bucket = 7
+	base = 415, 361, bucket = 7
+	base = 419, 384, bucket = 7
+	base = 41a, 376, bucket = 7
+	base = 41d, 364, bucket = 7
+	base = 41e, 366, bucket = 7
+	base = 421, 380, bucket = 7
+	base = 422, 382, bucket = 7
+	base = 424, 382, bucket = 7
+	base = 42b, 350, bucket = 7
+	base = 432, 390, bucket = 7
+	base = 441, 396, bucket = 7
+	base = 449, 372, bucket = 7
+	base = 44a, 359, bucket = 7
+	base = 44b, 374, bucket = 7
+	base = 44c, 387, bucket = 7
+	base = 450, 363, bucket = 7
+	base = 451, 371, bucket = 7
+	base = 454, 379, bucket = 7
+	base = 457, 359, bucket = 7
+	base = 458, 375, bucket = 7
+	base = 45d, 353, bucket = 7
+	base = 461, 352, bucket = 7
+	base = 465, 366, bucket = 7
+	base = 473, 356, bucket = 7
+	base = 475, 392, bucket = 7
+	base = 47a, 358, bucket = 7
+	base = 47e, 393, bucket = 7
+	base = 482, 365, bucket = 7
+	base = 483, 398, bucket = 7
+	base = 48e, 372, bucket = 7
+	base = 490, 399, bucket = 7
+	base = 493, 389, bucket = 7
+	base = 49b, 368, bucket = 7
+	base = 49c, 389, bucket = 7
+	base = 4a7, 361, bucket = 7
+	base = 4a8, 398, bucket = 7
+	base = 4a9, 368, bucket = 7
+	base = 4aa, 373, bucket = 7
+	base = 4ad, 386, bucket = 7
+	base = 4cf, 360, bucket = 7
+	base = 4d4, 356, bucket = 7
+	base = 4de, 372, bucket = 7
+	base = 4e1, 357, bucket = 7
+	base = 4e3, 396, bucket = 7
+	base = 4e7, 363, bucket = 7
+	base = 4e8, 379, bucket = 7
+	base = 4ed, 367, bucket = 7
+	base = 4f2, 397, bucket = 7
+	base = 4f5, 370, bucket = 7
+	base = 4fa, 355, bucket = 7
+	base = 50b, 380, bucket = 7
+	base = 541, 351, bucket = 7
+	base = 544, 372, bucket = 7
+	base = 550, 356, bucket = 7
+	base = 552, 360, bucket = 7
+	base = 554, 362, bucket = 7
+	base = 55c, 359, bucket = 7
+	base = 576, 357, bucket = 7
+	base = 580, 352, bucket = 7
+	base = 59b, 383, bucket = 7
+	base = 5bc, 361, bucket = 7
+	base = 5c5, 370, bucket = 7
+	base = 5ce, 364, bucket = 7
+	base = 5d3, 358, bucket = 7
+	base = 5de, 373, bucket = 7
+	base = 5e0, 357, bucket = 7
+	base = 5e3, 384, bucket = 7
+	base = 5e5, 394, bucket = 7
+	base = 5e9, 398, bucket = 7
+	base = 5eb, 357, bucket = 7
+	base = 5f3, 378, bucket = 7
+	base = 5f6, 352, bucket = 7
+	base = 601, 362, bucket = 7
+	base = 62a, 379, bucket = 7
+	base = 62d, 383, bucket = 7
+	base = 631, 388, bucket = 7
+	base = 637, 373, bucket = 7
+	base = 639, 359, bucket = 7
+	base = 63b, 371, bucket = 7
+	base = 642, 360, bucket = 7
+	base = 645, 354, bucket = 7
+	base = 647, 378, bucket = 7
+	base = 64d, 393, bucket = 7
+	base = 64f, 391, bucket = 7
+	base = 651, 368, bucket = 7
+	base = 655, 396, bucket = 7
+	base = 659, 367, bucket = 7
+	base = 65e, 356, bucket = 7
+	base = 673, 355, bucket = 7
+	base = 6c9, 354, bucket = 7
+	base = 6e9, 362, bucket = 7
+	base = 6fd, 357, bucket = 7
+	base = 700, 360, bucket = 7
+	base = 719, 362, bucket = 7
+	base = 71e, 375, bucket = 7
+	base = 720, 370, bucket = 7
+	base = 729, 357, bucket = 7
+	base = 734, 361, bucket = 7
+	base = 73a, 372, bucket = 7
+	base = 73e, 360, bucket = 7
+	base = 73f, 362, bucket = 7
+	base = 740, 350, bucket = 7
+	base = 741, 396, bucket = 7
+	base = 747, 355, bucket = 7
+	base = 74c, 355, bucket = 7
+	base = 7d0, 350, bucket = 7
+	base = 7d1, 398, bucket = 7
+	base = 7d2, 388, bucket = 7
+	base = 7d3, 386, bucket = 7
+	base = 7de, 369, bucket = 7
+	base = 7e0, 399, bucket = 7
+	base = 7e1, 371, bucket = 7
+	base = 7e2, 358, bucket = 7
+	base = 7e5, 365, bucket = 7
+	base = 7f3, 389, bucket = 7
+	base = 7f5, 362, bucket = 7
+	base = 7fa, 396, bucket = 7
+	base = 7fe, 364, bucket = 7
+	base = 7ff, 356, bucket = 7
+	base = 800, 362, bucket = 7
+	base = 802, 361, bucket = 7
+	base = 803, 368, bucket = 7
+	base = 804, 373, bucket = 7
+	base = 80c, 356, bucket = 7
+	base = 810, 361, bucket = 7
+	base = 815, 360, bucket = 7
+	base = 832, 353, bucket = 7
+	base = 835, 362, bucket = 7
+	base = 836, 369, bucket = 7
+	base = 839, 387, bucket = 7
+	base = 83c, 368, bucket = 7
+	base = 840, 352, bucket = 7
+	base = 841, 362, bucket = 7
+	base = 843, 395, bucket = 7
+	base = 845, 390, bucket = 7
+	base = 846, 367, bucket = 7
+	base = 84c, 359, bucket = 7
+	base = 84d, 385, bucket = 7
+	base = 850, 365, bucket = 7
+	base = 851, 362, bucket = 7
+	base = 853, 371, bucket = 7
+	base = 854, 390, bucket = 7
+	base = 856, 377, bucket = 7
+	base = 857, 389, bucket = 7
+	base = 858, 352, bucket = 7
+	base = 85f, 363, bucket = 7
+	base = 864, 379, bucket = 7
+	base = 865, 369, bucket = 7
+	base = 868, 358, bucket = 7
+	base = 86b, 394, bucket = 7
+	base = 86c, 389, bucket = 7
+	base = 86f, 393, bucket = 7
+	base = 871, 356, bucket = 7
+	base = 873, 354, bucket = 7
+	base = 874, 362, bucket = 7
+	base = 876, 375, bucket = 7
+	base = 877, 362, bucket = 7
+	base = 878, 384, bucket = 7
+	base = 879, 393, bucket = 7
+	base = 87b, 355, bucket = 7
+	base = 87c, 369, bucket = 7
+	base = 881, 379, bucket = 7
+	base = 885, 361, bucket = 7
+	base = 887, 356, bucket = 7
+	base = 888, 358, bucket = 7
+	base = 88d, 399, bucket = 7
+	base = 89a, 393, bucket = 7
+	base = 89d, 384, bucket = 7
+	base = 8a0, 394, bucket = 7
+	base = 8ab, 385, bucket = 7
+	base = 909, 356, bucket = 7
+	base = 960, 370, bucket = 7
+	base = 319, 343, bucket = 6
+	base = 32e, 317, bucket = 6
+	base = 336, 326, bucket = 6
+	base = 342, 330, bucket = 6
+	base = 350, 323, bucket = 6
+	base = 375, 345, bucket = 6
+	base = 37b, 326, bucket = 6
+	base = 37c, 344, bucket = 6
+	base = 389, 339, bucket = 6
+	base = 398, 349, bucket = 6
+	base = 39a, 346, bucket = 6
+	base = 39b, 319, bucket = 6
+	base = 3a6, 330, bucket = 6
+	base = 3d8, 313, bucket = 6
+	base = 3db, 304, bucket = 6
+	base = 3e6, 312, bucket = 6
+	base = 3ec, 314, bucket = 6
+	base = 3f7, 329, bucket = 6
+	base = 3f8, 303, bucket = 6
+	base = 43b, 308, bucket = 6
+	base = 43f, 327, bucket = 6
+-- epoch 1 1 --> push
+-- epoch 2 223 --> push
+-- epoch 3 7845 --> push
+-- epoch 4 292904 --> push
+-- epoch 5 2946108 --> push
+-- epoch 6 3196158 --> push
+-- epoch 7 696567 --> push
+-- epoch 8 144454 --> push
+-- epoch 9 21703 --> push
+-- epoch 10 6640 --> push
+-- epoch 11 1857 --> push
+-- epoch 12 632 --> push
+-- epoch 13 232 --> push
+-- epoch 14 153 --> push
+-- epoch 15 272 --> push
+-- epoch 16 61 --> push
+-- epoch 17 48 --> push
+-- epoch 18 38 --> push
+-- epoch 19 43 --> push
+-- epoch 20 29 --> push
+-- epoch 21 43 --> push
+-- epoch 22 29 --> push
+-- epoch 23 31 --> push
+-- epoch 24 22 --> push
+-- epoch 25 30 --> push
+-- epoch 26 21 --> push
+-- epoch 27 18 --> push
+-- epoch 28 16 --> push
+-- epoch 29 16 --> push
+-- epoch 30 16 --> push
+-- epoch 31 16 --> push
+-- epoch 32 14 --> push
+-- epoch 33 14 --> push
+-- epoch 34 14 --> push
+-- epoch 35 14 --> push
+-- epoch 36 14 --> push
+-- epoch 37 14 --> push
+-- epoch 38 13 --> push
+-- epoch 39 12 --> push
+-- epoch 40 12 --> push
+-- epoch 41 12 --> push
+-- epoch 42 12 --> push
+-- epoch 43 12 --> push
+-- epoch 44 12 --> push
+-- epoch 45 12 --> push
+-- epoch 46 12 --> push
+-- epoch 47 12 --> push
+-- epoch 48 11 --> push
+-- epoch 49 10 --> push
+-- epoch 50 10 --> push
+-- epoch 51 10 --> push
+-- epoch 52 10 --> push
+-- epoch 53 10 --> push
+-- epoch 54 10 --> push
+-- epoch 55 10 --> push
+-- epoch 56 10 --> push
+-- epoch 57 10 --> push
+-- epoch 58 10 --> push
+-- epoch 59 10 --> push
+-- epoch 60 10 --> push
+-- epoch 61 10 --> push
+-- epoch 62 10 --> push
+-- epoch 63 10 --> push
+-- epoch 64 10 --> push
+-- epoch 65 10 --> push
+-- epoch 66 10 --> push
+-- epoch 67 10 --> push
+-- epoch 68 10 --> push
+-- epoch 69 10 --> push
+-- epoch 70 7 --> push
+-- epoch 71 7 --> push
+-- epoch 72 7 --> push
+-- epoch 73 7 --> push
+-- epoch 74 7 --> push
+-- epoch 75 7 --> push
+-- epoch 76 7 --> push
+-- epoch 77 7 --> push
+-- epoch 78 7 --> push
+-- epoch 79 7 --> push
+-- epoch 80 7 --> push
+-- epoch 81 7 --> push
+-- epoch 82 7 --> push
+-- epoch 83 7 --> push
+-- epoch 84 7 --> push
+-- epoch 85 7 --> push
+-- epoch 86 7 --> push
+-- epoch 87 7 --> push
+-- epoch 88 7 --> push
+-- epoch 89 7 --> push
+-- epoch 90 7 --> push
+-- epoch 91 7 --> push
+-- epoch 92 7 --> push
+-- epoch 93 7 --> push
+-- epoch 94 7 --> push
+-- epoch 95 7 --> push
+-- epoch 96 7 --> push
+-- epoch 97 7 --> push
+-- epoch 98 7 --> push
+-- epoch 99 7 --> push
+-- epoch 100 7 --> push
+-- epoch 101 7 --> push
+-- epoch 102 7 --> push
+-- epoch 103 7 --> push
+-- epoch 104 7 --> push
+-- epoch 105 7 --> push
+-- epoch 106 7 --> push
+-- epoch 107 7 --> push
+-- epoch 108 7 --> push
+-- epoch 109 7 --> push
+-- epoch 110 7 --> push
+-- epoch 111 7 --> push
+-- epoch 112 7 --> push
+-- epoch 113 7 --> push
+-- epoch 114 7 --> push
+-- epoch 115 7 --> push
+-- epoch 116 7 --> push
+-- epoch 117 7 --> push
+-- epoch 118 7 --> push
+-- epoch 119 7 --> push
+-- epoch 120 7 --> push
+-- epoch 121 7 --> push
+-- epoch 122 7 --> push
+-- epoch 123 7 --> push
+-- epoch 124 7 --> push
+-- epoch 125 5 --> push
+-- epoch 126 5 --> push
+-- epoch 127 5 --> push
+-- epoch 128 5 --> push
+-- epoch 129 5 --> push
+-- epoch 130 5 --> push
+-- epoch 131 5 --> push
+-- epoch 132 5 --> push
+-- epoch 133 5 --> push
+-- epoch 134 5 --> push
+-- epoch 135 5 --> push
+-- epoch 136 5 --> push
+-- epoch 137 5 --> push
+-- epoch 138 5 --> push
+-- epoch 139 5 --> push
+-- epoch 140 5 --> push
+-- epoch 141 5 --> push
+-- epoch 142 5 --> push
+-- epoch 143 5 --> push
+-- epoch 144 5 --> push
+-- epoch 145 5 --> push
+-- epoch 146 5 --> push
+-- epoch 147 5 --> push
+-- epoch 148 5 --> push
+-- epoch 149 5 --> push
+-- epoch 150 5 --> push
+-- epoch 151 5 --> push
+-- epoch 152 5 --> push
+-- epoch 153 5 --> push
+-- epoch 154 5 --> push
+-- epoch 155 5 --> push
+-- epoch 156 5 --> push
+-- epoch 157 5 --> push
+-- epoch 158 5 --> push
+-- epoch 159 5 --> push
+-- epoch 160 5 --> push
+-- epoch 161 5 --> push
+-- epoch 162 5 --> push
+-- epoch 163 5 --> push
+-- epoch 164 5 --> push
+-- epoch 165 5 --> push
+-- epoch 166 4 --> push
+-- epoch 167 3 --> push
+-- epoch 168 3 --> push
+-- epoch 169 3 --> push
+-- epoch 170 3 --> push
+-- epoch 171 3 --> push
+-- epoch 172 3 --> push
+-- epoch 173 3 --> push
+-- epoch 174 3 --> push
+-- epoch 175 3 --> push
+-- epoch 176 3 --> push
+-- epoch 177 3 --> push
+-- epoch 178 3 --> push
+-- epoch 179 3 --> push
+-- epoch 180 3 --> push
+-- epoch 181 3 --> push
+-- epoch 182 3 --> push
+-- epoch 183 3 --> push
+-- epoch 184 3 --> push
+-- epoch 185 3 --> push
+-- epoch 186 3 --> push
+-- epoch 187 3 --> push
+-- epoch 188 3 --> push
+-- epoch 189 3 --> push
+-- epoch 190 3 --> push
+-- epoch 191 3 --> push
+-- epoch 192 3 --> push
+-- epoch 193 3 --> push
+-- epoch 194 3 --> push
+-- epoch 195 3 --> push
+-- epoch 196 3 --> push
+-- epoch 197 3 --> push
+-- epoch 198 3 --> push
+-- epoch 199 3 --> push
+-- epoch 200 3 --> push
+-- epoch 201 3 --> push
+-- epoch 202 3 --> push
+-- epoch 203 3 --> push
+-- epoch 204 3 --> push
+-- epoch 205 3 --> push
+-- epoch 206 3 --> push
+-- epoch 207 3 --> push
+-- epoch 208 3 --> push
+-- epoch 209 3 --> push
+-- epoch 210 3 --> push
+-- epoch 211 3 --> push
+-- epoch 212 3 --> push
+-- epoch 213 3 --> push
+-- epoch 214 3 --> push
+-- epoch 215 3 --> push
+-- epoch 216 3 --> push
+-- epoch 217 3 --> push
+-- epoch 218 3 --> push
+-- epoch 219 3 --> push
+-- epoch 220 3 --> push
+-- epoch 221 3 --> push
+-- epoch 222 3 --> push
+-- epoch 223 3 --> push
+-- epoch 224 3 --> push
+-- epoch 225 3 --> push
+-- epoch 226 3 --> push
+-- epoch 227 3 --> push
+-- epoch 228 3 --> push
+-- epoch 229 3 --> push
+-- epoch 230 3 --> push
+-- epoch 231 3 --> push
+-- epoch 232 3 --> push
+-- epoch 233 3 --> push
+-- epoch 234 3 --> push
+-- epoch 235 3 --> push
+-- epoch 236 3 --> push
+-- epoch 237 3 --> push
+-- epoch 238 3 --> push
+-- epoch 239 3 --> push
+-- epoch 240 3 --> push
+-- epoch 241 3 --> push
+-- epoch 242 3 --> push
+-- epoch 243 3 --> push
+-- epoch 244 3 --> push
+-- epoch 245 3 --> push
+-- epoch 246 3 --> push
+-- epoch 247 3 --> push
+-- epoch 248 2 --> push
+-- epoch 249 1 --> push
+-- epoch 250 1 --> push
+-- epoch 251 1 --> push
+-- epoch 252 1 --> push
+-- epoch 253 1 --> push
+-- epoch 254 1 --> push
+-- epoch 255 1 --> push
+-- epoch 256 1 --> push
+-- epoch 257 1 --> push
+-- epoch 258 1 --> push
+-- epoch 259 1 --> push
+-- epoch 260 1 --> push
+-- epoch 261 1 --> push
+-- epoch 262 1 --> push
+-- epoch 263 1 --> push
+-- epoch 264 1 --> push
+-- epoch 265 1 --> push
+-- epoch 266 1 --> push
+-- epoch 267 1 --> push
+-- epoch 268 1 --> push
+-- epoch 269 1 --> push
+-- epoch 270 1 --> push
+-- epoch 271 1 --> push
+-- epoch 272 1 --> push
+-- epoch 273 1 --> push
+-- epoch 274 1 --> push
+-- epoch 275 1 --> push
+-- epoch 276 1 --> push
+-- epoch 277 1 --> push
+-- epoch 278 1 --> push
+-- epoch 279 1 --> push
+-- epoch 280 1 --> push
+-- epoch 281 1 --> push
+-- epoch 282 1 --> push
+-- epoch 283 1 --> push
+-- epoch 284 1 --> push
+-- epoch 285 1 --> push
+-- epoch 286 1 --> push
+-- epoch 287 1 --> push
+-- epoch 288 1 --> push
+-- epoch 289 1 --> push
+-- epoch 290 1 --> push
+-- epoch 291 1 --> push
+-- epoch 292 1 --> push
+-- epoch 293 1 --> push
+-- epoch 294 1 --> push
+-- epoch 295 1 --> push
+-- epoch 296 1 --> push
+-- epoch 297 1 --> push
+-- epoch 298 1 --> push
+-- epoch 299 1 --> push
+-- epoch 300 1 --> push
+-- epoch 301 1 --> push
+-- epoch 302 1 --> push
+-- epoch 303 1 --> push
+-- epoch 304 1 --> push
+-- epoch 305 1 --> push
+-- epoch 306 1 --> push
+-- epoch 307 1 --> push
+-- epoch 308 1 --> push
+-- epoch 309 1 --> push
+-- epoch 310 1 --> push
+-- epoch 311 1 --> push
+-- epoch 312 1 --> push
+-- epoch 313 1 --> push
+-- epoch 314 1 --> push
+-- epoch 315 1 --> push
+-- epoch 316 1 --> push
+-- epoch 317 1 --> push
+-- epoch 318 1 --> push
+-- epoch 319 1 --> push
+-- epoch 320 1 --> push
+-- epoch 321 1 --> push
+-- epoch 322 1 --> push
+-- epoch 323 1 --> push
+-- epoch 324 1 --> push
+-- epoch 325 1 --> push
+-- epoch 326 1 --> push
+-- epoch 327 1 --> push
+-- epoch 328 1 --> push
+-- epoch 329 1 --> push
+-- epoch 330 1 --> push
+-- epoch 331 1 --> push
+-- epoch 332 1 --> push
+-- epoch 333 1 --> push
+-- epoch 334 1 --> push
+-- epoch 335 1 --> push
+-- epoch 336 1 --> push
+-- epoch 337 1 --> push
+-- epoch 338 1 --> push
+-- epoch 339 1 --> push
+-- epoch 340 1 --> push
+-- epoch 341 1 --> push
+-- epoch 342 1 --> push
+-- epoch 343 1 --> push
+-- epoch 344 1 --> push
+-- epoch 345 1 --> push
+-- epoch 346 1 --> push
+-- epoch 347 1 --> push
+-- epoch 348 1 --> push
+-- epoch 349 1 --> push
+-- epoch 350 1 --> push
+-- epoch 351 1 --> push
+-- epoch 352 1 --> push
+-- epoch 353 1 --> push
+-- epoch 354 1 --> push
+-- epoch 355 1 --> push
+-- epoch 356 1 --> push
+-- epoch 357 1 --> push
+-- epoch 358 1 --> push
+-- epoch 359 1 --> push
+-- epoch 360 1 --> push
+-- epoch 361 1 --> push
+-- epoch 362 1 --> push
+-- epoch 363 1 --> push
+-- epoch 364 1 --> push
+-- epoch 365 1 --> push
+-- epoch 366 1 --> push
+-- epoch 367 1 --> push
+-- epoch 368 1 --> push
+-- epoch 369 1 --> push
+-- epoch 370 1 --> push
+-- epoch 371 1 --> push
+-- epoch 372 1 --> push
+-- epoch 373 1 --> push
+-- epoch 374 1 --> push
+-- epoch 375 1 --> push
+-- epoch 376 1 --> push
+-- epoch 377 1 --> push
+-- epoch 378 1 --> push
+-- epoch 379 1 --> push
+-- epoch 380 1 --> push
+-- epoch 381 1 --> push
+-- epoch 382 1 --> push
+-- epoch 383 1 --> push
+-- epoch 384 1 --> push
+-- epoch 385 1 --> push
+-- epoch 386 1 --> push
+-- epoch 387 1 --> push
+-- epoch 388 1 --> push
+-- epoch 389 1 --> push
+-- epoch 390 1 --> push
+-- epoch 391 1 --> push
+-- epoch 392 1 --> push
+-- epoch 393 1 --> push
+-- epoch 394 1 --> push
+-- epoch 395 1 --> push
+-- epoch 396 1 --> push
+-- epoch 397 1 --> push
+-- epoch 398 1 --> push
+-- epoch 399 1 --> push
+-- epoch 400 1 --> push
+-- epoch 401 1 --> push
+-- epoch 402 1 --> push
+-- epoch 403 1 --> push
+-- epoch 404 1 --> push
+-- epoch 405 1 --> push
+-- epoch 406 1 --> push
+-- epoch 407 1 --> push
+Custom malloc called with size 576, using 1 blocks
+Custom malloc called with size 333, using 1 blocks
+Custom malloc called with size 333, using 1 blocks
+Custom malloc called with size 37, using 1 blocks
+Custom malloc called with size 16, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 39, using 1 blocks
+Custom malloc called with size 24, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 40, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 37, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 36, using 1 blocks
+Custom malloc called with size 72, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 38, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 38, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 36, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 40, using 1 blocks
+Custom malloc called with size 136, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 39, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 37, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 38, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 36, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 264, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 35, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 41, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 43, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 39, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 53, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 40, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 40, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 48, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 520, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 43, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 35, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 35, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 34, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 40, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 40, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 41, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 48, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 48, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 48, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 48, using 1 blocks
+Custom malloc called with size 33, using 1 blocks
+Custom malloc called with size 35, using 1 blocks
+ending kernel
+
+total kernel computation time: 88.714731
+user time: 88.620000
+kernel time: 0.040000
+footprint: start = 3199836KB, end = 3248648KB, diff = 48812KB
+page reclaims: 22102
+page faults: 0
+swaps: 0
+Total Accesses = 5652340003
