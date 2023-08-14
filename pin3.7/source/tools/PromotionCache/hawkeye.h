@@ -8,17 +8,18 @@
 #define PAGE_SIZE 4096
 #define HUGE_PAGE_SIZE 2097152
 #define NUM_BASE_PAGES 512
-#define MAX_NUM_PROMOTIONS 8 //512
+#define MAX_NUM_PROMOTIONS 8
+
+unsigned long ACCESS_INTERVAL = 1000000000;
 
 double ALPHA = 0.9;
-
-unsigned long total_num_accesses = 0, curr_num_accesses = 0, ACCESS_INTERVAL = 1000000000;
+unsigned long total_num_accesses = 0, curr_num_accesses = 0;
 bool tracking = true;
 
 unordered_map<uint64_t, bitset<NUM_BASE_PAGES>> coverage;
 unordered_map<uint64_t, double> ema;
 vector<uint64_t> buckets[NUM_BUCKETS];
-unordered_map<uint64_t, unsigned short> promotions;
+unordered_map<uint64_t, unsigned short> hawkeye_promotions;
 
 void clear_coverage() {
   uint64_t base;
@@ -97,7 +98,7 @@ void summarize() {
   }
 }
 
-void track_access(uint64_t vaddr) {
+void hawkeye_track_access(uint64_t vaddr) {
   uint64_t base, page, offset;
 
   curr_num_accesses++;

@@ -15,9 +15,9 @@
 
 #define L1_TLB_4K_ENTRIES 64
 #define L1_TLB_2M_ENTRIES 32
-#define L2_TLB_ENTRIES 1536
+#define L2_TLB_ENTRIES 1024
 #define PAGE_SIZE 4096
-#define SUPERPAGE_SIZE 2097152
+#define HUGE_PAGE_SIZE 2097152
 #define L1_ASSOC 4
 #define L2_ASSOC 6
 #define MAX_FREQ 255
@@ -262,7 +262,7 @@ public:
 
   bool access(uint64_t address, bool isLoad, bool is2M=false, bool print=false)
   {
-    int log_pofs = is2M ? log2(SUPERPAGE_SIZE) : log_line_size;
+    int log_pofs = is2M ? log2(HUGE_PAGE_SIZE) : log_line_size;
     uint64_t offset = extract(log_pofs-1, 0, address);
     uint64_t setid = extract(log_set_count+log_pofs-1, log_pofs, address);
     uint64_t tag = extract(63, log_set_count+log_pofs, address);
@@ -276,7 +276,7 @@ public:
 
   void insert(uint64_t address, bool isLoad, bool *dirtyEvict, int64_t *evictedAddr, uint64_t *evictedOffset, bool is2M=false, bool print=false)
   {
-    int log_pofs = is2M ? log2(SUPERPAGE_SIZE) : log_line_size;
+    int log_pofs = is2M ? log2(HUGE_PAGE_SIZE) : log_line_size;
     uint64_t offset = extract(log_pofs-1, 0, address);
     uint64_t setid = extract(log_set_count-1+log_pofs, log_pofs, address);
     uint64_t tag = extract(63, log_set_count+log_pofs, address);
@@ -294,7 +294,7 @@ public:
 
   void evict(uint64_t address, bool *dirtyEvict, bool is2M=false, bool print=false)
   {
-    int log_pofs = is2M ? log2(SUPERPAGE_SIZE) : log_line_size;
+    int log_pofs = is2M ? log2(HUGE_PAGE_SIZE) : log_line_size;
     uint64_t offset = extract(log_pofs-1, 0, address);
     uint64_t setid = extract(log_set_count-1+log_pofs, log_pofs, address);
     uint64_t tag = extract(63, log_set_count+log_pofs, address);
@@ -307,7 +307,7 @@ public:
 
   unsigned short getFreq(uint64_t address, bool is2M=false)
   {
-    int log_pofs = is2M ? log2(SUPERPAGE_SIZE) : log_line_size;
+    int log_pofs = is2M ? log2(HUGE_PAGE_SIZE) : log_line_size;
     uint64_t setid = extract(log_set_count-1+log_pofs, log_pofs, address);
     uint64_t tag = extract(63, log_set_count+log_pofs, address);
     CacheSet *c = sets.at(setid);
