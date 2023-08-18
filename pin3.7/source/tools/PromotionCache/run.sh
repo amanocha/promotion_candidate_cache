@@ -12,11 +12,9 @@ INTERVAL=1
 vp_apps=(bfs sssp pagerank)
 parsec_apps=(canneal dedup)
 spec_apps=(mcf omnetpp xalancbmk)
-npb_apps=(CG BT)
 other_apps=("${parsec_apps[@]}" "${spec_apps[@]}")
 apps=("${vp_apps[@]}")
 #apps=("${other_apps[@]}")
-#apps=("${npb_apps[@]}")
 
 datasets=(Kronecker_25 Twitter Sd1_Arc DBG_Kronecker_25 DBG_Twitter DBG_Sd1_Arc) # Wikipedia DBG_Wikipedia) # DBG_Kronecker_21 DBG_Kronecker_27)
 dataset_names=(kron25 twit web dbg_kron25 dbg_twit dbg_web wiki dbg_wiki)
@@ -28,7 +26,6 @@ other_intervals=(1174268969 2602817674 981555542 1023238603)
 
 footprints=(1 2 4 8 16 32 64 100)
 cache_sizes=(4 8 16 32 64 128 256 512 1024)
-cache_sizes=(128)
 
 exp_name=cache
 #exp_name=hawkeye
