@@ -1,18 +1,17 @@
 #include "tlb.h"
 #include <boost/tuple/tuple.hpp>
 
-#define HUGE_PAGE_SIZE 2097152
 #define EVICTION_POLICY 2
-//#define ACCESS_INTERVAL 700000000
-
 #define TRACK_REUSE 1
 
-double alpha = 0.9;
-unsigned long total_num_accesses = 0, num_2mb_ptw = 0, ACCESS_INTERVAL = 1000000000;
-unordered_map<uint64_t, boost::tuple<unsigned long, double, unsigned long, double>> reuse_map;
-unordered_map<uint64_t, unsigned short> promotions;
-
 unsigned int PROMOTION_CACHE_SIZE = 128, FACTOR = 30;
+unsigned long ACCESS_INTERVAL = 1000000000;
+
+double ALPHA = 0.9;
+unsigned long total_num_accesses = 0, num_2mb_ptw = 0;
+unordered_map<uint64_t, boost::tuple<unsigned long, double, unsigned long, double>> reuse_map;
+unordered_map<uint64_t, unsigned short> pcc_promotions;
+
 FunctionalCache *l1_tlb_4k, *l1_tlb_2m, *l2_tlb, *promotion_cache;
 bool l1_4k_dirty_evict, l1_2m_dirty_evict, l2_dirty_evict;
 int64_t l1_4k_evicted_tag, l1_2m_evicted_tag, l2_evicted_tag;
@@ -68,7 +67,7 @@ void summarize_promotions() {
   }
 }
 
-void track_access(uint64_t vaddr, bool print=false) {
+void pcc_track_access(uint64_t vaddr, bool print=false) {
     uint64_t base;
 
     total_num_accesses++;
@@ -151,7 +150,7 @@ void track_access(uint64_t vaddr, bool print=false) {
 			<< ", diff = " << (reuse_dist-ema) << endl;
 
       if (ema == 0) ema = reuse_dist;
-      else ema = ema*alpha + reuse_dist*(1-alpha);
+      else ema = ema*ALPHA + reuse_dist*(1-ALPHA);
       sum_sq += pow((ema-reuse_dist), 2);
       num_data_pts++;
 

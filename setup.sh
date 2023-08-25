@@ -1,6 +1,9 @@
 #!/bin/bash
 
-HOME_DIR=/home/aninda/promotion_candidate_cache # EDIT THIS VALUE (WORKFLOW DIRECTORY)
+current_dir=$(dirname $(realpath -s $0))
+export HOME_DIR=$current_dir
+exit
+
 NUMA_NODE=0 # EDIT THIS VALUE (NUMA NODE)
 
 DATA_DIR=data
