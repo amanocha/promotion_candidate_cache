@@ -5,10 +5,13 @@ MODE=$1 # pcc or hawkeye
 EXP_TYPE=$2 # measure_accesses, single_thread, sensitivity, multithread
 
 # ----- DIRECTORIES -----
+current_dir=$(dirname $(realpath -s $0))
+EXP_DIR=$current_dir/
+HOME_DIR=${EXP_DIR}../../../..
+
 PIN_HOME=${HOME_DIR}/pin3.7/
-EXP_DIR=${PIN_HOME}source/tools/PromotionCache/
 APPS_DIR=${HOME_DIR}/applications/
-DATA_DIR=${HOME_DIR}/graph_data/
+DATA_DIR=${HOME_DIR}/data/
 
 PCC_SIZE=128
 INTERVAL_FACTOR=1
@@ -21,6 +24,7 @@ other_apps=("${parsec_apps[@]}" "${spec_apps[@]}")
 apps=("${vp_apps[@]}" "${other_apps[@]}")
 
 datasets=(Kronecker_25 Twitter Sd1_Arc DBG_Kronecker_25 DBG_Twitter DBG_Sd1_Arc)
+datasets=(Kronecker_21)
 dataset_names=(kron25 twit web dbg_kron25 dbg_twit dbg_web)
 start_seeds=(0 0 0 3287496 15994127 18290613)
 intervals=(732856447 1093269888 827860087 1379256614 1096522560 902036450 1613872676 1604682443)
@@ -30,6 +34,33 @@ other_intervals=(1174268969 2602817674 981555542 1023238603 1362895757)
 
 footprints=(1 2 4 8 16 32 64 100)
 pcc_sizes=(4 8 16 32 64 128 256 512 1024)
+
+compile_apps() {
+  echo "COMPILING GRAPH APPLICATIONS"
+
+  for a in ${!vp_apps[@]}
+  do
+    app=${vp_apps[$a]}
+    echo ""
+
+    cd ${APPS_DIR}pin_source/${app}/
+    echo $app ": make"
+    make
+  done
+
+  echo "COMPILING OTHER APPLICATIONS"
+  for a in ${!other_apps[@]}
+  do
+    app=${other_apps[$a]}
+    echo ""
+
+    cd ${APPS_DIR}launch/${app}/
+    echo $app ": make"
+    make
+  done
+
+  echo ""
+}
 
 run_pin() {
   filename=$1
@@ -192,11 +223,11 @@ launch() {
   do
     app=${apps[$a]}
     echo ""
-    echo "APP: " $app
 
     if [[ " ${other_apps[@]} " =~ " ${app} " ]]; then
-      echo "OTHER"
-      dataset=${other_datasets[$a]}
+      num_apps=${#vp_apps[@]}
+      idx="$((a-num_apps))"
+      dataset=${other_datasets[$idx]}
 
       if [[ ! -d ${result_dir}other ]]; then
         mkdir -p "${result_dir}other"
@@ -205,7 +236,7 @@ launch() {
       filename=${result_dir}other/${app}
       access_interval=${other_intervals[$a]}
 
-      app_command="${APPS_DIR}launch/${app}/${app} ${DATA_DIR}${app}/${dataset}" 0 $MODE $access_interval
+      app_command="${APPS_DIR}launch/${app}/${app} ${DATA_DIR}${app}/${dataset} 0 $MODE $access_interval $PCC_SIZE $INTERVAL_FACTOR"
       
       run_pin $filename "$app_command"
       parse_promotions other $app $PCC_SIZE $INTERVAL_FACTOR
@@ -316,10 +347,13 @@ measure_accesses_per_sec() {
 if [[ "${EXP_TYPE}" == "measure_accesses" ]]; then
   measure_accesses_per_sec
 elif [[ "${EXP_TYPE}" == "single_thread" ]]; then
+  #compile_apps
   launch
 elif [[ "${EXP_TYPE}" == "sensitivity" ]]; then
+  compile_apps
   sensitivity
 elif [[ "${EXP_TYPE}" == "multithread" ]]; then
+  compile_apps
   multithread
 else
   echo "Invalid experiment type"

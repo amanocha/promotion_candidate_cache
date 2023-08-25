@@ -1,14 +1,13 @@
 #!/bin/bash
 
 current_dir=$(dirname $(realpath -s $0))
-export HOME_DIR=$current_dir
-exit
+HOME_DIR=$current_dir
 
 NUMA_NODE=0 # EDIT THIS VALUE (NUMA NODE)
 
 DATA_DIR=data
 DATA_URL="https://decades.cs.princeton.edu/datasets/big"
-DATA_URL="https://decades.cs.princeton.edu/datasets/medium_networks"
+DATA_URL="https://decades.cs.princeton.edu/datasets/medium"
 
 datasets=(Kronecker_25 Twitter Sd1_Arc DBG_Kronecker_25 DBG_Twitter DBG_Sd1_Arc)
 datasets=(Kronecker_21)
@@ -74,8 +73,6 @@ fi
 sudo echo 0 > /proc/sys/kernel/randomize_va_space
 
 # WORKFLOW PREPARATION
-cd ${HOME_DIR}/numactl
-bash make.sh
 
 cd ${HOME_DIR}/utils
 make
