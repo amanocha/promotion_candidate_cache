@@ -39,6 +39,7 @@ END_LEGAL */
 #include <map>
 #include <string>
 
+#include "common.h"
 #include "huge_page_reuse.h"
 #include "hawkeye.h"
 
@@ -81,7 +82,7 @@ static INT32 Usage()
     return -1;
 }
 
-
+/*
 static VOID EmitMem(VOID * ea, INT32 size)
 {
     std::ofstream TraceFile;
@@ -124,6 +125,7 @@ static VOID EmitMem(VOID * ea, INT32 size)
     TraceFile << "#eof" << endl;
     TraceFile.close();
 }
+*/
 
 // Set ROI flag
 static VOID StartROI()
@@ -269,13 +271,17 @@ int main(int argc, char *argv[])
         ACCESS_INTERVAL = atoi(argv[10]);
         PROMOTION_CACHE_SIZE = atoi(argv[11]);
         FACTOR = atoi(argv[12]);
+    } else if (argc > 10) {
+        ACCESS_INTERVAL = atoi(argv[8]);
+        PROMOTION_CACHE_SIZE = 128;
+        FACTOR = 30;
     } else {
         ACCESS_INTERVAL = 10000000;
         PROMOTION_CACHE_SIZE = 128;
         FACTOR = 30;
     }
 
-    if !(mode) cout << "ACCESS INTERVAL = " << ACCESS_INTERVAL << ", PROMOTION CACHE SIZE = " << PROMOTION_CACHE_SIZE << ", FACTOR = " << FACTOR << endl;
+    if (!mode) cout << "ACCESS INTERVAL = " << ACCESS_INTERVAL << ", PROMOTION CACHE SIZE = " << PROMOTION_CACHE_SIZE << ", FACTOR = " << FACTOR << endl;
     
     if( PIN_Init(argc,argv) )
     {
