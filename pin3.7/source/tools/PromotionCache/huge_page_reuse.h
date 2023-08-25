@@ -4,11 +4,8 @@
 #define EVICTION_POLICY 2
 #define TRACK_REUSE 1
 
-unsigned int PROMOTION_CACHE_SIZE = 128, FACTOR = 30;
-unsigned long ACCESS_INTERVAL = 1000000000;
-
-double ALPHA = 0.9;
-unsigned long total_num_accesses = 0, num_2mb_ptw = 0;
+unsigned int PROMOTION_CACHE_SIZE = 128;
+unsigned long num_2mb_ptw = 0;
 unordered_map<uint64_t, boost::tuple<unsigned long, double, unsigned long, double>> reuse_map;
 unordered_map<uint64_t, unsigned short> pcc_promotions;
 
@@ -42,8 +39,8 @@ void summarize_promotions() {
     cache_freq = promotion_cache->getFreq(base*PAGE_SIZE);
     cout << "\tbase = " << hex << base << dec << ", " << reuse_dist << ", " << freq << ", " << cache_freq;
         
-    if (promotions.find(base) == promotions.end() && cache_freq > 0) { // promoting data that is not already promoted
-        promotions[base] = 0;
+    if (pcc_promotions.find(base) == pcc_promotions.end() && cache_freq > 0) { // promoting data that is not already promoted
+        pcc_promotions[base] = 0;
 	      reuse_map.erase(base);
 	      for (int i = 0; i < HUGE_PAGE_SIZE/PAGE_SIZE; i++) {
 	          addr = base*HUGE_PAGE_SIZE + i*PAGE_SIZE;
@@ -52,10 +49,10 @@ void summarize_promotions() {
                   res = l2_tlb->access(addr, true, false);
 	          if (res) l2_tlb->evict(addr, &l2_dirty_evict);
         }
-    } else if (promotions.find(base) != promotions.end()) { // demotion
-      //promotions[base]++;
+    } else if (pcc_promotions.find(base) != pcc_promotions.end()) { // demotion
+      //pcc_promotions[base]++;
       cout << "--> DEMOTION";
-      promotions.erase(base);
+      pcc_promotions.erase(base);
       addr = base*HUGE_PAGE_SIZE + i*PAGE_SIZE;
       res = l1_tlb_2m->access(addr, true, true);
       if (res) l1_tlb_2m->evict(addr, &l1_2m_dirty_evict, true);
@@ -88,7 +85,7 @@ void pcc_track_access(uint64_t vaddr, bool print=false) {
             l2_hit = l2_tlb->access(vaddr, true, true);
 
 	    if (!l2_hit) { // L2 2M TLB miss
-	        is_2m = promotions.find(base) != promotions.end(); // promoted
+	        is_2m = pcc_promotions.find(base) != pcc_promotions.end(); // promoted
                 l2_tlb->insert(vaddr, true, &l2_dirty_evict, &l2_evicted_tag, &l2_evicted_offset, is_2m);
 
                 if (is_2m) {
@@ -116,7 +113,7 @@ void pcc_track_access(uint64_t vaddr, bool print=false) {
       return;
     } else {
       /********** START: promotion cache logic **********/
-      is_2m = promotions.find(base) != promotions.end();
+      is_2m = pcc_promotions.find(base) != pcc_promotions.end();
       res = promotion_cache->access(base*PAGE_SIZE, true, is_2m);
       if (!res) {
 	      if (is_2m && boost::get<0>(reuse_map[base]) != 0) num_2mb_ptw++; //cout << base << " --> 2MB PTW" << endl;
@@ -162,7 +159,7 @@ void pcc_track_access(uint64_t vaddr, bool print=false) {
     }
 }
 
-void summarize() {
+void summarize_reuse() {
   unsigned long base;
   double reuse_dist, std_dev;
 
