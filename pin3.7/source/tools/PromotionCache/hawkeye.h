@@ -2,17 +2,11 @@
 #include <unordered_map>
 
 #define ACC_COV_VAL 1
-#define FACTOR 30
 #define NUM_BUCKETS 10
 #define BUCKET_SIZE 50
-#define PAGE_SIZE 4096
-#define HUGE_PAGE_SIZE 2097152
 #define NUM_BASE_PAGES 512
 #define MAX_NUM_PROMOTIONS 8
 
-unsigned long ACCESS_INTERVAL = 1000000000;
-
-double ALPHA = 0.9;
 unsigned long total_num_accesses = 0, curr_num_accesses = 0;
 bool tracking = true;
 

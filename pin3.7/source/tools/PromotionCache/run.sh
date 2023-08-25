@@ -134,7 +134,7 @@ num_accesses() {
       for d in ${!datasets[@]}
       do
         dataset=${datasets[$d]}
-        filename=${EXP_DIR}access_output/${dataset_names[$d]}
+        filename=${EXP_DIR}access_output/${:[$d]}
         start_seed=${start_seeds[$d]}
         app_command="${APPS_DIR}pin_source/${app}/main ${DATA_DIR}$dataset/ $start_seed"
 
@@ -192,8 +192,10 @@ launch() {
   do
     app=${apps[$a]}
     echo ""
+    echo "APP: " $app
 
     if [[ " ${other_apps[@]} " =~ " ${app} " ]]; then
+      echo "OTHER"
       dataset=${other_datasets[$a]}
 
       if [[ ! -d ${result_dir}other ]]; then
