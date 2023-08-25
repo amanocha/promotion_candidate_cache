@@ -7,9 +7,7 @@
 #define NUM_BASE_PAGES 512
 #define MAX_NUM_PROMOTIONS 8
 
-unsigned long total_num_accesses = 0, curr_num_accesses = 0;
 bool tracking = true;
-
 unordered_map<uint64_t, bitset<NUM_BASE_PAGES>> coverage;
 unordered_map<uint64_t, double> ema;
 vector<uint64_t> buckets[NUM_BUCKETS];
@@ -71,10 +69,10 @@ void summarize() {
     base = buckets[bucket_idx][idx];
     cout << "\tbase = " << hex << base << ", " << ema[base] << dec << ", bucket = " << bucket_idx << endl;
 
-    if (promotions.find(base) == promotions.end()) {
-        promotions[base] = 0;
+    if (hawkeye_promotions.find(base) == hawkeye_promotions.end()) {
+        hawkeye_promotions[base] = 0;
     } else {
-      promotions[base]++;
+      hawkeye_promotions[base]++;
       repeat_promotion = true;
     }
 
