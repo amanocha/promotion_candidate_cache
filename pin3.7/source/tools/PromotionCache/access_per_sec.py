@@ -7,7 +7,8 @@ import sys
 NUM_ITER = 5
 
 graph = ["kron25", "twit", "web", "dbg_kron25", "dbg_twit", "dbg_web"]
-other = ["canneal", "dedup", "mcf", "omnetpp", "xalancbmk"]
+other = ["canneal", "dedup"]
+spec = ["mcf", "omnetpp", "xalancbmk"]
 datasets = graph + other
 
 def process_file(dataset):

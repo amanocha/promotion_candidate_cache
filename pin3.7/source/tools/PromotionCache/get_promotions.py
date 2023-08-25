@@ -1,25 +1,7 @@
-import argparse
-import numpy as np
-import math
-import os
-import re
-import sys
-
-vp = ["bfs", "sssp", "pagerank", "multiphase"]
-parsec = ["canneal", "dedup"]
-spec = ["mcf", "omnetpp", "xalancbmk"]
-
-HUGE_PAGE_SIZE = 2*1024*1024
-MODE = ""
-PERCENT = 100
-NUM_4KB = 512
-KB_SIZE = 1024
-PROMOTION_DIR = "promotion/"
-OFFSET = 0
+from offset import *
 
 total_num_huge_pages = 0
 promotion_limit = 0
-promote_all = False
 
 cache_match_str = "\tbase = (\w+), (\d+\.*\d*(?:e\+\d+)?), (\d+)(?:, (\d+))?"
 hawkeye_match_str = "\tbase = (\w+), (\d+\.*\d*(?:e\+\d+)?), bucket = (\d+)"
@@ -44,7 +26,7 @@ def write_promotions(candidates):
                     break
         to_promote.sort()
         for addr in to_promote:
-            promotion_file.write(str(time) + "," + str(addr+OFFSET) + "\n")
+            promotion_file.write(str(time) + "," + str(addr+offset) + "\n")
         stats_file.write("\n")
         to_promote = []
     if (len(unique_candidates) < promotion_limit):
@@ -83,26 +65,25 @@ def process_file(filename):
                 #rank_list = []
                 #print("\nTIME = " + str(time))
             
-            match_str = cache_match_str if "cache" in MODE else hawkeye_match_str
+            match_str = cache_match_str if mode == "cache" else hawkeye_match_str
             match = re.match(match_str, line)
             if match != None and reading == True:
                 total_num_huge_pages += 1
 
-                if "cache" in MODE:
+                if mode == "cache":
                     addr = int(match.group(1), 16)
                     dist = float(match.group(2))
                     freq = int(match.group(3))
                     cache_freq = int(match.group(4))
             
-                    if cache_freq > 0 or promote_all:
-                        if time not in candidates:
-                            candidates[time] = []
-                        candidates[time].append(addr)
+                    if time not in candidates:
+                        candidates[time] = []
+                    candidates[time].append(addr)
 
-                        if (dist > MAX_DIST):
-                            MAX_DIST = dist
-                        if (freq > MAX_FREQ):
-                            MAX_FREQ = freq
+                    if (dist > MAX_DIST):
+                        MAX_DIST = dist
+                    if (freq > MAX_FREQ):
+                        MAX_FREQ = freq
                 else:
                     addr = int(match.group(1), 16)
                     coverage = float(match.group(2))
@@ -113,7 +94,7 @@ def process_file(filename):
                     candidates[time].append(addr)
 
         total_num_huge_pages = int((size+HUGE_PAGE_SIZE-1)/HUGE_PAGE_SIZE)
-        promotion_limit = int(total_num_huge_pages*PERCENT/100)
+        promotion_limit = int(total_num_huge_pages*percent/100)
         print("Total footprint = " + str(total_num_huge_pages) + " huge pages")
         print("----------\n")
         data.close()
@@ -125,59 +106,29 @@ if __name__ == "__main__":
     app = filename.split("/")[-2]
     dataset = filename.split("/")[-1]
 
-    MODE = "cache" if "cache" in filename else "other"
+    mode = "cache" if "pcc" in filename else "other"
     
-    if app in vp:
-        if app == "sssp":
-            if "web" in dataset:
-                OFFSET = 190
-            else:
-                OFFSET = 189
-        if app == "bfs" or app == "pagerank":
-            if "kron" in dataset:
-                OFFSET = 189
-            else:
-                OFFSET = 190
-        if app == "multiphase":
-            OFFSET = 190
-    elif dataset == "canneal" and MODE == "cache":
-        OFFSET = 397426688
-        OFFSET = 0
-    elif dataset == "canneal":
-        OFFSET = 397234176 #67100397
-    elif dataset == "omnetpp":
-        OFFSET = -368
-        OFFSET = 0
-    elif dataset == "xalancbmk":
-        OFFSET = -352
-        OFFSET = 0
-    else: # dedup, mcf
-        OFFSET = 0
+    offset = get_offset(app)
 
     if (len(sys.argv) > 2):
-        PERCENT = int(sys.argv[2])
+        percent = int(sys.argv[2])
         if (len(sys.argv) > 3):
-            promote_all = sys.argv[3]
-            if (len(sys.argv) > 4):
-                OFFSET = int(sys.argv[4])
+            offset = int(sys.argv[4])
 
     PROMOTION_DIR = filename.replace("output/", "output/promotion_data/").replace(dataset, "")
-    if promote_all:
-        PROMOTION_DIR += "promote_all/"
 
-    print("MODE = " + MODE + ", OFFSET = " + str(OFFSET) + ", PERCENT = " + str(PERCENT) + ", PROMOTION DIR = " + PROMOTION_DIR + "\n")
+    print("mode = " + mode + ", offset = " + str(offset) + ", promotion percent = " + str(percent) + ", promotion directory = " + PROMOTION_DIR + "\n")
 
     if (not os.path.isdir(PROMOTION_DIR)):
         os.makedirs(PROMOTION_DIR, exist_ok=True)
-    promotion_filename = PROMOTION_DIR + dataset + "_" + str(PERCENT)
+    promotion_filename = PROMOTION_DIR + dataset + "_" + str(percent)
     promotion_file = open(promotion_filename, "w+")
     stats_file = open(promotion_filename + "_stats", "w+")
 
     process_file(filename)
-    #rank_promotions()
 
     stats_file.write("Total num of candidates: " + str(total_num_huge_pages) + "\n")
-    if ("cache" in MODE):
+    if (mode == "cache"):
         stats_file.write("Max reuse distance: " + str(MAX_DIST) + "\nMax freq: " + str(MAX_FREQ) + "\n")
 
     promotion_file.close()
