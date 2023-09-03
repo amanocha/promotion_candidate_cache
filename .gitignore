@@ -4,4 +4,4 @@ applications/launch/omnetpp/**
 applications/launch/xalancbmk/**
 
 **/__pycache__/
-pin3.7/source/tools/PromotionCache/output/
+pin3.7/source/tools/PromotionCache/out*

@@ -205,10 +205,10 @@ parse_promotions_mt() {
   do
     footprint=${footprints[$f]}
     type=${MODE}_${pcc_size}_${threads}/${access_time}_sec
-    if [ ! -f output/promotion_data/multithread/${type}_${footprint}_${policy}/$filename ]
+    if [ ! -f output/promotion_data/multithread/${type}/${dir}/${filename}_${footprint}_${policy} ]
     then
-      echo "python get_promotions_mt.py output/multithread/${type}/$dir/$filename $type $footprint $policy"
-      #python get_promotions_mt.py output/multithread/${type}/$dir/$filename $type $footprint $policy
+      echo "python get_promotions_mt.py output/multithread/${type}/${dir}/${filename} $threads $footprint $policy"
+      #python get_promotions_mt.py output/multithread/${type}/${dir}/${filename} $threads $footprint $policy
     fi
   done
 }
@@ -416,7 +416,7 @@ elif [[ "${EXP_TYPE}" == "sensitivity" ]]; then
   compile_apps
   sensitivity
 elif [[ "${EXP_TYPE}" == "multithread" ]]; then
-  compile_mt_apps
+  #compile_mt_apps
   multithread
 else
   echo "Invalid experiment type"
