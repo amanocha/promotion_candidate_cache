@@ -1,0 +1,110 @@
+12 arguments, path = /home/aninda/optimizing-huge-page-utility/applications/pin_source/sssp/main, exec = main
+ACCESS INTERVAL = 1093269888, PROMOTION CACHE SIZE = 4, FACTOR = 30
+Routine = _Z9pin_startv
+Routine = _Z7pin_endv
+Nodes: 52579682, Edges: 1963263821
+reading byte length of:    210318732
+reading byte length of:    7853055284
+reading byte length of:    7853055284
+Reading graph elapsed time: 4106.75s
+
+Memory Regions:
+NODE_ARRAY: starting base = 3fffe34, ending base = 3fffefd
+EDGE_ARRAY: starting base = 3ffe0f3, ending base = 3fffe35
+EDGE_VALUES: starting base = 3ffc3b1, ending base = 3ffe0f4
+PROP_ARRAY: starting base = 3ffc2e9, ending base = 3ffc3b2
+IN_WL: starting base = 3ffbefe, ending base = 3ffc2ea
+OUT_WL: starting base = 3ffbb13, ending base = 3ffbeff
+
+
+1093269888: Memory Regions:
+	base = 3ffc2ec, 35.1039, 171, 225
+	base = 3ffc2ed, 45.7094, 94, 182
+	base = 3ffc2eb, 119.432, 221, 163
+	base = 3ffc2ea, 98.3543, 204, 101
+
+33891366528: Memory Regions:
+	base = 3ffc2e9, 2656.11, 373, 208
+	base = 3ffc2ee, 2193, 2, 153
+	base = 3ffc30e, 23, 1, 153
+	base = 3ffc31a, 38, 1, 153
+
+66689463168: Memory Regions:
+	base = 3ffe5d2, 5924.32, 4, 220
+	base = 3ffc891, 5924.32, 4, 220
+	base = 3fffe34, 0, 0, 216
+	base = 3ffc320, 23, 2, 216
+
+99487559808: Memory Regions:
+	base = 3ffc36c, 24.35, 3, 253
+	base = 3ffc36a, 23, 2, 252
+	base = 3ffc36e, 23, 1, 251
+	base = 3ffccff, 0, 0, 250
+
+132285656448: Memory Regions:
+	base = 3ffe661, 3409.27, 4, 232
+	base = 3ffc920, 3409.27, 4, 232
+	base = 3ffc318, 23, 2, 229
+	base = 3fffe35, 0, 0, 228
+
+165083753088: Memory Regions:
+	base = 3ffe5c9, 7181.84, 4, 145
+	base = 3ffc888, 7181.84, 4, 145
+	base = 3ffc39e, 0, 0, 141
+	base = 3ffc359, 0, 0, 141
+
+197881849728: Memory Regions:
+	base = 3ffe0ff, 11484.7, 32, 209
+	base = 3ffc3be, 11484.7, 32, 209
+	base = 3ffc2f1, 334.54, 4, 180
+	base = 3ffc303, 23, 1, 178
+
+230679946368: Memory Regions:
+	base = 3ffc2fe, 26.6832, 24, 219
+	base = 3ffc301, 147.48, 11, 215
+	base = 3ffc2fd, 23, 15, 207
+	base = 3ffc7b3, 0, 0, 206
+
+263478043008: Memory Regions:
+	base = 3ffc39c, 38.7697, 7, 232
+	base = 3ffc38d, 45.6541, 7, 231
+	base = 3ffc3a0, 23, 2, 229
+	base = 3ffd599, 0, 0, 227
+
+296276139648: Memory Regions:
+	base = 3ffc2f5, 23, 2, 181
+	base = 3ffc2fc, 23, 1, 181
+	base = 3ffda20, 0, 0, 180
+	base = 3ffc32b, 0, 0, 180
+
+
+starting kernel
+-- epoch 1 1 --> push
+-- epoch 2 1 --> push
+-- epoch 3 3049 --> push
+-- epoch 4 5874250 --> push
+-- epoch 5 62092163 --> push
+-- epoch 6 82182811 --> push
+-- epoch 7 6118560 --> push
+-- epoch 8 607869 --> push
+-- epoch 9 131076 --> push
+-- epoch 10 45546 --> push
+-- epoch 11 16025 --> push
+-- epoch 12 5123 --> push
+-- epoch 13 1043 --> push
+-- epoch 14 221 --> push
+-- epoch 15 226 --> push
+-- epoch 16 27 --> push
+-- epoch 17 10 --> push
+-- epoch 18 4 --> push
+ending kernel
+
+total kernel computation time: 37564.908039
+user time: 37507.990000
+kernel time: 2.050000
+footprint: start = 31558912KB, end = 32690560KB, diff = 1131648KB
+page reclaims: 294890
+page faults: 595
+swaps: 0
+Writing output to file!
+Total Accesses = 323392425919

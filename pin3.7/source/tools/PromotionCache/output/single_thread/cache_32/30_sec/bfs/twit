@@ -1,0 +1,78 @@
+12 arguments, path = /home/aninda/optimizing-huge-page-utility/applications/pin_source/bfs/main, exec = main
+ACCESS INTERVAL = 1093269888, PROMOTION CACHE SIZE = 32, FACTOR = 30
+Routine = _Z9pin_startv
+Routine = _Z7pin_endv
+Nodes: 52579682, Edges: 1963263821
+reading byte length of:    210318732
+reading byte length of:    7853055284
+Reading graph elapsed time: 1028.02s
+
+Memory Regions:
+NODE_ARRAY: starting base = 3fffe34, ending base = 3fffefd
+EDGE_ARRAY: starting base = 3ffe0f3, ending base = 3fffe35
+PROP_ARRAY: starting base = 3ffe02a, ending base = 3ffe0f4
+IN_WL: starting base = 3ffde99, ending base = 3ffe02b
+OUT_WL: starting base = 3ffdd08, ending base = 3ffde9a
+
+
+1093269888: Memory Regions:
+	base = 3ffe031, 43.1224, 4953, 251
+	base = 3ffe030, 33.8845, 1971, 241
+	base = 3ffe032, 26.9981, 4350, 207
+	base = 3ffe035, 62.9105, 3055, 204
+	base = 3ffe033, 24.1995, 3482, 185
+	base = 3ffe034, 24.3865, 3388, 167
+	base = 3ffe036, 23.3365, 2721, 164
+	base = 3ffe039, 25.2978, 450, 161
+	base = 3ffe02f, 55.2628, 2412, 159
+	base = 3ffe03a, 29.7679, 409, 146
+	base = 3ffe03b, 21.2127, 389, 142
+	base = 3ffe037, 17.5245, 376, 141
+	base = 3ffe03c, 24.2551, 339, 128
+	base = 3ffe02e, 24.5734, 2879, 95
+	base = 3ffe038, 23.8403, 65, 65
+	base = 3ffe02d, 47.1801, 1338, 57
+	base = 3ffe02c, 45.1105, 1541, 31
+	base = 3ffe3a2, 7793.05, 25, 11
+	base = 3ffe02b, 68.7041, 1683, 9
+	base = 3ffe02a, 360.065, 1058, 3
+	base = 3ffdea2, 0, 0, 0
+	base = 3ffe043, 1037.91, 24, 0
+	base = 3ffe05c, 19.3342, 8, 0
+	base = 3ffe03f, 1727.26, 18, 0
+	base = 3ffe044, 18.5127, 13, 0
+	base = 3ffe05e, 28.5, 3, 0
+	base = 3ffe060, 17.85, 3, 0
+	base = 3ffe062, 28.5, 3, 0
+	base = 3ffe04b, 24.9301, 9, 0
+	base = 3ffe052, 31.5, 6, 0
+	base = 3ffe059, 16.35, 3, 0
+	base = 3ffe05f, 16.5, 2, 0
+
+
+starting kernel
+-- epoch 1 1 --> push
+-- epoch 2 1 --> push
+-- epoch 3 3049 --> push
+-- epoch 4 4067065 --> push
+-- epoch 5 20738927 --> push
+-- epoch 6 23620241 --> push
+-- epoch 7 756666 --> push
+-- epoch 8 41624 --> push
+-- epoch 9 2571 --> push
+-- epoch 10 172 --> push
+-- epoch 11 10 --> push
+-- epoch 12 2 --> push
+-- epoch 13 1 --> push
+-- epoch 14 1 --> push
+-- epoch 15 1 --> push
+ending kernel
+
+total kernel computation time: 1942.272799
+user time: 1895.910000
+kernel time: 2.740000
+footprint: start = 16220620KB, end = 16570220KB, diff = 349600KB
+page reclaims: 98995
+page faults: 0
+swaps: 0
+Total Accesses = 30513870464

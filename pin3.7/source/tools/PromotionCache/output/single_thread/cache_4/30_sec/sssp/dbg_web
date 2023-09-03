@@ -1,0 +1,256 @@
+12 arguments, path = /home/aninda/optimizing-huge-page-utility/applications/pin_source/sssp/main, exec = main
+ACCESS INTERVAL = 902036450, PROMOTION CACHE SIZE = 4, FACTOR = 30
+Routine = _Z9pin_startv
+Routine = _Z7pin_endv
+Nodes: 94946569, Edges: 1937489265
+reading byte length of:    379786280
+reading byte length of:    7749957060
+reading byte length of:    7749957060
+Reading graph elapsed time: 2555.2s
+
+Memory Regions:
+NODE_ARRAY: starting base = 3fffd92, ending base = 3fffefd
+EDGE_ARRAY: starting base = 3ffe0b3, ending base = 3fffd93
+EDGE_VALUES: starting base = 3ffc3d4, ending base = 3ffe0b4
+PROP_ARRAY: starting base = 3ffc26a, ending base = 3ffc3d5
+IN_WL: starting base = 3ffbb57, ending base = 3ffc26b
+OUT_WL: starting base = 3ffb444, ending base = 3ffbb58
+
+
+902036450: Memory Regions:
+	base = 3ffc271, 35.7843, 77, 189
+	base = 3ffc270, 33.1753, 60, 146
+	base = 3ffc26e, 42.6711, 159, 127
+	base = 3ffc26f, 31.5884, 64, 121
+
+27963129950: Memory Regions:
+	base = 3ffc340, 25.5678, 11, 230
+	base = 3ffc341, 24.6767, 6, 228
+	base = 3ffc339, 28.4325, 22, 227
+	base = 3ffc33a, 23, 14, 225
+
+55024223450: Memory Regions:
+	base = 3ffc26a, 51.9452, 14, 186
+	base = 3ffc26c, 437.443, 9, 180
+	base = 3ffc26b, 299.742, 7, 179
+	base = 3ffc3b9, 36.5, 2, 174
+
+82085316950: Memory Regions:
+	base = 3fffe85, 40.77, 3, 254
+	base = 3fffe81, 45.1377, 9, 253
+	base = 3ffc33e, 23, 1, 253
+	base = 3ffc27a, 0, 0, 252
+
+109146410450: Memory Regions:
+	base = 3ffc26d, 24.863, 6, 149
+	base = 3ffc27f, 23, 4, 148
+	base = 3ffc28e, 23, 1, 146
+	base = 3ffc29c, 0, 0, 145
+
+136207503950: Memory Regions:
+	base = 3fffdb1, 860.566, 19, 194
+	base = 3ffc32f, 23, 3, 185
+	base = 3ffdba0, 0, 0, 184
+	base = 3fff87f, 0, 0, 184
+
+163268597450: Memory Regions:
+	base = 3ffc336, 25.3, 2, 169
+	base = 3fff111, 759, 1, 168
+	base = 3ffd432, 759, 1, 168
+	base = 3fffd95, 0, 0, 167
+
+190329690950: Memory Regions:
+	base = 3fffd93, 206719, 9819, 139
+	base = 3ffca8c, 202397, 65, 39
+	base = 3ffe76b, 281431, 50, 32
+	base = 3ffc967, 0, 0, 23
+
+217390784450: Memory Regions:
+	base = 3ffc280, 8555.13, 5, 214
+	base = 3ffc2ce, 8181.67, 3, 214
+	base = 3ffc276, 85.56, 3, 213
+	base = 3ffd951, 0, 0, 211
+
+244451877950: Memory Regions:
+	base = 3ffc273, 186.031, 201, 229
+	base = 3ffc272, 349.361, 328, 172
+	base = 3ffed95, 11498.1, 34, 37
+	base = 3ffd0b6, 11498.1, 34, 37
+
+271512971450: Memory Regions:
+	base = 3ffd3fa, 4647.61, 5, 200
+	base = 3fff0d8, 4947.1, 2, 197
+	base = 3fff0d9, 5432.1, 2, 197
+	base = 3fff0d6, 1851.84, 3, 196
+
+298574064950: Memory Regions:
+	base = 3ffe624, 10228.7, 20, 159
+	base = 3ffc945, 10228.7, 20, 159
+	base = 3ffc3a1, 0, 0, 139
+	base = 3ffc274, 801.907, 5, 139
+
+325635158450: Memory Regions:
+	base = 3ffc39a, 33.603, 4, 211
+	base = 3ffc390, 82.6935, 6, 209
+	base = 3ffc39f, 27.6, 2, 209
+	base = 3ffd02d, 0, 0, 208
+
+352696251950: Memory Regions:
+	base = 3ffce6d, 2833.6, 3, 233
+	base = 3ffeb4c, 11776, 2, 232
+	base = 3ffc38d, 91.0639, 5, 231
+	base = 3ffc398, 34.27, 3, 231
+
+
+starting kernel
+-- epoch 1 1 --> push
+-- epoch 2 1 --> push
+-- epoch 3 9 --> push
+-- epoch 4 1310135 --> push
+-- epoch 5 33070643 --> push
+-- epoch 6 162352234 --> push
+-- epoch 7 75226634 --> push
+-- epoch 8 15154259 --> push
+-- epoch 9 7475148 --> push
+-- epoch 10 4441276 --> push
+-- epoch 11 2274243 --> push
+-- epoch 12 971529 --> push
+-- epoch 13 479525 --> push
+-- epoch 14 312153 --> push
+-- epoch 15 256349 --> push
+-- epoch 16 207398 --> push
+-- epoch 17 158470 --> push
+-- epoch 18 129853 --> push
+-- epoch 19 108510 --> push
+-- epoch 20 81587 --> push
+-- epoch 21 65548 --> push
+-- epoch 22 47580 --> push
+-- epoch 23 35576 --> push
+-- epoch 24 26256 --> push
+-- epoch 25 19164 --> push
+-- epoch 26 13873 --> push
+-- epoch 27 9590 --> push
+-- epoch 28 6575 --> push
+-- epoch 29 4591 --> push
+-- epoch 30 3070 --> push
+-- epoch 31 2255 --> push
+-- epoch 32 1543 --> push
+-- epoch 33 1076 --> push
+-- epoch 34 857 --> push
+-- epoch 35 694 --> push
+-- epoch 36 528 --> push
+-- epoch 37 389 --> push
+-- epoch 38 313 --> push
+-- epoch 39 242 --> push
+-- epoch 40 191 --> push
+-- epoch 41 168 --> push
+-- epoch 42 153 --> push
+-- epoch 43 156 --> push
+-- epoch 44 143 --> push
+-- epoch 45 146 --> push
+-- epoch 46 141 --> push
+-- epoch 47 128 --> push
+-- epoch 48 129 --> push
+-- epoch 49 123 --> push
+-- epoch 50 125 --> push
+-- epoch 51 134 --> push
+-- epoch 52 119 --> push
+-- epoch 53 105 --> push
+-- epoch 54 100 --> push
+-- epoch 55 92 --> push
+-- epoch 56 92 --> push
+-- epoch 57 99 --> push
+-- epoch 58 102 --> push
+-- epoch 59 96 --> push
+-- epoch 60 76 --> push
+-- epoch 61 72 --> push
+-- epoch 62 77 --> push
+-- epoch 63 75 --> push
+-- epoch 64 68 --> push
+-- epoch 65 71 --> push
+-- epoch 66 56 --> push
+-- epoch 67 49 --> push
+-- epoch 68 55 --> push
+-- epoch 69 67 --> push
+-- epoch 70 60 --> push
+-- epoch 71 72 --> push
+-- epoch 72 82 --> push
+-- epoch 73 63 --> push
+-- epoch 74 59 --> push
+-- epoch 75 54 --> push
+-- epoch 76 50 --> push
+-- epoch 77 42 --> push
+-- epoch 78 51 --> push
+-- epoch 79 61 --> push
+-- epoch 80 42 --> push
+-- epoch 81 41 --> push
+-- epoch 82 38 --> push
+-- epoch 83 41 --> push
+-- epoch 84 41 --> push
+-- epoch 85 47 --> push
+-- epoch 86 36 --> push
+-- epoch 87 43 --> push
+-- epoch 88 41 --> push
+-- epoch 89 34 --> push
+-- epoch 90 24 --> push
+-- epoch 91 19 --> push
+-- epoch 92 18 --> push
+-- epoch 93 18 --> push
+-- epoch 94 18 --> push
+-- epoch 95 18 --> push
+-- epoch 96 18 --> push
+-- epoch 97 18 --> push
+-- epoch 98 18 --> push
+-- epoch 99 18 --> push
+-- epoch 100 18 --> push
+-- epoch 101 17 --> push
+-- epoch 102 16 --> push
+-- epoch 103 13 --> push
+-- epoch 104 12 --> push
+-- epoch 105 5 --> push
+-- epoch 106 4 --> push
+-- epoch 107 3 --> push
+-- epoch 108 3 --> push
+-- epoch 109 3 --> push
+-- epoch 110 3 --> push
+-- epoch 111 3 --> push
+-- epoch 112 3 --> push
+-- epoch 113 2 --> push
+-- epoch 114 2 --> push
+-- epoch 115 2 --> push
+-- epoch 116 2 --> push
+-- epoch 117 2 --> push
+-- epoch 118 2 --> push
+-- epoch 119 2 --> push
+-- epoch 120 2 --> push
+-- epoch 121 2 --> push
+-- epoch 122 2 --> push
+-- epoch 123 2 --> push
+-- epoch 124 2 --> push
+-- epoch 125 2 --> push
+-- epoch 126 2 --> push
+-- epoch 127 2 --> push
+-- epoch 128 3 --> push
+-- epoch 129 3 --> push
+-- epoch 130 2 --> push
+-- epoch 131 2 --> push
+-- epoch 132 2 --> push
+-- epoch 133 2 --> push
+-- epoch 134 1 --> push
+-- epoch 135 1 --> push
+-- epoch 136 1 --> push
+-- epoch 137 1 --> push
+-- epoch 138 1 --> push
+-- epoch 139 1 --> push
+-- epoch 140 1 --> push
+ending kernel
+
+total kernel computation time: 23757.420267
+user time: 23587.330000
+kernel time: 10.260000
+footprint: start = 31818160KB, end = 33679372KB, diff = 1861212KB
+page reclaims: 477178
+page faults: 0
+swaps: 0
+Writing output to file!
+Total Accesses = 358570730388
