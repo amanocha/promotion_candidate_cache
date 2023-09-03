@@ -1,34 +1,7 @@
-import argparse
-import numpy as np
-import math
-import os
-import re
-import sys
-
-vp = ["bfs", "sssp", "pagerank"]
-parsec = ["canneal", "dedup"]
-spec = ["mcf", "omnetpp", "xalancbmk"]
-npb = ["CG", "BT"]
+from offset import *
 
 # ARGS
-MODE = ""
-PERCENT = 100
 POLICY = 0
-
-HUGE_PAGE_SIZE = 2*1024*1024
-NUM_4KB = 512
-KB_SIZE = 1024
-PROMOTION_DIR = "promotion/"
-OFFSET = 0
-
-total_num_huge_pages = 0
-promotion_limit = 0
-
-cache_match_str = "\tbase = (\w+), (\d+\.*\d*(?:e\+\d+)?), (\d+)(?:, (\d+))?"
-hawkeye_match_str = "\tbase = (\w+), (\d+), bucket = (\d+)"
-
-MAX_DIST = 0
-MAX_FREQ = 0
 
 unique_candidates = []
 to_promote = []
@@ -161,26 +134,24 @@ def process_file(filename):
 if __name__ == "__main__":
     filename = sys.argv[1]
     app = filename.split("/")[-2]
-    app = "other"
     dataset = filename.split("/")[-1]
 
-    if (len(sys.argv) > 2):
-        MODE = sys.argv[2]
-        num_threads = MODE.split("_")[-1]
-        if (len(sys.argv) > 3):
-            PERCENT = int(sys.argv[3])
-            if (len(sys.argv) > 4):
-                POLICY = int(sys.argv[4])
-    PROMOTION_DIR = app + "/promotion_" + MODE + "_" + str(PERCENT) + "_" + str(POLICY) + "/"
-    print("MODE = " + MODE + ", PERCENT = " + str(PERCENT) + ", POLICY = " + str(POLICY) + ", OUTPUT DIR = " + str(PROMOTION_DIR))
+    mode = "cache" if "pcc" in filename else "other"
+    offset = get_offset(app, dataset)
+    policy = 0
 
-    if app in vp or app == "canneal":
-        if num_threads == "16":
-            OFFSET = 191
-        else:
-            OFFSET = 190
-    else: # dedup, mcf, omnetpp, xalancbmk
-        OFFSET = 0
+    if (len(sys.argv) > 2):
+        mode = sys.argv[2]
+        num_threads = mode.split("_")[-1]
+        if (len(sys.argv) > 3):
+            percent = int(sys.argv[3])
+            if (len(sys.argv) > 4):
+                policy = int(sys.argv[4])
+    
+    PROMOTION_DIR = filename.replace("output/", "output/promotion_data/").replace(dataset, "")
+
+    print("mode = " + mode + ", offset = " + str(offset) + ", promotion percent = " + str(percent) + ", policy = " + str(policy) + ", promotion directory = " + PROMOTION_DIR + "\n")
+
 
     if (not os.path.isdir(PROMOTION_DIR)):
         os.mkdir(PROMOTION_DIR)
@@ -189,10 +160,9 @@ if __name__ == "__main__":
     stats_file = open(promotion_filename + "_stats", "w+")
 
     process_file(filename)
-    #rank_promotions()
 
     stats_file.write("Total num of candidates: " + str(total_num_huge_pages) + "\n")
-    if ("cache" in MODE):
+    if (mode == "cache"):
         stats_file.write("Max reuse distance: " + str(MAX_DIST) + "\nMax freq: " + str(MAX_FREQ) + "\n")
 
     promotion_file.close()

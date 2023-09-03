@@ -1,14 +1,5 @@
 from offset import *
 
-total_num_huge_pages = 0
-promotion_limit = 0
-
-cache_match_str = "\tbase = (\w+), (\d+\.*\d*(?:e\+\d+)?), (\d+)(?:, (\d+))?"
-hawkeye_match_str = "\tbase = (\w+), (\d+\.*\d*(?:e\+\d+)?), bucket = (\d+)"
-
-MAX_DIST = 0
-MAX_FREQ = 0
-
 def write_promotions(candidates):
     done_promoting = False
     unique_candidates = []
@@ -56,20 +47,14 @@ def process_file(filename):
             footprint_match = re.match("footprint: start = (\d+)KB, end = (\d+)KB, diff = (\d+)KB", line)
             if footprint_match != None:
                 size = int(footprint_match.group(2))*KB_SIZE
-
+            
             time_match = re.match("(\d+): Memory Regions(?: \(Cache #(\d+)\))?:", line)
             if time_match != None:
                 time = int(time_match.group(1))
 
-                #rank_promotions()
-                #rank_list = []
-                #print("\nTIME = " + str(time))
-            
             match_str = cache_match_str if mode == "cache" else hawkeye_match_str
             match = re.match(match_str, line)
             if match != None and reading == True:
-                total_num_huge_pages += 1
-
                 if mode == "cache":
                     addr = int(match.group(1), 16)
                     dist = float(match.group(2))
@@ -92,6 +77,12 @@ def process_file(filename):
                     if time not in candidates:
                         candidates[time] = []
                     candidates[time].append(addr)
+                
+        if size == 0:
+            if dataset in footprints:
+                size = footprints[dataset]*KB_SIZE
+            else:
+                print("Footprint for " + dataset + " not found!")
 
         total_num_huge_pages = int((size+HUGE_PAGE_SIZE-1)/HUGE_PAGE_SIZE)
         promotion_limit = int(total_num_huge_pages*percent/100)
@@ -107,8 +98,7 @@ if __name__ == "__main__":
     dataset = filename.split("/")[-1]
 
     mode = "cache" if "pcc" in filename else "other"
-    
-    offset = get_offset(app)
+    offset = get_offset(app, dataset)
 
     if (len(sys.argv) > 2):
         percent = int(sys.argv[2])

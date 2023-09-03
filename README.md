@@ -81,11 +81,13 @@ Then execute `sudo bash setup.sh`.
 
 ### Characterizing Reuse Distance
 
-You can configure TLB size by modifying line 4 in `run.sh`:
+Navigate to `applications/reuse/`. You can configure TLB size by modifying line 4 in `run.sh`:
 
     TLB_SIZE=1024
 
 Then execute `bash run.sh`. 
+
+### Simulation
 
 ## Results
 

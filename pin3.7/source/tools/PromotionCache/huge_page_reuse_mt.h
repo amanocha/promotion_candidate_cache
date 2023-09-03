@@ -2,18 +2,11 @@
 #include <boost/tuple/tuple.hpp>
 #include <stdatomic.h>
 
-#define HUGE_PAGE_SIZE 2097152
 #define EVICTION_POLICY 2
 #define TRACK_REUSE 1
 
-double alpha = 0.9;
-unsigned long ACCESS_INTERVAL = 1000000000;
-unsigned int PROMOTION_CACHE_SIZE = 512;
-unsigned int FACTOR = 30;
-
 /********** SHARED VARIABLES **********/
-unsigned long total_num_accesses = 0, num_2mb_ptw = 0;
-unordered_map<uint64_t, unsigned long> promotions;
+unordered_map<uint64_t, unsigned long> pcc_promotions;
 bool l1_4k_dirty_evict, l1_2m_dirty_evict, l2_dirty_evict;
 int64_t l1_4k_evicted_tag, l1_2m_evicted_tag, l2_evicted_tag;
 uint64_t l1_4k_evicted_offset, l1_2m_evicted_offset, l2_evicted_offset, evicted_addr;
@@ -54,8 +47,8 @@ void summarize_promotions(unsigned int tid) {
     cache_freq = promotion_caches[tid]->getFreq(base*PAGE_SIZE);
     cout << "\tbase = " << hex << base << dec << ", " << reuse_dist << ", " << freq << ", " << cache_freq << endl;
         
-    if (promotions.find(base) == promotions.end() && cache_freq > 0) {
-        atomic_store((atomic_ulong*) &promotions[base], 0);
+    if (pcc_promotions.find(base) == pcc_promotions.end() && cache_freq > 0) {
+        atomic_store((atomic_ulong*) &pcc_promotions[base], 0);
 	      reuse_maps[tid].erase(base);
 	      for (int i = 0; i < HUGE_PAGE_SIZE/PAGE_SIZE; i++) {
 	          addr = base*HUGE_PAGE_SIZE + i*PAGE_SIZE;
@@ -66,12 +59,12 @@ void summarize_promotions(unsigned int tid) {
         }
 	      promotion_caches[tid]->evict(base*PAGE_SIZE, &l1_2m_dirty_evict);
     } else {
-      atomic_fetch_add((atomic_ulong*) &promotions[base], 1);
+      atomic_fetch_add((atomic_ulong*) &pcc_promotions[base], 1);
     }
   }
 }
 
-void track_access(uint64_t vaddr, unsigned int tid, bool print=false) {
+void pcc_track_access(uint64_t vaddr, unsigned int tid, bool print=false) {
   uint64_t base;
 
   atomic_fetch_add((atomic_ulong*) &total_num_accesses, 1);
@@ -94,7 +87,7 @@ void track_access(uint64_t vaddr, unsigned int tid, bool print=false) {
       l2_hit = l2_tlbs[tid]->access(vaddr, true, true);
 
       if (!l2_hit) { // L2 2M TLB miss
-        is_2m = promotions.find(base) != promotions.end(); // promoted
+        is_2m = pcc_promotions.find(base) != pcc_promotions.end(); // promoted
         l2_tlbs[tid]->insert(vaddr, true, &l2_dirty_evict, &l2_evicted_tag, &l2_evicted_offset, is_2m);
 
         if (is_2m) l1_tlb_2ms[tid]->insert(vaddr, true, &l1_2m_dirty_evict, &l1_2m_evicted_tag, &l1_2m_evicted_offset);
@@ -119,7 +112,7 @@ void track_access(uint64_t vaddr, unsigned int tid, bool print=false) {
     return;
   } else {
     /********** START: promotion cache logic **********/
-    is_2m = promotions.find(base) != promotions.end();
+    is_2m = pcc_promotions.find(base) != pcc_promotions.end();
     res = promotion_caches[tid]->access(base*PAGE_SIZE, true, is_2m);
     if (!res) {
       if (is_2m && boost::get<0>(reuse_maps[tid][base]) != 0) atomic_fetch_add((atomic_ulong*) &num_2mb_ptw, 1); //cout << base << " --> 2MB PTW" << endl;
@@ -154,7 +147,7 @@ void track_access(uint64_t vaddr, unsigned int tid, bool print=false) {
       << ", diff = " << (reuse_dist-ema) << endl;
 
     if (ema == 0) ema = reuse_dist;
-    else ema = ema*alpha + reuse_dist*(1-alpha);
+    else ema = ema*ALPHA + reuse_dist*(1-ALPHA);
     sum_sq += pow((ema-reuse_dist), 2);
     num_data_pts++;
 

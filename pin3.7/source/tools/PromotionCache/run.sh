@@ -14,7 +14,7 @@ APPS_DIR=${HOME_DIR}/applications/
 DATA_DIR=${HOME_DIR}/data/
 
 PCC_SIZE=128
-INTERVAL_FACTOR=1
+INTERVAL_FACTOR=30
 
 # ----- APPLICATIONS -----
 vp_apps=(bfs sssp pagerank)
@@ -26,8 +26,10 @@ apps=("${vp_apps[@]}" "${other_apps[@]}")
 datasets=(Kronecker_25 Twitter Sd1_Arc DBG_Kronecker_25 DBG_Twitter DBG_Sd1_Arc)
 datasets=(Kronecker_21)
 dataset_names=(kron25 twit web dbg_kron25 dbg_twit dbg_web)
+dataset_names=(kron21)
 start_seeds=(0 0 0 3287496 15994127 18290613)
 intervals=(732856447 1093269888 827860087 1379256614 1096522560 902036450 1613872676 1604682443)
+intervals=(73285644)
 
 other_datasets=(canneal_native.in dedup_native.in mcf_speed_inp.in omnetpp.ini t5.xml)
 other_intervals=(1174268969 2602817674 981555542 1023238603 1362895757)
@@ -36,6 +38,8 @@ footprints=(1 2 4 8 16 32 64 100)
 pcc_sizes=(4 8 16 32 64 128 256 512 1024)
 
 compile_apps() {
+  clean_apps
+
   echo "COMPILING GRAPH APPLICATIONS"
 
   for a in ${!vp_apps[@]}
@@ -57,6 +61,67 @@ compile_apps() {
     cd ${APPS_DIR}launch/${app}/
     echo $app ": make"
     make
+  done
+
+  echo ""
+}
+
+compile_mt_apps() {
+  clean_mt_apps
+
+  echo "COMPILING GRAPH APPLICATIONS"
+
+  for a in ${!vp_apps[@]}
+  do
+    app=${vp_apps[$a]}
+    echo ""
+
+    cd ${APPS_DIR}pin_source/parallel/${app}/
+    echo $app ": make"
+    make
+  done
+
+  echo ""
+}
+
+clean_apps() {
+  echo "CLEANING GRAPH APPLICATIONS"
+
+  for a in ${!vp_apps[@]}
+  do
+    app=${vp_apps[$a]}
+    echo ""
+
+    cd ${APPS_DIR}pin_source/${app}/
+    echo $app ": make clean"
+    make clean
+  done
+
+  echo "CLEANING OTHER APPLICATIONS"
+  for a in ${!other_apps[@]}
+  do
+    app=${other_apps[$a]}
+    echo ""
+
+    cd ${APPS_DIR}launch/${app}/
+    echo $app ": make clean"
+    make clean
+  done
+
+  echo ""
+}
+
+clean_mt_apps() {
+  echo "CLEANING GRAPH APPLICATIONS"
+
+  for a in ${!vp_apps[@]}
+  do
+    app=${vp_apps[$a]}
+    echo ""
+
+    cd ${APPS_DIR}pin_source/parallel/${app}/
+    echo $app ": make clean"
+    make clean
   done
 
   echo ""
@@ -108,8 +173,8 @@ parse_promotions() {
     
     if [ ! -f output/promotion_data/single_thread/${type}/${dir}/${filename}_${footprint} ]
     then
-      echo "python get_promotions.py output/single_thread/${type}/$dir/$filename $footprint"
-      #python get_promotions.py output/single_thread/${type}/$dir/$filename $footprint
+      echo "python get_promotions.py output/single_thread/${type}/${dir}/${filename} $footprint"
+      #python get_promotions.py output/single_thread/${type}/${dir}/${filename} $footprint
     fi
   done
 }
@@ -120,11 +185,11 @@ parse_demotions() {
   pcc_size=$3
   access_time=$4
 
-  type=${MODE}_${pcc_size}/${access_time}_sec/$app
-  if [ ! -f output/demotion_data/single_thread/${type}/$filename ]
+  type=${MODE}_${pcc_size}/${access_time}_sec
+  if [ ! -f output/demotion_data/single_thread/${type}/${app}/${filename} ]
   then
-    echo "python get_demotions.py output/single_thread/${type}/$filename"
-    #python get_demotions.py output/single_thread/${type}/$filename
+    echo "python get_demotions.py output/single_thread/${type}/${app}/${filename}"
+    #python get_demotions.py output/single_thread/${type}/${app}/${filename}
   fi
 }
 
@@ -132,17 +197,18 @@ parse_promotions_mt() {
   dir=$1
   filename=$2
   pcc_size=$3
-  threads=$4
-  policy=$5
+  access_time=$4
+  threads=$5
+  policy=$6
 
   for f in ${!footprints[@]}
   do
     footprint=${footprints[$f]}
-    type=${MODE}_${pcc_size}_${threads}
-    if [ ! -f $dir/promotion_${type}_${footprint}_${policy}/$filename ]
+    type=${MODE}_${pcc_size}_${threads}/${access_time}_sec
+    if [ ! -f output/promotion_data/multithread/${type}_${footprint}_${policy}/$filename ]
     then
       echo "python get_promotions_mt.py output/multithread/${type}/$dir/$filename $type $footprint $policy"
-      python get_promotions_mt.py output/multithread/${type}/$dir/$filename $type $footprint $policy
+      #python get_promotions_mt.py output/multithread/${type}/$dir/$filename $type $footprint $policy
     fi
   done
 }
@@ -165,7 +231,7 @@ num_accesses() {
       for d in ${!datasets[@]}
       do
         dataset=${datasets[$d]}
-        filename=${EXP_DIR}access_output/${:[$d]}
+        filename=${EXP_DIR}access_output/${datasets[$d]}
         start_seed=${start_seeds[$d]}
         app_command="${APPS_DIR}pin_source/${app}/main ${DATA_DIR}$dataset/ $start_seed"
 
@@ -234,7 +300,7 @@ launch() {
       fi
 
       filename=${result_dir}other/${app}
-      access_interval=${other_intervals[$a]}
+      access_interval=${other_intervals[$idx]}
 
       app_command="${APPS_DIR}launch/${app}/${app} ${DATA_DIR}${app}/${dataset} 0 $MODE $access_interval $PCC_SIZE $INTERVAL_FACTOR"
       
@@ -266,9 +332,9 @@ launch() {
 sensitivity() {
   echo "SENSITIVITY"
 
-  for a in ${!apps[@]}
+  for a in ${!vp_apps[@]}
   do
-    app=${apps[$a]}
+    app=${vp_apps[$a]}
     echo ""
 
     for d in ${!datasets[@]}
@@ -278,15 +344,13 @@ sensitivity() {
       for s in ${!pcc_sizes[@]}
       do
         pcc_size=${pcc_sizes[$s]}
-        dir_name=pcc_$pcc_size
-        result_dir=${EXP_DIR}output/single_thread/${dir_name}/${INTERVAL_FACTOR}_sec/$app
-        filename=${result_dir}/${dataset_names[$d]}
+        result_dir=${EXP_DIR}output/single_thread/${MODE}_${pcc_size}/${INTERVAL_FACTOR}_sec/
+        filename=${result_dir}$app/${dataset_names[$d]}
         start_seed=${start_seeds[$d]}
         access_interval=${intervals[$d]}
         
-        if [ ! -d $result_dir ]
-        then
-          mkdir -p $result_dir
+        if [[ ! -d ${result_dir}${app} ]]; then
+          mkdir -p "${result_dir}${app}"
         fi
 
         app_command="${APPS_DIR}pin_source/$app/main ${DATA_DIR}$dataset/ $start_seed $MODE $access_interval $pcc_size $INTERVAL_FACTOR"
@@ -301,9 +365,9 @@ sensitivity() {
 multithread() {
   echo "MULTITHREAD"
 
-  for a in ${!apps[@]}
+  for a in ${!vp_apps[@]}
   do
-    app=${apps[$a]}
+    app=${vp_apps[$a]}
     echo ""
 
     for d in ${!datasets[@]}
@@ -312,23 +376,22 @@ multithread() {
 
       for ((t=2; t<=16; t*=2))
       do
-        dir_name=pcc_${size}_${t}
-        filename=${EXP_DIR}output/multithread/${dir_name}/$app/${dataset_names[$d]}
+        result_dir=${EXP_DIR}output/multithread/${MODE}_${PCC_SIZE}_${t}/${INTERVAL_FACTOR}_sec/
+        filename=${result_dir}$app/${dataset_names[$d]}
         start_seed=${start_seeds[$d]}
         access_interval=${intervals[$d]}
         
-        if [ ! -d ${EXP_DIR}output/multithread/${dir_name}/$app ]
-        then
-          mkdir ${EXP_DIR}output/multithread/${dir_name}/$app
+        if [[ ! -d ${result_dir}${app} ]]; then
+          mkdir -p "${result_dir}${app}"
         fi
 
-        app_command="${APPS_DIR}pin_source/parallel/$app/$app ${DATA_DIR}$dataset/ $start_seed $t $access_interval $size"
+        app_command="${APPS_DIR}pin_source/parallel/$app/$app ${DATA_DIR}$dataset/ $start_seed $t $access_interval $PCC_SIZE $INTERVAL_FACTOR"
 
         run_pin $filename "$app_command" true
 
         for p in {0..1}
         do
-          parse_promotions_mt $app ${dataset_names[$d]} $size $t $p
+          parse_promotions_mt $app ${dataset_names[$d]} $PCC_SIZE $INTERVAL_FACTOR $t $p
         done
       done
     done 
@@ -353,7 +416,7 @@ elif [[ "${EXP_TYPE}" == "sensitivity" ]]; then
   compile_apps
   sensitivity
 elif [[ "${EXP_TYPE}" == "multithread" ]]; then
-  compile_apps
+  compile_mt_apps
   multithread
 else
   echo "Invalid experiment type"

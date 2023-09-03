@@ -6,9 +6,7 @@ TLB_SIZE=1024
 apps=(bfs sssp pagerank)
 
 datasets=(Kronecker_25 Twitter Sd1_Arc DBG_Kronecker_25 DBG_Twitter DBG_Sd1_Arc)
-datasets=(Kronecker_21)
 dataset_names=(kron25 twit web dbg_kron25 dbg_twit dbg_web)
-dataset_names=(kron21)
 start_seed=(0 0 0 3287496 15994127 18290613)
 
 num_nodes=(1 512 262144)

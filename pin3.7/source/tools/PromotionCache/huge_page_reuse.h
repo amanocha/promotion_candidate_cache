@@ -4,8 +4,6 @@
 #define EVICTION_POLICY 2
 #define TRACK_REUSE 1
 
-unsigned int PROMOTION_CACHE_SIZE = 128;
-unsigned long num_2mb_ptw = 0;
 unordered_map<uint64_t, boost::tuple<unsigned long, double, unsigned long, double>> reuse_map;
 unordered_map<uint64_t, unsigned short> pcc_promotions;
 
@@ -45,8 +43,8 @@ void summarize_promotions() {
 	      for (int i = 0; i < HUGE_PAGE_SIZE/PAGE_SIZE; i++) {
 	          addr = base*HUGE_PAGE_SIZE + i*PAGE_SIZE;
 	          res = l1_tlb_4k->access(addr, true, false);
-                  if (res) l1_tlb_4k->evict(addr, &l1_4k_dirty_evict, false);
-                  res = l2_tlb->access(addr, true, false);
+            if (res) l1_tlb_4k->evict(addr, &l1_4k_dirty_evict, false);
+            res = l2_tlb->access(addr, true, false);
 	          if (res) l2_tlb->evict(addr, &l2_dirty_evict);
         }
     } else if (pcc_promotions.find(base) != pcc_promotions.end()) { // demotion
@@ -69,9 +67,11 @@ void pcc_track_access(uint64_t vaddr, bool print=false) {
 
     total_num_accesses++;
     
-    if (total_num_accesses % (FACTOR*ACCESS_INTERVAL) == ACCESS_INTERVAL) {
+    if ((FACTOR > 1) && (total_num_accesses % (FACTOR*ACCESS_INTERVAL) == ACCESS_INTERVAL)) {
       summarize_promotions();
-     }
+    } else if (total_num_accesses % (FACTOR*ACCESS_INTERVAL) == 0) {
+      summarize_promotions();
+    } 
     base = (uint64_t) (vaddr/HUGE_PAGE_SIZE);
 
     /********** START: TLB hierarchy logic **********/

@@ -7,12 +7,24 @@ HUGE_PAGE_SIZE = 2*1024*1024
 NUM_4KB = 512
 KB_SIZE = 1024
 PROMOTION_DIR = "promotion/"
+DEMOTION_DIR = "demotion/"
 
 vp = ["bfs", "sssp", "pagerank"]
 parsec = ["canneal", "dedup"]
 spec = ["mcf", "omnetpp", "xalancbmk"]
 
-def get_offset(app, dataset) {
+footprints = {"canneal": 881016, "dedup": 857696, "mcf": 5046416, "omnetpp": 257752, "xalancbmk": 436740}
+
+cache_match_str = "\tbase = (\w+), (\d+\.*\d*(?:e\+\d+)?), (\d+)(?:, (\d+))?"
+hawkeye_match_str = "\tbase = (\w+), (\d+\.*\d*(?:e\+\d+)?), bucket = (\d+)"
+
+total_num_huge_pages = 0
+promotion_limit = 0
+
+MAX_DIST = 0
+MAX_FREQ = 0
+
+def get_offset(app, dataset):
     if app in vp:
         if app == "sssp":
             if "web" in dataset:
@@ -41,4 +53,3 @@ def get_offset(app, dataset) {
         offset = 0
 
     return offset
-}

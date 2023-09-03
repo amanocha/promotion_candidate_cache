@@ -1,28 +1,4 @@
-import argparse
-import numpy as np
-import math
-import os
-import re
-import sys
-
-vp = ["bfs", "sssp", "pagerank"]
-parsec = ["canneal", "dedup"]
-spec = ["mcf", "omnetpp", "xalancbmk"]
-
-HUGE_PAGE_SIZE = 2*1024*1024
-MODE = ""
-NUM_4KB = 512
-KB_SIZE = 1024
-DEMOTION_DIR = "demotion/"
-OFFSET = 0
-
-total_num_huge_pages = 0
-
-cache_match_str = "\tbase = (\w+), (\d+\.*\d*(?:e\+\d+)?), (\d+)(?:, (\d+))?"
-hawkeye_match_str = "\tbase = (\w+), (\d+\.*\d*(?:e\+\d+)?), bucket = (\d+)"
-
-MAX_DIST = 0
-MAX_FREQ = 0
+from offset import *
 
 def write_demotions(candidates):
     promoted_addr = []
@@ -71,12 +47,10 @@ def process_file(filename):
             if time_match != None:
                 time = int(time_match.group(1))
             
-            match_str = cache_match_str if "cache" in MODE else hawkeye_match_str
+            match_str = cache_match_str if mode == "cache" else hawkeye_match_str
             match = re.match(match_str, line)
             if match != None and reading == True:
-                total_num_huge_pages += 1
-
-                if "cache" in MODE:
+                if mode == "cache":
                     addr = int(match.group(1), 16)
                     dist = float(match.group(2))
                     freq = int(match.group(3))
@@ -100,6 +74,12 @@ def process_file(filename):
                         candidates[time] = []
                     candidates[time].append(addr)
 
+        if size == 0:
+            if dataset in footprints:
+                size = footprints[dataset]*KB_SIZE
+            else:
+                print("Footprint for " + dataset + " not found!")
+
         total_num_huge_pages = int((size+HUGE_PAGE_SIZE-1)/HUGE_PAGE_SIZE)
         print("Total footprint = " + str(total_num_huge_pages) + " huge pages")
         print("----------\n")
@@ -112,7 +92,9 @@ if __name__ == "__main__":
     app = filename.split("/")[-2]
     dataset = filename.split("/")[-1]
 
-    MODE = "cache" if "cache" in filename else "other"
+    mode = "cache" if "pcc" in filename else "other"
+
+    offset = get_offset(app, dataset)
     
     if app in vp:
         if app == "sssp":
@@ -149,8 +131,9 @@ if __name__ == "__main__":
                 OFFSET = int(sys.argv[4])
 
     DEMOTION_DIR = filename.replace("output/", "output/demotion_data/").replace(dataset, "")
-    print("MODE = " + MODE + ", OFFSET = " + str(OFFSET) + ", PROMOTION DIR = " + DEMOTION_DIR + "\n")
-
+    
+    print("mode = " + mode + ", offset = " + str(offset) + ", demotion directory = " + DEMOTION_DIR + "\n")
+    
     if (not os.path.isdir(DEMOTION_DIR)):
         os.makedirs(DEMOTION_DIR, exist_ok=True)
     demotion_filename = DEMOTION_DIR + dataset
@@ -160,7 +143,7 @@ if __name__ == "__main__":
     process_file(filename)
 
     stats_file.write("Total num of candidates: " + str(total_num_huge_pages) + "\n")
-    if ("cache" in MODE):
+    if (mode == "cache"):
         stats_file.write("Max reuse distance: " + str(MAX_DIST) + "\nMax freq: " + str(MAX_FREQ) + "\n")
 
     demotion_file.close()
