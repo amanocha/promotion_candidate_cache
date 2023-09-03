@@ -24,22 +24,11 @@ NUM_SIZES = 9
 NUM_POLICIES = 2
 NUM_ITER = 3
 
-mode = "motivation"
-mode = "all"
-mode = "frag"
-
 # APPS
 vp = ["bfs", "sssp", "pagerank"]
 parsec = ["canneal", "dedup"]
 spec = ["mcf", "omnetpp", "xalancbmk"]
-
-if mode == "motivation" or mode == "all":
-  apps = vp + ["canneal", "omnetpp", "xalancbmk", "dedup", "mcf"]
-elif mode == "multiprocess":
-  apps = ["pagerank", "mcf"]
-  apps = ["pagerank", "sssp"]
-else:
-  apps = vp
+apps = vp + parsec + spec
 
 # INPUTS
 datasets = ["Kronecker_25", "Twitter", "Sd1_Arc"]
@@ -187,6 +176,7 @@ def main():
         percentage = int(math.pow(2, i))
         run("hawkeye", percentage)
       run("hawkeye", 100)
+
   elif args.experiment == "single_thread_pcc":
     RESULT_DIR += + "single_thread/"
     run("cache", 0) # baseline
@@ -195,29 +185,37 @@ def main():
         percentage = int(math.pow(2, i))
         run("cache", percentage)
       run("cache", 100)
+
   elif args.experiment == "sensitivity":
+    apps = vp
     if (not is_thp):
       for i in range(NUM_SIZES):
         size = int(math.pow(2, i+2))
         for f in range(NUM_PERCENTAGES):
           run("cache", int(math.pow(2, f)), size)
         run("cache", 100, size)
+
   elif args.experiment == "multithread":
+    apps = vp
     RESULT_DIR += "multithread/"
     for policy in range(NUM_POLICIES):
       for t in range(1, NUM_THREADS+1):
         num_threads = int(math.pow(2, t))
         run("cache", 0, PCC_SIZE, num_threads, policy) # baseline
-        for i in range(NUM_PERCENTAGES):
-          percentage = int(math.pow(2, i))
-          run("cache", percentage, PCC_SIZE, num_threads, policy)
-        run("cache", 100, PCC_SIZE, num_threads, policy)
+        if (not is_thp):
+          for i in range(NUM_PERCENTAGES):
+            percentage = int(math.pow(2, i))
+            run("cache", percentage, PCC_SIZE, num_threads, policy)
+          run("cache", 100, PCC_SIZE, num_threads, policy)
+
   elif args.experiment == "frag":
+    apps = vp
     RESULT_DIR += "frag" + str(args.frag_level) + "/"
     run("cache", 0, PCC_SIZE)
-    run("hawkeye", 100, PCC_SIZE)
-    run("cache", 100, PCC_SIZE)
-    run("cache", 100, PCC_SIZE, demotion=True)
+    if (not is_thp):
+      run("hawkeye", 100, PCC_SIZE)
+      run("cache", 100, PCC_SIZE)
+      run("cache", 100, PCC_SIZE, demotion=True)
     
 if __name__ == "__main__":
   main()
