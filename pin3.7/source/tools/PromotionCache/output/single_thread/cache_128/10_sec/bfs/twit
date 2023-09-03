@@ -1,0 +1,434 @@
+12 arguments, path = /home/aninda/optimizing-huge-page-utility/applications/pin_source/bfs/main, exec = main
+ACCESS INTERVAL = 1093269888, PROMOTION CACHE SIZE = 128, FACTOR = 10
+Routine = _Z9pin_startv
+Routine = _Z7pin_endv
+Nodes: 52579682, Edges: 1963263821
+reading byte length of:    210318732
+reading byte length of:    7853055284
+Reading graph elapsed time: 1931.1s
+
+Memory Regions:
+NODE_ARRAY: starting base = 3fffe34, ending base = 3fffefd
+EDGE_ARRAY: starting base = 3ffe0f3, ending base = 3fffe35
+PROP_ARRAY: starting base = 3ffe02a, ending base = 3ffe0f4
+IN_WL: starting base = 3ffde99, ending base = 3ffe02b
+OUT_WL: starting base = 3ffdd08, ending base = 3ffde9a
+
+
+1093269888: Memory Regions:
+	base = 3ffe031, 43.1224, 98116, 248
+	base = 3ffe030, 41.6965, 121250, 241
+	base = 3ffe032, 26.0685, 87118, 209
+	base = 3ffe035, 62.9105, 240004, 203
+	base = 3ffe033, 23.2796, 69100, 184
+	base = 3ffe034, 23.4479, 269713, 167
+	base = 3ffe036, 23.3365, 203926, 164
+	base = 3ffe039, 24.268, 155545, 162
+	base = 3ffe02f, 51.2365, 155805, 157
+	base = 3ffe03a, 34.2916, 139369, 146
+	base = 3ffe03b, 20.5921, 126281, 142
+	base = 3ffe037, 17.5245, 160319, 141
+	base = 3ffe03c, 24.2587, 112776, 127
+	base = 3ffe02e, 22.7545, 188886, 94
+	base = 3ffe038, 51.4601, 12542, 66
+	base = 3ffe02d, 46.9621, 230370, 55
+	base = 3ffe02c, 39.3895, 270238, 18
+	base = 3ffe3a2, 7937.06, 99, 10
+	base = 3ffe02b, 69.3336, 207310, 6
+	base = 3ffe02a, 351.058, 127422, 1
+	base = 3ffdea2, 159818, 50, 1
+	base = 3ffe043, 1691.01, 78498, 0
+	base = 3ffe03e, 2961.89, 98386, 0
+	base = 3ffe03f, 2634.75, 88243, 0
+	base = 3ffe040, 3238.79, 78487, 0
+	base = 3ffe044, 3076.69, 62437, 0
+	base = 3ffe045, 4476.53, 72211, 0
+	base = 3ffe046, 4247.16, 59138, 0
+	base = 3ffe04b, 4802.43, 40432, 0
+	base = 3ffe042, 5666.53, 69650, 0
+	base = 3ffe049, 7158.17, 46902, 0
+	base = 3ffe052, 6810.82, 28686, 0
+	base = 3ffe05c, 9442.76, 12988, 0
+	base = 3ffe03d, 8445.9, 60764, 0
+	base = 3ffe048, 7501.57, 50174, 0
+	base = 3ffe04d, 9895.79, 37711, 0
+	base = 3ffe04a, 9679.39, 41933, 0
+	base = 3ffe050, 11190, 33753, 0
+	base = 3ffe055, 11458.2, 20439, 0
+	base = 3ffe062, 14919.1, 9124, 0
+	base = 3ffe060, 16588.5, 9730, 0
+	base = 3ffe047, 11526.6, 52774, 0
+	base = 3ffe04c, 13785.5, 31785, 0
+	base = 3ffe051, 11832.2, 30265, 0
+	base = 3ffe053, 15664, 26173, 0
+	base = 3ffe059, 16655, 14285, 0
+	base = 3ffe05e, 21403.6, 9597, 0
+	base = 3ffe04e, 17725.2, 15662, 0
+	base = 3ffe04f, 18722.9, 27155, 0
+	base = 3ffe057, 17239, 15533, 0
+	base = 3ffe058, 19459.3, 3311, 0
+	base = 3ffe05f, 24833.9, 10285, 0
+	base = 3ffe063, 25818, 1737, 0
+	base = 3ffe054, 23480.5, 25976, 0
+	base = 3ffe05a, 29718.7, 3894, 0
+	base = 3ffe05d, 30550.4, 11182, 0
+	base = 3ffe041, 37393.2, 1034, 0
+	base = 3ffe05b, 30030.3, 11253, 0
+	base = 3ffe061, 28452.2, 9439, 0
+	base = 3ffe069, 49449.8, 552, 0
+	base = 3ffe06a, 40052.2, 346, 0
+	base = 3ffe065, 27984, 7383, 0
+	base = 3ffe056, 17783.1, 18439, 0
+	base = 3ffe07b, 334343, 64, 0
+	base = 3ffe081, 415416, 39, 0
+	base = 3ffe072, 127558, 87, 0
+	base = 3ffe073, 64135, 106, 0
+	base = 3ffe074, 113196, 55, 0
+	base = 3ffe077, 139470, 43, 0
+	base = 3ffe078, 343169, 56, 0
+	base = 3ffe07a, 328529, 161, 0
+	base = 3ffe07d, 448660, 47, 0
+	base = 3ffe083, 556888, 27, 0
+	base = 3fffe34, 520249, 6, 0
+	base = 3ffe06b, 42971.1, 769, 0
+	base = 3ffe06e, 66514.8, 70, 0
+	base = 3ffe070, 94859, 60, 0
+	base = 3ffe064, 59564, 277, 0
+	base = 3ffe067, 43247.1, 1244, 0
+	base = 3ffe079, 469916, 42, 0
+	base = 3ffe06d, 108379, 162, 0
+	base = 3ffe066, 38088.2, 7250, 0
+	base = 3ffe068, 37672.2, 2353, 0
+	base = 3ffe06c, 85839.9, 177, 0
+	base = 3ffe071, 99578.2, 84, 0
+	base = 3ffe076, 187309, 34, 0
+	base = 3ffe07c, 388379, 55, 0
+	base = 3ffdd08, 237714, 20, 0
+	base = 3ffe07e, 545878, 37, 0
+	base = 3ffe075, 168324, 36, 0
+	base = 3ffe06f, 90037.2, 703, 0
+	base = 3ffe3a1, 7690.26, 189, 0
+	base = 3ffffff, 0, 0, 0
+	base = 3ffe3a0, 9107.56, 107, 0
+	base = 3ffe39f, 7601.3, 127, 0
+	base = 3ffe39e, 7475.26, 89, 0
+	base = 3ffe087, 339706, 23, 0
+	base = 3ffe088, 80028, 1, 0
+	base = 3ffe082, 201840, 19, 0
+	base = 3ffe08a, 153202, 2, 0
+	base = 3ffe085, 218849, 24, 0
+	base = 3ffe091, 552224, 2, 0
+	base = 3ffe098, 110266, 3, 0
+	base = 3ffe0a5, 120700, 2, 0
+	base = 3ffe0a7, 0, 0, 0
+	base = 3ffe0a1, 0, 0, 0
+	base = 3ffe0d2, 0, 0, 0
+	base = 3ffe0b0, 0, 0, 0
+	base = 3ffe090, 409425, 2, 0
+	base = 3ffe0e5, 0, 0, 0
+	base = 3ffe0e4, 0, 0, 0
+	base = 3ffe0df, 0, 0, 0
+	base = 3ffe0dc, 0, 0, 0
+	base = 3ffe0ab, 0, 0, 0
+	base = 3ffe0a0, 0, 0, 0
+	base = 3ffe08d, 0, 0, 0
+	base = 3ffe39d, 6672.46, 66, 0
+	base = 3ffe08b, 226308, 17, 0
+	base = 3ffe09b, 256397, 16, 0
+	base = 3ffe084, 138989, 42, 0
+	base = 3ffe08e, 91333.4, 5, 0
+	base = 3ffe093, 0, 0, 0
+	base = 3ffe092, 0, 0, 0
+	base = 3ffe08c, 0, 0, 0
+	base = 3ffe08f, 177401, 12, 0
+	base = 3ffe080, 139792, 16, 0
+	base = 3ffe086, 238276, 29, 0
+	base = 3ffe39c, 5560.88, 94, 0
+
+12025968768: Memory Regions:
+	base = 3ffe07f, 88015.9, 22777, 237
+	base = 3ffe097, 176780, 6991, 195
+	base = 3ffe09c, 140083, 426, 178
+	base = 3ffe089, 114210, 16514, 177
+	base = 3ffe09a, 89440, 5763, 148
+	base = 3ffe099, 150538, 6324, 147
+	base = 3ffe096, 144369, 7554, 144
+	base = 3ffe095, 146731, 3804, 140
+	base = 3ffe094, 181648, 7315, 139
+	base = 3ffe09e, 134354, 351, 131
+	base = 3ffe09f, 179764, 317, 128
+	base = 3ffe09d, 171844, 345, 127
+	base = 3ffe0af, 13490.5, 217, 116
+	base = 3ffe0a3, 45453.8, 275, 103
+	base = 3ffe0ad, 20585.1, 221, 100
+	base = 3ffe0a4, 18940.5, 282, 99
+	base = 3ffe0a2, 82838.5, 267, 96
+	base = 3ffe0ae, 22044.9, 213, 92
+	base = 3ffe0ac, 18942, 209, 88
+	base = 3ffe0a6, 25449.3, 230, 85
+	base = 3ffe0a8, 28744.8, 187, 75
+	base = 3ffe0aa, 18957.1, 160, 75
+	base = 3fff311, 8481.52, 58, 72
+	base = 3ffe0bc, 1948.11, 91, 68
+	base = 3ffe0a9, 34547.6, 179, 68
+	base = 3fffe3b, 190086, 95, 58
+	base = 3ffe0b1, 83401.9, 115, 56
+	base = 3ffe0bd, 12215, 42, 55
+	base = 3ffe0da, 16924.1, 70, 53
+	base = 3fffe3c, 336650, 92, 53
+	base = 3ffe0b4, 35336.5, 111, 52
+	base = 3ffe0b3, 25728.4, 93, 50
+	base = 3ffe0dd, 12068, 52, 50
+	base = 3fffe39, 296659, 147, 47
+	base = 3fffe3e, 144283, 71, 47
+	base = 3fffe38, 320183, 135, 44
+	base = 3fffe3a, 186081, 115, 42
+	base = 3fffe3d, 298768, 65, 41
+	base = 3fffe40, 161296, 56, 39
+	base = 3ffe0c6, 38942.8, 31, 38
+	base = 3fffe4c, 109068, 27, 38
+	base = 3ffe0c7, 56575.7, 58, 37
+	base = 3fffe44, 158513, 52, 37
+	base = 3ffe4d8, 6397.64, 18, 37
+	base = 3fffe4f, 2270.44, 23, 36
+	base = 3ffe0db, 17471.4, 31, 36
+	base = 3ffe0d9, 32799.8, 34, 36
+	base = 3fffe3f, 179358, 51, 36
+	base = 3fffe4e, 111650, 24, 36
+	base = 3ffe0bb, 20464, 21, 35
+	base = 3ffe0d6, 67293.2, 54, 33
+	base = 3ffe0d8, 55444.2, 39, 32
+	base = 3ffe0cd, 22308.9, 18, 32
+	base = 3ffe0ba, 121108, 45, 32
+	base = 3fffe45, 148243, 40, 32
+	base = 3ffe510, 5998.71, 13, 32
+	base = 3fffe35, 354325, 509, 31
+	base = 3fffe43, 124391, 36, 31
+	base = 3fffe50, 112579, 18, 31
+	base = 3ffe4bc, 6766.81, 12, 31
+	base = 3ffe508, 6085.77, 12, 31
+	base = 3ffe518, 5536.24, 12, 31
+	base = 3ffe0d1, 40140, 25, 30
+	base = 3ffe0cc, 41439.6, 23, 30
+	base = 3fffe37, 394368, 128, 30
+	base = 3ffe0be, 153139, 73, 30
+	base = 3fffe46, 103109, 33, 30
+	base = 3fffe52, 95352.5, 16, 30
+	base = 3fffe51, 837.744, 16, 29
+	base = 3fffe36, 746361, 430, 29
+	base = 3ffe51e, 6940.55, 9, 29
+	base = 3fffe4d, 2823.6, 16, 28
+	base = 3ffe0c5, 34423.2, 15, 28
+	base = 3ffe0b7, 29150.6, 15, 28
+	base = 3ffe0c8, 68064, 23, 28
+	base = 3ffe0b8, 43624.2, 19, 28
+	base = 3ffe315, 5237.51, 11, 28
+	base = 3ffe4ad, 6610.72, 10, 28
+	base = 3ffe0b2, 95752, 35, 27
+	base = 3ffe0d7, 124676, 52, 27
+	base = 3fffe48, 121177, 28, 27
+	base = 3fffe49, 129872, 28, 27
+	base = 3ffe1dc, 4733.67, 10, 27
+	base = 3ffe527, 6042.78, 7, 27
+	base = 3fffe41, 2148.88, 32, 26
+	base = 3ffe0b9, 39376.1, 16, 26
+	base = 3ffe0ce, 46603.1, 20, 26
+	base = 3ffe4ca, 4547.16, 7, 26
+	base = 3ffe523, 6868.12, 6, 26
+	base = 3ffe0d3, 136901, 39, 25
+	base = 3ffdedf, 232832, 53, 25
+	base = 3ffe4f6, 6227.39, 6, 25
+	base = 3ffe0cf, 50848.3, 15, 24
+	base = 3ffe5b9, 4684.06, 9, 24
+	base = 3ffe2bf, 4100.74, 7, 24
+	base = 3ffe484, 6547.76, 6, 24
+	base = 3ffe4d7, 3334.56, 5, 24
+	base = 3ffe520, 3327.87, 4, 24
+	base = 3ffe526, 5799.18, 4, 24
+	base = 3ffe0b6, 82674.5, 10, 23
+	base = 3ffe259, 3915.63, 6, 23
+	base = 3ffe45c, 7059.99, 5, 23
+	base = 3ffe4d2, 5230.56, 4, 23
+	base = 3ffe511, 6108.36, 4, 23
+	base = 3ffe516, 3874.62, 4, 23
+	base = 3ffe51d, 5296.17, 4, 23
+	base = 3ffe51f, 4192.95, 3, 23
+	base = 3fffe42, 4061.75, 24, 22
+	base = 3ffe0bf, 38366.7, 9, 22
+	base = 3ffe2be, 4555.63, 5, 22
+	base = 3ffe36a, 3513.76, 4, 22
+	base = 3ffe464, 3262.26, 4, 22
+	base = 3ffe0ca, 73266.2, 17, 21
+	base = 3ffe0c3, 55185.5, 11, 21
+	base = 3ffe0d5, 140442, 26, 21
+	base = 3ffe0eb, 5350.36, 7, 21
+	base = 3fffe53, 103455, 7, 21
+	base = 3ffe285, 3666.85, 4, 21
+	base = 3ffe2aa, 5799.18, 4, 21
+	base = 3ffe2ae, 2171.84, 4, 21
+	base = 3ffe2bc, 7231.67, 4, 21
+	base = 3ffe2c8, 5799.18, 4, 21
+	base = 3ffe313, 2805.55, 4, 21
+	base = 3ffe343, 2628.03, 4, 21
+	base = 3ffe345, 3160.2, 3, 21
+	base = 3ffe3e5, 4727.55, 3, 21
+	base = 3ffe407, 4569.45, 3, 21
+	base = 3ffe528, 7545, 1, 21
+
+22958667648: Memory Regions:
+	base = 3fff69d, 5828.7, 346, 253
+	base = 3fff69e, 68498.8, 219, 236
+	base = 3fff5dd, 3298.53, 201, 233
+	base = 3fffe63, 48819.3, 4037, 146
+	base = 3fff184, 166707, 123, 141
+	base = 3ffe0b5, 16851.7, 7587, 139
+	base = 3fffe5b, 25470.3, 1934, 135
+	base = 3fffe61, 49272.6, 4860, 133
+	base = 3fffe5d, 45805.4, 4886, 132
+	base = 3fffe60, 57444.2, 5412, 130
+	base = 3ffe0cb, 49363.9, 7187, 127
+	base = 3fffe6b, 53569.4, 2667, 126
+	base = 3ffe0e0, 46188.4, 5627, 125
+	base = 3fffe62, 29174.5, 4804, 124
+	base = 3fffe54, 56638, 1990, 123
+	base = 3fffe5f, 26774.8, 3706, 122
+	base = 3ffe0de, 45752.4, 6525, 121
+	base = 3ffe0c9, 25317.9, 6760, 120
+	base = 3fffe67, 59671.2, 2767, 118
+	base = 3fffe57, 34113.6, 1931, 118
+	base = 3fffe69, 69873.1, 2695, 117
+	base = 3ffe0e1, 48228, 5371, 116
+	base = 3fffe65, 61740.1, 3524, 116
+	base = 3fffe5a, 37298.1, 1851, 115
+	base = 3fffe5e, 45043.1, 3687, 115
+	base = 3fffe6d, 102929, 2414, 112
+	base = 3ffe0c4, 49712.6, 5673, 111
+	base = 3fffe5c, 50795.8, 4638, 110
+	base = 3fffe66, 64024.3, 4696, 107
+	base = 3ffe0c1, 20033.1, 6571, 105
+	base = 3fffe6c, 71923.6, 2492, 104
+	base = 3fffe59, 39823.6, 137, 101
+	base = 3fffe55, 71675.6, 1798, 99
+	base = 3ffe0e2, 58763.8, 5187, 95
+	base = 3ffe0d0, 48070.5, 6497, 94
+	base = 1fff0, 0, 0, 93
+	base = 3fffe68, 59970.9, 2168, 92
+	base = 3fffe6a, 74524.3, 2502, 92
+	base = 1ffff, 0, 0, 91
+	base = 3fffe56, 62322.6, 114, 91
+	base = 3fffe6e, 95758.9, 90, 87
+	base = 3fffe4a, 108223, 87, 76
+	base = 3fff185, 164851, 57, 75
+	base = 3ffe0e3, 51365.2, 4080, 72
+	base = 3fffe64, 103923, 66, 70
+	base = 3fffe77, 68658.9, 159, 69
+	base = 3fffe70, 96864.1, 2349, 67
+	base = 3ffe0c0, 54101.7, 4985, 66
+	base = 3ffe0c2, 60722.4, 4182, 65
+	base = 3ffe0d4, 82427.1, 1387, 63
+	base = 3fffe6f, 88969.4, 2322, 62
+	base = 3fffe74, 79865.7, 1999, 62
+	base = 3fffe78, 79094.3, 84, 60
+	base = 3fff919, 912053, 294, 55
+	base = 3fffe7a, 126019, 37, 55
+	base = 3fffe76, 96603.5, 37, 55
+	base = 3fff5bc, 3525.83, 28, 53
+	base = 3fffe7f, 107617, 34, 52
+	base = 3fffe73, 154033, 2086, 51
+	base = 3fffe71, 76787.2, 24, 50
+	base = 3fffe87, 161151, 31, 49
+	base = 3fff54e, 4698.46, 12, 49
+	base = 3fffe89, 153242, 29, 48
+	base = 3fffe58, 126713, 28, 48
+	base = 3fffe75, 46629.8, 16, 48
+	base = 3fffe82, 135096, 29, 47
+	base = 3fff2b6, 3888.87, 10, 47
+	base = 3fffe7b, 186620, 26, 44
+	base = 3ffe6f9, 12717.3, 8, 44
+	base = 3fffe79, 211154, 118, 43
+	base = 3ffdeb9, 230145, 26, 43
+	base = 3fffa52, 6512.38, 8, 42
+	base = 3fffe72, 58229.7, 9, 42
+	base = 3fffe9f, 116571, 13, 41
+	base = 3fffe7d, 49236, 9, 41
+	base = 3fff49f, 3259.57, 5, 41
+	base = 3fffe83, 168072, 22, 40
+	base = 3ffefc9, 104.553, 4, 40
+	base = 3fffe4b, 34880.6, 5, 40
+	base = 3fff65d, 2159.48, 10, 39
+	base = 3fff2b8, 115985, 9, 39
+	base = 3fffe84, 195069, 21, 39
+	base = 3ffee8c, 101.85, 3, 39
+	base = 3fff6aa, 217772, 13, 39
+	base = 3fffe7c, 12242.5, 4, 39
+	base = 3fff261, 343.2, 2, 39
+	base = 3fff73b, 833.4, 2, 39
+	base = 3fffeb7, 46.095, 5, 38
+	base = 3fffeb8, 83.058, 5, 38
+	base = 3ffe9fc, 2577.42, 4, 38
+	base = 3ffee1b, 319.17, 3, 38
+	base = 3fff93c, 6885.75, 3, 38
+	base = 3fff2ee, 10927.8, 3, 38
+	base = 3fff219, 396.9, 2, 38
+	base = 3fffe88, 221542, 19, 38
+	base = 3fff52e, 2763.3, 2, 38
+	base = 3fffe91, 554.7, 2, 38
+	base = 3fff0a8, 132, 2, 38
+	base = 3ffed17, 348, 1, 38
+	base = 3ffee02, 543, 1, 38
+	base = 3fff3f6, 909, 1, 38
+	base = 3ffecd4, 71904.9, 5, 38
+	base = 3fff305, 180, 1, 38
+	base = 3fff42e, 6705, 1, 38
+	base = 3fff545, 330, 1, 38
+	base = 3ffedf4, 105, 1, 38
+	base = 3fff55e, 411, 1, 38
+	base = 3fff570, 213, 1, 38
+	base = 3fff2d5, 180, 1, 38
+	base = 3fff605, 105, 1, 38
+	base = 3fff625, 1953, 1, 38
+	base = 3fff487, 60, 1, 38
+	base = 3fff738, 0, 0, 37
+	base = 3fff6fb, 0, 0, 37
+	base = 3fff6d1, 0, 0, 37
+	base = 3fff695, 0, 0, 37
+	base = 3fff63f, 0, 0, 37
+	base = 3fff633, 0, 0, 37
+	base = 3fff61a, 0, 0, 37
+	base = 3fff5f9, 0, 0, 37
+	base = 3fff5c0, 0, 0, 37
+	base = 3fff5b4, 0, 0, 37
+	base = 3fff547, 0, 0, 37
+	base = 3fff544, 0, 0, 37
+	base = 3fff53b, 0, 0, 37
+	base = 3fff50d, 0, 0, 37
+	base = 3fff4fb, 0, 0, 37
+	base = 3fff471, 0, 0, 37
+
+
+starting kernel
+-- epoch 1 1 --> push
+-- epoch 2 1 --> push
+-- epoch 3 3049 --> push
+-- epoch 4 4067065 --> push
+-- epoch 5 20738927 --> push
+-- epoch 6 23620241 --> push
+-- epoch 7 756666 --> push
+-- epoch 8 41624 --> push
+-- epoch 9 2571 --> push
+-- epoch 10 172 --> push
+-- epoch 11 10 --> push
+-- epoch 12 2 --> push
+-- epoch 13 1 --> push
+-- epoch 14 1 --> push
+-- epoch 15 1 --> push
+ending kernel
+
+total kernel computation time: 4880.185416
+user time: 4869.490000
+kernel time: 0.690000
+footprint: start = 16220620KB, end = 16584292KB, diff = 363672KB
+page reclaims: 103783
+page faults: 0
+swaps: 0
+Total Accesses = 30513870464

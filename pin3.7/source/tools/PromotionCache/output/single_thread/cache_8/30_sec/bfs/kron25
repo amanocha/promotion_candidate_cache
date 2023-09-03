@@ -1,0 +1,47 @@
+12 arguments, path = /home/aninda/optimizing-huge-page-utility/applications/pin_source/bfs/main, exec = main
+ACCESS INTERVAL = 732856447, PROMOTION CACHE SIZE = 8, FACTOR = 30
+Routine = _Z9pin_startv
+Routine = _Z7pin_endv
+Nodes: 33554431, Edges: 1047218258
+reading byte length of:    134217728
+reading byte length of:    4188873032
+Reading graph elapsed time: 936.375s
+
+Memory Regions:
+NODE_ARRAY: starting base = 3fffe7c, ending base = 3fffefd
+EDGE_ARRAY: starting base = 3ffeee2, ending base = 3fffe7d
+PROP_ARRAY: starting base = 3ffee62, ending base = 3ffeee3
+IN_WL: starting base = 3ffed62, ending base = 3ffee63
+OUT_WL: starting base = 3ffec62, ending base = 3ffed63
+
+
+732856447: Memory Regions:
+	base = 3ffeec0, 16.8124, 197, 252
+	base = 3ffeebf, 19.321, 186, 220
+	base = 3ffeec1, 15.4351, 108, 163
+	base = 3ffeebe, 18.2341, 195, 128
+	base = 3ffeebd, 22.5572, 210, 74
+	base = 3ffeebc, 19.3195, 198, 63
+	base = 3ffeebb, 19.456, 207, 59
+	base = 3ffeeba, 20.5559, 203, 58
+
+
+starting kernel
+-- epoch 1 1 --> push
+-- epoch 2 19 --> push
+-- epoch 3 161756 --> push
+-- epoch 4 13132073 --> push
+-- epoch 5 3737530 --> push
+-- epoch 6 16692 --> push
+-- epoch 7 62 --> push
+-- epoch 8 1 --> push
+ending kernel
+
+total kernel computation time: 4420.624367
+user time: 4412.320000
+kernel time: 0.280000
+footprint: start = 8767020KB, end = 8900316KB, diff = 133296KB
+page reclaims: 44952
+page faults: 0
+swaps: 0
+Total Accesses = 16270704059

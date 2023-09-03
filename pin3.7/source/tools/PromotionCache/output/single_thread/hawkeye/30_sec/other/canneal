@@ -1,0 +1,217 @@
+8 arguments, path = /home/aninda/optimizing-huge-page-utility/applications/launch/canneal/canneal, exec = canneal
+Routine = _Z9pin_startv
+Routine = _Z7pin_endv
+Routine = _GLOBAL__sub_I__Z9pin_startv
+PARSEC Benchmark Suite
+netlist filename: /home/aninda/graph_data/canneal/canneal_native.in
+Threadcount: 1
+15000 swaps per temperature step
+start temperature: 2000
+number of temperature steps: 6000
+locs created
+locs assigned
+
+1174268969: Memory Regions:
+	base = 3, 481, bucket = 9
+	base = 4, 512, bucket = 9
+	base = 5, 512, bucket = 9
+	base = 6, 512, bucket = 9
+	base = 7, 512, bucket = 9
+	base = 8, 512, bucket = 9
+	base = 9, 512, bucket = 9
+	base = a, 512, bucket = 9
+Just saw element: 100000
+Just saw element: 200000
+Just saw element: 300000
+Just saw element: 400000
+Just saw element: 500000
+Just saw element: 600000
+Just saw element: 700000
+Just saw element: 800000
+Just saw element: 900000
+Just saw element: 1000000
+Just saw element: 1100000
+Just saw element: 1200000
+Just saw element: 1300000
+Just saw element: 1400000
+Just saw element: 1500000
+
+37576607008: Memory Regions:
+	base = 4, 460.8, bucket = 9
+	base = 5, 460.8, bucket = 9
+	base = 6, 460.8, bucket = 9
+	base = 7, 460.8, bucket = 9
+	base = 8, 460.8, bucket = 9
+	base = 9, 460.8, bucket = 9
+	base = a, 460.8, bucket = 9
+	base = b, 460.8, bucket = 9
+	base = c, 460.8, bucket = 9
+	base = d, 460.8, bucket = 9
+	base = e, 505.1, bucket = 9
+	base = f, 512, bucket = 9
+	base = 10, 512, bucket = 9
+	base = 3fffe84, 511.9, bucket = 9
+	base = 3fffe85, 512, bucket = 9
+Just saw element: 1600000
+Just saw element: 1700000
+Just saw element: 1800000
+Just saw element: 1900000
+Just saw element: 2000000
+Just saw element: 2100000
+Just saw element: 2200000
+Just saw element: 2300000
+Just saw element: 2400000
+Just saw element: 2500000
+netlist created. 2500000 elements.
+netlist a = 0x7fffd2164038, netlist b = 0x7fffd844f848
+
+73978945047: Memory Regions:
+	base = e, 500.99, bucket = 9
+	base = f, 507.8, bucket = 9
+	base = 10, 507.5, bucket = 9
+	base = 3fffe84, 511.91, bucket = 9
+	base = 3fffe85, 512, bucket = 9
+	base = 3fffe86, 511.91, bucket = 9
+	base = 3fffe87, 511.73, bucket = 9
+	base = 3fffe88, 511.64, bucket = 9
+	base = 3fffe89, 511.82, bucket = 9
+	base = 3fffe8a, 512, bucket = 9
+	base = 3fffe8b, 512, bucket = 9
+	base = 3fffe8c, 511.82, bucket = 9
+	base = 3fffe8d, 512, bucket = 9
+
+110381283086: Memory Regions:
+	base = e, 498.391, bucket = 9
+	base = f, 502.52, bucket = 9
+	base = 10, 503.25, bucket = 9
+	base = 3fffe84, 511.919, bucket = 9
+	base = 3fffe85, 512, bucket = 9
+	base = 3fffe86, 511.919, bucket = 9
+	base = 3fffe87, 511.757, bucket = 9
+	base = 3fffe88, 511.676, bucket = 9
+	base = 3fffe89, 511.838, bucket = 9
+	base = 3fffe8a, 512, bucket = 9
+	base = 3fffe8b, 512, bucket = 9
+	base = 3fffe8c, 511.838, bucket = 9
+	base = 3fffe8d, 512, bucket = 9
+	base = 3fffe8e, 511.838, bucket = 9
+	base = 3fffe8f, 511.919, bucket = 9
+	base = 3fffe90, 511.919, bucket = 9
+	base = 3fffe91, 511.919, bucket = 9
+	base = 3fffe92, 512, bucket = 9
+	base = 3fffe93, 511.919, bucket = 9
+	base = 3fffe94, 512, bucket = 9
+	base = 3fffe95, 511.919, bucket = 9
+
+146783621125: Memory Regions:
+	base = f, 497.668, bucket = 9
+	base = 10, 498.525, bucket = 9
+	base = 3fffe84, 511.927, bucket = 9
+	base = 3fffe85, 512, bucket = 9
+	base = 3fffe86, 511.927, bucket = 9
+	base = 3fffe87, 511.781, bucket = 9
+	base = 3fffe88, 511.708, bucket = 9
+	base = 3fffe89, 511.854, bucket = 9
+	base = 3fffe8a, 512, bucket = 9
+	base = 3fffe8b, 512, bucket = 9
+	base = 3fffe8c, 511.854, bucket = 9
+	base = 3fffe8d, 512, bucket = 9
+	base = 3fffe8e, 511.854, bucket = 9
+	base = 3fffe8f, 511.927, bucket = 9
+	base = 3fffe90, 511.927, bucket = 9
+	base = 3fffe91, 511.927, bucket = 9
+	base = 3fffe92, 512, bucket = 9
+	base = 3fffe93, 511.927, bucket = 9
+	base = 3fffe94, 512, bucket = 9
+	base = 3fffe95, 511.927, bucket = 9
+	base = 3fffe96, 511.927, bucket = 9
+	base = 3fffe97, 511.927, bucket = 9
+	base = 3fffe98, 511.854, bucket = 9
+	base = 3fffe99, 511.854, bucket = 9
+	base = 3fffe9a, 512, bucket = 9
+	base = 3fffe9b, 511.781, bucket = 9
+	base = 3fffe9c, 512, bucket = 9
+	base = 3fffe9d, 511.927, bucket = 9
+
+183185959164: Memory Regions:
+	base = 3fffe84, 511.934, bucket = 9
+	base = 3fffe85, 512, bucket = 9
+	base = 3fffe86, 511.934, bucket = 9
+	base = 3fffe87, 511.803, bucket = 9
+	base = 3fffe88, 511.738, bucket = 9
+	base = 3fffe89, 511.869, bucket = 9
+	base = 3fffe8a, 512, bucket = 9
+	base = 3fffe8b, 512, bucket = 9
+	base = 3fffe8c, 511.869, bucket = 9
+	base = 3fffe8d, 512, bucket = 9
+	base = 3fffe8e, 511.869, bucket = 9
+	base = 3fffe8f, 511.934, bucket = 9
+	base = 3fffe90, 511.934, bucket = 9
+	base = 3fffe91, 511.934, bucket = 9
+	base = 3fffe92, 512, bucket = 9
+	base = 3fffe93, 511.934, bucket = 9
+	base = 3fffe94, 512, bucket = 9
+	base = 3fffe95, 511.934, bucket = 9
+	base = 3fffe96, 511.934, bucket = 9
+	base = 3fffe97, 511.934, bucket = 9
+	base = 3fffe98, 511.869, bucket = 9
+	base = 3fffe99, 511.869, bucket = 9
+	base = 3fffe9a, 512, bucket = 9
+	base = 3fffe9b, 511.803, bucket = 9
+	base = 3fffe9c, 512, bucket = 9
+	base = 3fffe9d, 511.934, bucket = 9
+	base = 3fffe9e, 512, bucket = 9
+	base = 3fffe9f, 511.934, bucket = 9
+	base = 3fffea0, 511.934, bucket = 9
+	base = 3fffea1, 511.934, bucket = 9
+	base = 3fffea2, 512, bucket = 9
+	base = 3fffea3, 511.869, bucket = 9
+	base = 3fffea4, 511.934, bucket = 9
+	base = 3fffea5, 512, bucket = 9
+
+219588297203: Memory Regions:
+	base = 3fffe84, 511.941, bucket = 9
+	base = 3fffe85, 512, bucket = 9
+	base = 3fffe86, 511.941, bucket = 9
+	base = 3fffe87, 511.823, bucket = 9
+	base = 3fffe88, 511.764, bucket = 9
+	base = 3fffe89, 511.882, bucket = 9
+	base = 3fffe8a, 512, bucket = 9
+	base = 3fffe8b, 512, bucket = 9
+	base = 3fffe8c, 511.882, bucket = 9
+	base = 3fffe8d, 512, bucket = 9
+	base = 3fffe8e, 511.882, bucket = 9
+	base = 3fffe8f, 511.941, bucket = 9
+	base = 3fffe90, 511.941, bucket = 9
+	base = 3fffe91, 511.941, bucket = 9
+	base = 3fffe92, 512, bucket = 9
+	base = 3fffe93, 511.941, bucket = 9
+	base = 3fffe94, 512, bucket = 9
+	base = 3fffe95, 511.941, bucket = 9
+	base = 3fffe96, 511.941, bucket = 9
+	base = 3fffe97, 511.941, bucket = 9
+	base = 3fffe98, 511.882, bucket = 9
+	base = 3fffe99, 511.882, bucket = 9
+	base = 3fffe9a, 512, bucket = 9
+	base = 3fffe9b, 511.823, bucket = 9
+	base = 3fffe9c, 512, bucket = 9
+	base = 3fffe9d, 511.941, bucket = 9
+	base = 3fffe9e, 512, bucket = 9
+	base = 3fffe9f, 511.941, bucket = 9
+	base = 3fffea0, 511.941, bucket = 9
+	base = 3fffea1, 511.941, bucket = 9
+	base = 3fffea2, 512, bucket = 9
+	base = 3fffea3, 511.882, bucket = 9
+	base = 3fffea4, 511.941, bucket = 9
+	base = 3fffea5, 512, bucket = 9
+	base = 3fffea6, 511.941, bucket = 9
+	base = 3fffea7, 511.823, bucket = 9
+	base = 3fffea8, 512, bucket = 9
+	base = 3fffea9, 512, bucket = 9
+	base = 3fffeaa, 512, bucket = 9
+	base = 3fffeab, 512, bucket = 9
+	base = 3fffeac, 511.941, bucket = 9
+	base = 3fffead, 511.941, bucket = 9
+Final routing is: 9.03315e+09
+Total Accesses = 232200727116
+footprint: start = 881016KB, end = 881016KB, diff = 0KB
