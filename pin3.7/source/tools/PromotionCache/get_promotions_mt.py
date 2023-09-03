@@ -141,8 +141,7 @@ if __name__ == "__main__":
     policy = 0
 
     if (len(sys.argv) > 2):
-        mode = sys.argv[2]
-        num_threads = mode.split("_")[-1]
+        num_threads = sys.argv[2]
         if (len(sys.argv) > 3):
             percent = int(sys.argv[3])
             if (len(sys.argv) > 4):
@@ -151,7 +150,6 @@ if __name__ == "__main__":
     PROMOTION_DIR = filename.replace("output/", "output/promotion_data/").replace(dataset, "")
 
     print("mode = " + mode + ", offset = " + str(offset) + ", promotion percent = " + str(percent) + ", policy = " + str(policy) + ", promotion directory = " + PROMOTION_DIR + "\n")
-
 
     if (not os.path.isdir(PROMOTION_DIR)):
         os.mkdir(PROMOTION_DIR)
