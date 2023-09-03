@@ -3,8 +3,7 @@
 DATASET=$1
 APP=$2
 NUMA_NODE=$3
-EXP_NUM=$4
-THP_ENABLED=$5
+THP_ENABLED=$4
 
 ORDER=9
 FILE="done.txt"
@@ -61,15 +60,15 @@ do
 	echo "-----------"
 
         if [ $THP_ENABLED -eq 1 ]; then
-		echo "echo always > /sys/kernel/mm/transparent_hugepage/enabled"
-		echo always > /sys/kernel/mm/transparent_hugepage/enabled
+			echo "echo always > /sys/kernel/mm/transparent_hugepage/enabled"
+			echo always > /sys/kernel/mm/transparent_hugepage/enabled
 
-		echo "echo always > /sys/kernel/mm/transparent_hugepage/defrag"
-		echo always > /sys/kernel/mm/transparent_hugepage/defrag
-	fi
+			echo "echo always > /sys/kernel/mm/transparent_hugepage/defrag"
+			echo always > /sys/kernel/mm/transparent_hugepage/defrag
+		fi
 
-        cmd="sudo python3 go.py --experiment=$EXP_NUM --dataset=$DATASET --app=$APP"
-	echo $cmd
+        cmd="sudo python3 go.py --experiment=frag --dataset=$DATASET --app=$APP"
+		echo $cmd
         sleep 10
  	$cmd
 

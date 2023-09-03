@@ -410,7 +410,7 @@ measure_accesses_per_sec() {
 if [[ "${EXP_TYPE}" == "measure_accesses" ]]; then
   measure_accesses_per_sec
 elif [[ "${EXP_TYPE}" == "single_thread" ]]; then
-  #compile_apps
+  compile_apps
   launch
 elif [[ "${EXP_TYPE}" == "sensitivity" ]]; then
   compile_apps
