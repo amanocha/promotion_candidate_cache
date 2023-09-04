@@ -5,4 +5,5 @@ echo "sudo bash ../pin3.7/source/tools/run.sh pcc multithread"
 sudo bash ../pin3.7/source/tools/run.sh pcc multithread
 
 # Huge Page Utility
-python go.py -x multithread
+echo "sudo python go.py -x multithread"
+sudo python go.py -x multithread

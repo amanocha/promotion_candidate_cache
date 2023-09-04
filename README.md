@@ -1,5 +1,10 @@
 # Architectural Support for Optimizing Huge Page Selection Within the OS
 
+To alleviate address translation overheads that memory-intensive irregular applications incur, we introduce a hardware-OS co-design to manage huge pages, which can effectively eliminate TLB misses when used efficiently. We design a novel hardware promotion candidate cache (PCC) to track huge page (2MB)-aligned regions that collectively incur the most page table walks from constituent base page accesses. We then decouple OS page promotion decisions from page data tracking performed by the PCC to alleviate the OS from scanning overheads and enable quicker promotion of candidates, especially when the system is under memory pressure and huge page resources are limited. This repository provides the workflow to evaluate this proposal. For further details, please refer to our manuscript referenced below.
+
+**Reference**
+Aninda Manocha, Zi Yan, Esin Tureci, Juan Luis Aragón, David Nellans, Margaret Martonosi. Architectural Support for Optimizing Huge Page Selection Within the OS. In *Proceedings of the 56th International Symposium on Microarchitecture (MICRO)*. IEEE, 2023.
+
 ## Graph Applications
 
  1. **Breadth First Search (BFS)** - Given a starting (root) vertex, determine the minimum number of hops to all vertices. 
@@ -51,7 +56,7 @@ We perform dataset preprocessing as a standalone, separate step and store the pr
 For details on the DBG algorithm, see the reference below.
 
 **Reference**
-Priyank Faldu, Jeff Diamond, and Boris Grot. 2020. [A Closer Look at Lightweight Graph Reordering](https://faldupriyank.com/papers/DBG_IISWC19.pdf). In *2019 IEEE International Symposium on Workload Characterization (IISWC)*. Institute of Electrical and Electronics Engineers (IEEE), United States, 1–13. 
+Priyank Faldu, Jeff Diamond, and Boris Grot. [A Closer Look at Lightweight Graph Reordering](https://faldupriyank.com/papers/DBG_IISWC19.pdf). In *Proceedings of the 19th IEEE International Symposium on Workload Characterization (IISWC)*. IEEE, 2020, pages 1–13. 
 
 ## Experiments
 
@@ -81,13 +86,69 @@ Then execute `sudo bash setup.sh`.
 
 ### Characterizing Reuse Distance
 
-Navigate to `applications/reuse/`. You can configure TLB size by modifying line 4 in `run.sh`:
+To perform characterizations of page data and determine which are best served by huge pages, navigate to `applications/reuse/`. To match the characterization to your machine (to approximate which data would incur TLB misses), you can run `cpuid | grep -i tlb` to determine the number of L2 TLB entries. You can then configure the L2 TLB size (number of entries) by modifying line 4 in `run.sh`:
 
     TLB_SIZE=1024
 
-Then execute `bash run.sh`. 
+Then execute `bash run.sh`. This will generate a `data/` folder within each graph application folder, which will store data tracking reuse distance at the 4KB, 2MB, and 1GB page granularities for each application/dataset configuration. There will also be a `figs/` folder generated for each graph application, which will store figures illustrating the categorization of page data for each application/dataset configuration overall and by data structure.
 
-### Simulation
+### Performance Evaluation
+
+To accurately capture PCC hardware behavior, our evaluation is a two-step process consisting of first, offline hardware simulation to capture the 4KB virtual address regions that incur the most page table walks and model promotion of these regions, and second, online real-system performance evaluation that includes OS behavior and overheads. We compare our PCC proposal to an existing, software-based huge page management scheme, HawkEye. We model this scheme in our simulation framework and measure its performance in a similar two-step process. 
+
+For more details on HawkEye, see the reference below.
+
+**Reference**
+Ashish Panwar, Sorav Bansal, and K. Gopinath. [HawkEye: Efficient Fine-grained OS Support for Huge Pages](https://doi.org/10.1145/3297858.3304064). In *Proceedings of the 24th International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS)*. ACM, 2019, pages 347–360.
+
+#### Simulation
+
+In the first step, we model and simulate the behavior of the CPU’s data TLB hierarchy (L1 and L2 TLBs), so that the PCC receives all page table walk information. We use [Intel’s Pin tool](TODO) to extract memory accesses during application execution and input these accesses into the simulated TLBs. The PCC tracks 2MB-aligned regions (where the tags are 2MB virtual address prefixes) that miss in the last-level TLB. Within the simulation, a periodic “promotion” process takes place every 30 seconds (calibrated based on the number of memory accesses per second observed in each application), extracting promotion candidates from the PCC and removing them as if they have been promoted. During TLB+PCC simulation, the PCC candidates are recorded. 
+
+To run simulations independently, execute `sudo bash pin3.7/source/tools/run.sh [MODE] [CONFIG]` where `MODE` is either `pcc` or `hawkeye` and `CONFIG` is either `single_thread`, `sensitivity`, or `multithread` (we describe these configurations in more detail later).
+
+#### Real-System Execution
+
+In the second step, the promotion candidate addresses identified by the PCC are provided to the OS promotion logic at the correct time during workload execution. A low-overhead background thread performs userspace promotion system calls. We then measure the wall clock time of the application execution. This two-step process emulates a system setup with a hardware PCC identifying profitable promotion candidates and the OS periodically consuming the candidate information to perform promotions. This therefore demonstrates the real-system effect of these promotions, including all page promotion overheads.
+
+To run real-system executions independently (assuming you have already collected the appropriate simulation data), execute `sudo python applications/go.py -x [CONFIG]` where `CONFIG` is either `hawkeye`, `single_thread_pcc`, `sensitivity`, or `multithread` (we describe these configurations in more detail later).
+
+### Single-Thread Performance 
+
+For all real-system experiments, navigate to the `applications/` folder.
+
+#### Huge Page Utility
+
+ 
+
+
+#### Realistic Scenario: Fragmented Memory
+
+To run fragmented memory experiments independently, execute `sudo bash run_frag.sh`.
+
+#### Sensitivity Analysis: PCC Size
+
+We provide infrastructure to investigate the impact of the PCC size (4-1024 entries) on application performance.
+To gather simulation data, execute the following:
+
+`sudo bash ../pin3.7/source/tools/run.sh pcc sensitivity`
+
+This will collect PCC promotion data for PCCs with 4, 8, 16, ..., 1024 entries for each of the three graph applications executing on each of the six datasets. If executed serially, these simulations can take a few weeks to complete. We suggest you launch this script multiple times on multiple cores to parallelize simulations (the script checks for duplicate simulations of the same configuration). If you would like to reduce the scope of this analysis, you can add a new, shortened dataset list (with the appropriate dataset data) after line 29 in `run.sh`. For example:
+
+`datasets=(Kronecker_25)
+dataset_names=(kron25)
+start_seeds=(0)
+intervals=(732856447)`
+
+To measure real-system performance, execute the following:
+
+`sudo python go.py -x sensitivity`
+
+### Multithread
+
+multi-threaded applications, where all threads belong to the same process and each thread runs on a different core with individual per-core PCCs. In this case, the OS gathers promotion information from multiple PCCs and makes huge page promotion decisions for a single process, because all threads share the same address space.
+
+We compare two different OS policies when selecting huge page candidates from multiple PCCs: Highest PCC Frequency selects pro- motion candidates with the globally highest PCC frequencies (blue). Round Robin selects candidates so that huge pages are equally distributed across the threads (red). Unless a thread runs out of candidates in its PCC, huge pages will always be distributed evenly amongst threads.
 
 ## Results
 
@@ -111,7 +172,7 @@ Within each application/dataset experiment folder, the following files are gener
     - results_output_i.txt (results output)
     - results.txt (average results output)     
 
-`x` represents the huge page setting (e.g. 0 for baseline and THP, 1 for HawkEye and PCC) and `i` is the iteration number (each experiment is run 3 times). 
+`x` represents the huge page setting (e.g. 0 for baseline and THP, 21 for HawkEye and PCC) and `i` is the iteration number (each experiment is run 3 times, or 5 for fragmented memory evaluations). 
 
 The runtimes for a given execution will be at the bottom of `app_output_x_i.txt` and appear as follows:
 

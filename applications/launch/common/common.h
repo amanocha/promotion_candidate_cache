@@ -22,8 +22,7 @@
 #include "split_huge_page.h"
 
 #define HUGE_PAGE_SIZE 2097152
-#define PROMOTION_FIXED 21
-#define HAWKEYE 22
+#define DYNAMIC_PROMOTION 21
 #define MADVISE_ALL 50
 
 #define MAX_BUFFER_SIZE 5000
