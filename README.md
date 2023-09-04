@@ -2,7 +2,7 @@
 
 To alleviate address translation overheads that memory-intensive irregular applications incur, we introduce a hardware-OS co-design to manage huge pages, which can effectively eliminate TLB misses when used efficiently. We design a novel hardware promotion candidate cache (PCC) to track huge page (2MB)-aligned regions that collectively incur the most page table walks from constituent base page accesses. We then decouple OS page promotion decisions from page data tracking performed by the PCC to alleviate the OS from scanning overheads and enable quicker promotion of candidates, especially when the system is under memory pressure and huge page resources are limited. This repository provides the workflow to evaluate this proposal. For further details, please refer to our manuscript referenced below.
 
-**Reference**
+**Reference:**
 Aninda Manocha, Zi Yan, Esin Tureci, Juan Luis Aragón, David Nellans, Margaret Martonosi. Architectural Support for Optimizing Huge Page Selection Within the OS. In *Proceedings of the 56th International Symposium on Microarchitecture (MICRO)*. IEEE, 2023.
 
 ## Graph Applications
@@ -55,8 +55,8 @@ We perform dataset preprocessing as a standalone, separate step and store the pr
 
 For details on the DBG algorithm, see the reference below.
 
-**Reference**
-Priyank Faldu, Jeff Diamond, and Boris Grot. [A Closer Look at Lightweight Graph Reordering](https://faldupriyank.com/papers/DBG_IISWC19.pdf). In *Proceedings of the 19th IEEE International Symposium on Workload Characterization (IISWC)*. IEEE, 2020, pages 1–13. 
+**Reference:**
+Priyank Faldu, Jeff Diamond, and Boris Grot. [A Closer Look at Lightweight Graph Reordering](https://doi.org/10.1109/IISWC47752.2019.9041948). In *Proceedings of the 19th IEEE International Symposium on Workload Characterization (IISWC)*. IEEE, 2020, pages 1–13. 
 
 ## Experiments
 
@@ -98,7 +98,7 @@ To accurately capture PCC hardware behavior, our evaluation is a two-step proces
 
 For more details on HawkEye, see the reference below.
 
-**Reference**
+**Reference:**
 Ashish Panwar, Sorav Bansal, and K. Gopinath. [HawkEye: Efficient Fine-grained OS Support for Huge Pages](https://doi.org/10.1145/3297858.3304064). In *Proceedings of the 24th International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS)*. ACM, 2019, pages 347–360.
 
 #### Simulation
@@ -115,16 +115,35 @@ To run real-system executions independently (assuming you have already collected
 
 ### Single-Thread Performance 
 
-For all real-system experiments, navigate to the `applications/` folder.
+For all real-system experiments, navigate to the `applications/` folder. To run single-thread experiments, execute `sudo bash single_thread.sh`. This will perform all experiments to measure huge page utility for the PCC and HawkEye as well as performance when memory is fragmented.
 
 #### Huge Page Utility
-
  
+To measure how well the PCC approach optimizes huge page selection across different huge page availability in a system, we provide infrastructure to evaluate performance while limiting the number of huge pages used to back *N*% of the total application memory footprint, where *N* ranges from 0 (baseline), 1, 2, 4, ..., 64, ~100%, totaling 9 data points per utility curve. The ~100% configuration represents promotions occurring until 100% of all huge page candidates tracked in the PCC are promoted (the most aggressive case for our approach) yet the PCC might not have visibility of 100% of the total application footprint since TLB-friendly accesses may never experience page table walks. The utility curve demonstrates the effect of memory pressure or fragmentation limiting huge page resources and shows the effective utility of promoting additional huge pages in each application.
 
+To gather simulation data for the PCC, execute the following:
+
+`sudo bash ../pin3.7/source/tools/run.sh pcc single_thread`
+
+And to gather simulation data for HawkEye, execute the following:
+
+`sudo bash ../pin3.7/source/tools/run.sh hawkeye single_thread`
+
+These will collect PCC and HawkEye data for each of the 9 huge page percentages for each application/dataset configuration. 
+
+To measure real-system performance for the PCC, execute the following:
+
+`sudo python go.py -x single_thread_pcc`
+
+And to measure real-system performance for HawkEye, execute the following:
+
+`sudo python go.py -x hawkeye`
+
+Running `single_thread.sh` will automate the process of running all of these commands.
 
 #### Realistic Scenario: Fragmented Memory
 
-To run fragmented memory experiments independently, execute `sudo bash run_frag.sh`.
+To demonstrate how the utility curves translate to a realistic scenario, e.g. where memory compaction often takes place to form contiguous physical memory regions for promotions, we evaluate the PCC approach when system memory is 50% and 90% fragmented and compare it to HawkEye and Linux. We provide infrastructure to fragment memory by allocating one non-movable page in every 2MB-aligned region. To run fragmented memory experiments independently, execute `sudo bash run_frag.sh`.
 
 #### Sensitivity Analysis: PCC Size
 
@@ -135,10 +154,12 @@ To gather simulation data, execute the following:
 
 This will collect PCC promotion data for PCCs with 4, 8, 16, ..., 1024 entries for each of the three graph applications executing on each of the six datasets. If executed serially, these simulations can take a few weeks to complete. We suggest you launch this script multiple times on multiple cores to parallelize simulations (the script checks for duplicate simulations of the same configuration). If you would like to reduce the scope of this analysis, you can add a new, shortened dataset list (with the appropriate dataset data) after line 29 in `run.sh`. For example:
 
-`datasets=(Kronecker_25)
+```
+datasets=(Kronecker_25)
 dataset_names=(kron25)
 start_seeds=(0)
-intervals=(732856447)`
+intervals=(732856447)
+```
 
 To measure real-system performance, execute the following:
 
@@ -146,9 +167,12 @@ To measure real-system performance, execute the following:
 
 ### Multithread
 
-multi-threaded applications, where all threads belong to the same process and each thread runs on a different core with individual per-core PCCs. In this case, the OS gathers promotion information from multiple PCCs and makes huge page promotion decisions for a single process, because all threads share the same address space.
+We also provide infrastructure to evaluate multi-threaded applications, where all threads belong to the same process and each thread runs on a different core with individual per-core PCCs. In this case, the OS gathers promotion information from multiple PCCs and makes huge page promotion decisions for a single process, because all threads share the same address space. In our evaluation, we compare two different OS policies when selecting huge page candidates from multiple PCCs: 
 
-We compare two different OS policies when selecting huge page candidates from multiple PCCs: Highest PCC Frequency selects pro- motion candidates with the globally highest PCC frequencies (blue). Round Robin selects candidates so that huge pages are equally distributed across the threads (red). Unless a thread runs out of candidates in its PCC, huge pages will always be distributed evenly amongst threads.
+1. **Highest PCC Frequency** selects promotion candidates with the globally highest PCC frequencies.
+2. **Round Robin** selects candidates so that huge pages are equally distributed across the threads. Unless a thread runs out of candidates in its PCC, huge pages will always be distributed evenly amongst threads.
+
+To perform evaluations of multi-threaded applications, execute `sudo bash multithread.sh`. This performs simulation via `sudo bash ../pin3.7/source/tools/run.sh pcc multithread` and real-system evaluation via `sudo python go.py -x multithread`.
 
 ## Results
 
