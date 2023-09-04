@@ -1,7 +1,8 @@
-data/**
-applications/launch/mcf/**
-applications/launch/omnetpp/**
-applications/launch/xalancbmk/**
+data/
+applications/launch/mcf/
+applications/launch/omnetpp/
+applications/launch/xalancbmk/
 
-**/__pycache__/
+__pycache__/
+*.pyc
 pin3.7/source/tools/PromotionCache/out*

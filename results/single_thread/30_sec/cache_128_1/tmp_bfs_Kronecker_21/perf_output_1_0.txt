@@ -1,0 +1,76 @@
+# started on Mon Sep  4 19:15:06 2023
+
+instructions:u: 469443290 553983373 80323244
+cpu-cycles:u: 1823909486 553983373 81330574
+L1-dcache-loads: 135665559 553983373 82347328
+L1-dcache-load-misses: 97627509 553983373 78928263
+L1-dcache-stores: 5430369 553983373 34025223
+LLC-loads: 70366682 553983373 33974764
+LLC-load-misses: 12599072 553983373 33901400
+LLC-stores: 170190 553983373 33976641
+LLC-store-misses: 5247 553983373 34000120
+dTLB-loads: 132949218 553983373 33968781
+dTLB-stores: 3952522 553983373 34042912
+page-faults:u: 2379 553078944 553078944
+dtlb_load_misses.stlb_hit:u: 12155518 553983373 33975211
+dtlb_load_misses.miss_causes_a_walk:u: 44342006 553983373 33865106
+dtlb_load_misses.walk_completed:u: 43669816 553983373 50902102
+dtlb_load_misses.walk_completed_1g:u: 0 553983373 67836115
+dtlb_load_misses.walk_completed_2m_4m:u: 0 553983373 67932613
+dtlb_load_misses.walk_completed_4k:u: 43561765 553983373 67945534
+dtlb_store_misses.stlb_hit:u: 443663 553983373 67890769
+dtlb_store_misses.miss_causes_a_walk:u: 13047 553983373 67936243
+dtlb_store_misses.walk_completed:u: 12026 553983373 67948999
+dtlb_store_misses.walk_completed_1g:u: 0 553983373 67936115
+dtlb_store_misses.walk_completed_2m_4m:u: 0 553983373 68009400
+dtlb_store_misses.walk_completed_4k:u: 10795 553983373 67997206
+dtlb_load_misses.walk_duration:u: 958764648 553983373 67927387
+dtlb_store_misses.walk_duration:u: 687013 553983373 67958012
+dtlb_load_misses.stlb_hit_4k:u: 12249250 553983373 67870286
+dtlb_load_misses.stlb_hit_2m:u: 0 553983373 67885895
+dtlb_store_misses.stlb_hit_4k:u: 444843 553983373 67010793
+dtlb_store_misses.stlb_hit_2m:u: 0 553983373 65992105
+page_walker_loads.dtlb_l1:u: 20418328 553983373 65007894
+page_walker_loads.dtlb_l2:u: 22495085 553983373 64010931
+page_walker_loads.dtlb_l3:u: 3394295 553983373 63937576
+page_walker_loads.dtlb_memory:u: 114263 553983373 63968606
+
+ Performance counter stats for process id '25232':
+
+       469,443,290      instructions:u            #    0.26  insn per cycle           (14.50%)
+     1,823,909,486      cpu-cycles:u                                                  (14.68%)
+       135,665,559      L1-dcache-loads                                               (14.86%)
+        97,627,509      L1-dcache-load-misses     #   71.96% of all L1-dcache hits    (14.25%)
+         5,430,369      L1-dcache-stores                                              (6.14%)
+        70,366,682      LLC-loads                                                     (6.13%)
+        12,599,072      LLC-load-misses           #   17.90% of all LL-cache hits     (6.12%)
+           170,190      LLC-stores                                                    (6.13%)
+             5,247      LLC-store-misses                                              (6.14%)
+       132,949,218      dTLB-loads                                                    (6.13%)
+         3,952,522      dTLB-stores                                                   (6.15%)
+             2,379      page-faults:u                                               
+        12,155,518      dtlb_load_misses.stlb_hit:u                                     (6.13%)
+        44,342,006      dtlb_load_misses.miss_causes_a_walk:u                                     (6.11%)
+        43,669,816      dtlb_load_misses.walk_completed:u                                     (9.19%)
+                 0      dtlb_load_misses.walk_completed_1g:u                                     (12.25%)
+                 0      dtlb_load_misses.walk_completed_2m_4m:u                                     (12.26%)
+        43,561,765      dtlb_load_misses.walk_completed_4k:u                                     (12.26%)
+           443,663      dtlb_store_misses.stlb_hit:u                                     (12.26%)
+            13,047      dtlb_store_misses.miss_causes_a_walk:u                                     (12.26%)
+            12,026      dtlb_store_misses.walk_completed:u                                     (12.27%)
+                 0      dtlb_store_misses.walk_completed_1g:u                                     (12.26%)
+                 0      dtlb_store_misses.walk_completed_2m_4m:u                                     (12.28%)
+            10,795      dtlb_store_misses.walk_completed_4k:u                                     (12.27%)
+       958,764,648      dtlb_load_misses.walk_duration:u                                     (12.26%)
+           687,013      dtlb_store_misses.walk_duration:u                                     (12.27%)
+        12,249,250      dtlb_load_misses.stlb_hit_4k:u                                     (12.25%)
+                 0      dtlb_load_misses.stlb_hit_2m:u                                     (12.25%)
+           444,843      dtlb_store_misses.stlb_hit_4k:u                                     (12.10%)
+                 0      dtlb_store_misses.stlb_hit_2m:u                                     (11.91%)
+        20,418,328      page_walker_loads.dtlb_l1:u                                     (11.73%)
+        22,495,085      page_walker_loads.dtlb_l2:u                                     (11.55%)
+         3,394,295      page_walker_loads.dtlb_l3:u                                     (11.54%)
+           114,263      page_walker_loads.dtlb_memory:u                                     (11.55%)
+
+       1.445525075 seconds time elapsed
+
