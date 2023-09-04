@@ -66,7 +66,8 @@ def parse_args():
   parser.add_argument("-a", "--app", type=str, help="Application to run (bfs, sssp, pagerank, canneal, dedup, mcf, omnetpp, xalancbmk)")
   parser.add_argument("-x", "--experiment", type=str, default=-1, help="Experiment to run (hawkeye, single_thread_pcc, sensitivity, multithread)")
   parser.add_argument("-d", "--dataset", type=str, help="Dataset to run")
-  parser.add_argument("-f", "--frag_level", type=int, help="Fragmentation level")
+  parser.add_argument("-f", "--frag_level", type=int, help="Fragmentation level (0-100%)")
+  parser.add_argument("-i", "--num_iter", type=int, default=NUM_ITER, help="Number of iterations to run each experiment")
   args = parser.parse_args()
   return args
 
@@ -136,14 +137,14 @@ def run(exp_type, config, size=PCC_SIZE, access_time=ACCESS_TIME, num_threads=1,
         if "bfs" in app or "sssp" in app:
           cmd_args += ["-ss", start_seed[input]]
         
-        cmd_args += ["-x", str(NUM_ITER)]
+        cmd_args += ["-x", num_iter]
         
         cmd = " ".join(cmd_args)
         exec(cmd, tmp_output, exp_dir + output)
 
 def main():
   global HOME_DIR, RESULT_DIR
-  global is_thp, apps, inputs, datasets
+  global is_thp, apps, inputs, datasets, num_iter
 
   args = parse_args()
   HOME_DIR = os.getcwd()
@@ -216,6 +217,8 @@ def main():
       run("hawkeye", 100, PCC_SIZE)
       run("cache", 100, PCC_SIZE)
       run("cache", 100, PCC_SIZE, demotion=True)
+
+  num_iter = args.num_iter
     
 if __name__ == "__main__":
   main()

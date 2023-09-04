@@ -37,7 +37,7 @@ int main(int argc, char *argv[] ) {
             // FORK #3: Create promotion process
             int cpid3 = fork();
             if (cpid3 == 0) {
-                if (run_kernel == HAWKEYE) launch_promoter(cpid3, promotion_filename, other_filename);
+                if (run_kernel == DYNAMIC_PROMOTION) launch_promoter(cpid3, promotion_filename, other_filename);
             } else {
                 setpgid(cpid3, 0); // set the child the leader of its process group
 

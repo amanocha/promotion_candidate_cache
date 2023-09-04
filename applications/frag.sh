@@ -7,6 +7,7 @@ THP_ENABLED=$4
 
 ORDER=9
 FILE="done.txt"
+ITER=5
 
 levels=(50)
 
@@ -67,7 +68,7 @@ do
 			echo always > /sys/kernel/mm/transparent_hugepage/defrag
 		fi
 
-        cmd="sudo python3 go.py --experiment=frag --dataset=$DATASET --app=$APP"
+        cmd="sudo python3 go.py --experiment=frag --dataset=$DATASET --app=$APP --num_iter=$ITER"
 		echo $cmd
         sleep 10
  	$cmd

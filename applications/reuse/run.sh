@@ -40,7 +40,6 @@ reuse_dist() {
         mkdir $app/data/${dataset_names[$d]}
       fi
 
-
       for (( i=0; i< ${#page_sizes[@]}; i++))
       do
         if [ ! -f $app/data/${dataset_names[$d]}/${reuse_suffix[$i]} ]
