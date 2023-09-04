@@ -55,7 +55,7 @@ def write_promotions(candidates):
         '''
         to_promote.sort()
         for addr in to_promote:
-            promotion_file.write(str(time) + "," + str(addr+OFFSET) + "\n")
+            promotion_file.write(str(time) + "," + str(addr+offset) + "\n")
         stats_file.write("\n")
         to_promote = []
     if (len(unique_candidates) < promotion_limit):
@@ -102,7 +102,7 @@ def process_file(filename):
                 #rank_list = []
                 #print("\nTIME = " + str(time))
             
-            match_str = cache_match_str if "cache" in MODE else hawkeye_match_str
+            match_str = cache_match_str if mode == "cache" else hawkeye_match_str
             match = re.match(match_str, line)
             if match != None and reading == True:
                 total_num_huge_pages += 1
@@ -111,7 +111,6 @@ def process_file(filename):
                 dist = float(match.group(2))
                 freq = int(match.group(3))
                 cache_freq = int(match.group(4))
-                print(addr, dist, freq, screenline)
             
                 if time not in candidates:
                     candidates[time] = {tid: []}
@@ -125,7 +124,7 @@ def process_file(filename):
                     MAX_FREQ = freq
 
         total_num_huge_pages = int((size+HUGE_PAGE_SIZE-1)/HUGE_PAGE_SIZE)
-        promotion_limit = int(total_num_huge_pages*PERCENT/100)
+        promotion_limit = int(total_num_huge_pages*percent/100)
         print("Total footprint = " + str(total_num_huge_pages) + " huge pages, promoting " + str(promotion_limit) + "\n")
         data.close()
 
@@ -152,8 +151,8 @@ if __name__ == "__main__":
     print("mode = " + mode + ", offset = " + str(offset) + ", promotion percent = " + str(percent) + ", policy = " + str(policy) + ", promotion directory = " + PROMOTION_DIR + "\n")
 
     if (not os.path.isdir(PROMOTION_DIR)):
-        os.mkdir(PROMOTION_DIR)
-    promotion_filename = PROMOTION_DIR + dataset
+        os.makedirs(PROMOTION_DIR, exist_ok=True)
+    promotion_filename = PROMOTION_DIR + dataset + "_" + str(percent) + "_" + str(policy)
     promotion_file = open(promotion_filename, "w+")
     stats_file = open(promotion_filename + "_stats", "w+")
 

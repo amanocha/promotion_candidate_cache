@@ -143,7 +143,7 @@ run_pin() {
   if [ ! -f $filename ]
   then
     echo "sudo ${PIN_HOME}pin -t ${EXP_DIR}obj-intel64/${toolname} -- ${app_command} > $filename"
-    #sudo ${PIN_HOME}pin -t ${EXP_DIR}obj-intel64/${toolname} -- ${app_command} > $filename
+    sudo ${PIN_HOME}pin -t ${EXP_DIR}obj-intel64/${toolname} -- ${app_command} > $filename
   fi
 }
 
@@ -176,7 +176,7 @@ parse_promotions() {
     if [ ! -f output/promotion_data/single_thread/${type}/${dir}/${filename}_${footprint} ]
     then
       echo "python get_promotions.py output/single_thread/${type}/${dir}/${filename} $footprint"
-      #python get_promotions.py output/single_thread/${type}/${dir}/${filename} $footprint
+      python get_promotions.py output/single_thread/${type}/${dir}/${filename} $footprint
     fi
   done
 }
@@ -191,7 +191,7 @@ parse_demotions() {
   if [ ! -f output/demotion_data/single_thread/${type}/${app}/${filename} ]
   then
     echo "python get_demotions.py output/single_thread/${type}/${app}/${filename}"
-    #python get_demotions.py output/single_thread/${type}/${app}/${filename}
+    python get_demotions.py output/single_thread/${type}/${app}/${filename}
   fi
 }
 
@@ -210,7 +210,7 @@ parse_promotions_mt() {
     if [ ! -f output/promotion_data/multithread/${type}/${dir}/${filename}_${footprint}_${policy} ]
     then
       echo "python get_promotions_mt.py output/multithread/${type}/${dir}/${filename} $threads $footprint $policy"
-      #python get_promotions_mt.py output/multithread/${type}/${dir}/${filename} $threads $footprint $policy
+      python get_promotions_mt.py output/multithread/${type}/${dir}/${filename} $threads $footprint $policy
     fi
   done
 }
@@ -418,7 +418,7 @@ elif [[ "${EXP_TYPE}" == "sensitivity" ]]; then
   compile_apps
   sensitivity
 elif [[ "${EXP_TYPE}" == "multithread" ]]; then
-  #compile_mt_apps
+  compile_mt_apps
   multithread
 else
   echo "Invalid experiment type"

@@ -6,12 +6,6 @@ import time
 
 from subprocess import Popen, PIPE
 
-LAUNCH_DIR = HOME_DIR + "applications/launch/" 
-RESULT_DIR = HOME_DIR + "results/"
-GRAPH_DIR = HOME_DIR + "data/"
-PROMOTION_CACHE_DIR = HOME_DIR + "pin3.7/source/tools/PromotionCache/output/promotion_data/"
-DEMOTION_CACHE_DIR = HOME_DIR + "pin3.7/source/tools/PromotionCache/output/demotion_data/"
-
 KB_PER_THP = 2048
 PCC_SIZE = 128
 ACCESS_TIME = 30
@@ -71,8 +65,10 @@ def parse_args():
   args = parser.parse_args()
   return args
 
-def exec(cmd, tmp_output, output):
+def exec_run(cmd, tmp_output, output):
   print(cmd)
+'''
+  return
   exit = os.system(cmd)
   if not exit and "screen" not in cmd:
     if tmp_output != output:
@@ -81,6 +77,7 @@ def exec(cmd, tmp_output, output):
     print("Done! Navigate to " + output + "results.txt to see the results!")
   else:
     print("Experiment failed!")
+'''
 
 def run(exp_type, config, size=PCC_SIZE, access_time=ACCESS_TIME, num_threads=1, policy=0, demotion=False): 
   if "cache" in exp_type:
@@ -137,17 +134,23 @@ def run(exp_type, config, size=PCC_SIZE, access_time=ACCESS_TIME, num_threads=1,
         if "bfs" in app or "sssp" in app:
           cmd_args += ["-ss", start_seed[input]]
         
-        cmd_args += ["-x", num_iter]
+        cmd_args += ["-x", str(num_iter)]
         
         cmd = " ".join(cmd_args)
-        exec(cmd, tmp_output, exp_dir + output)
+        exec_run(cmd, tmp_output, exp_dir + output)
 
 def main():
-  global HOME_DIR, RESULT_DIR
+  global HOME_DIR, LAUNCH_DIR, RESULT_DIR, GRAPH_DIR, PROMOTION_CACHE_DIR, DEMOTION_CACHE_DIR
   global is_thp, apps, inputs, datasets, num_iter
 
   args = parse_args()
-  HOME_DIR = os.getcwd()
+
+  HOME_DIR = os.path.dirname(os.getcwd()) + "/"
+  LAUNCH_DIR = HOME_DIR + "applications/launch/" 
+  RESULT_DIR = HOME_DIR + "results/"
+  GRAPH_DIR = HOME_DIR + "data/"
+  PROMOTION_CACHE_DIR = HOME_DIR + "pin3.7/source/tools/PromotionCache/output/promotion_data/"
+  DEMOTION_CACHE_DIR = HOME_DIR + "pin3.7/source/tools/PromotionCache/output/demotion_data/"
 
   stdout = Popen("uname -r", shell=True, stdout=PIPE).stdout
   output_str = stdout.read().decode("utf-8")
@@ -162,6 +165,8 @@ def main():
     is_thp = 2
   else:
     is_thp = 0
+
+  num_iter = args.num_iter
 
   if args.app:
     apps = [args.app]
@@ -179,7 +184,7 @@ def main():
       run("hawkeye", 100)
 
   elif args.experiment == "single_thread_pcc":
-    RESULT_DIR += + "single_thread/"
+    RESULT_DIR += "single_thread/"
     run("cache", 0) # baseline
     if (not is_thp):
       for i in range(NUM_PERCENTAGES):
@@ -217,8 +222,6 @@ def main():
       run("hawkeye", 100, PCC_SIZE)
       run("cache", 100, PCC_SIZE)
       run("cache", 100, PCC_SIZE, demotion=True)
-
-  num_iter = args.num_iter
     
 if __name__ == "__main__":
   main()
