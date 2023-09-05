@@ -9,4 +9,4 @@ $(TARGETS):
 	$(CXX) $(CXXFLAGS) -o $@ main.cpp
 
 clean:
-	rm $(TARGETS) stat.log thp.txt pf.txt
+	rm $(TARGETS) stat.log thp.txt pf* app* err* access* perf*
