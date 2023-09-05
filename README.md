@@ -77,26 +77,32 @@ First, clone the following repository:
 `git clone https://github.com/amanocha/graphs_thp_linux.git`
 
 Then compile and install the code:
-$ cd graphs_thp_linux
-$ cp config . config
-$ sudo yum group install " Development
-Tools "
-$ sudo yum install ncurses - devel bison
-flex elfutils - libelf - devel openssl -
-devel
-$ make -j $ ( num_cores )
-$ sudo make modules_install
-$ sudo make install
-$ sudo reboot
-After reboot verify that the code was installed correctly (you
-should see 5.15.0-rc6+ as the kernel version):
-$ uname -r
-5.15.0 - rc6 +
-Perf Linux’s perf tool is needed to measure TLB miss and page
-table walk rates. To install it, run the following commands:
-$ cd graphs_thp_linux / tools / perf /
-$ make -j $ ( num_cores )
-$ cp perf / usr / bin / perf
+
+```
+cd graphs_thp_linux
+cp config .config
+sudo yum group install " Development Tools "
+sudo yum install ncurses-devel bison flex elfutils-libelf-devel openssl-devel
+make -j $ ( num_cores )
+sudo make modules_install
+sudo make install
+sudo reboot
+```
+
+After reboot, verify that the code was installed correctly (you should see `5.15.0-rc6+`` as the kernel version):
+
+```
+uname -r
+    5.15.0-rc6+
+```
+
+Linux’s perf tool is needed to measure TLB miss and page table walk rates. To install it, run the following commands:
+
+```
+cd graphs_thp_linux/tools/perf/
+make -j $ ( num_cores )
+cp perf /usr/bin/perf
+```
 
 ### NUMA Effects
 
