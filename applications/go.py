@@ -24,7 +24,6 @@ vp = ["bfs", "sssp", "pagerank"]
 parsec = ["canneal", "dedup"]
 spec = ["mcf", "omnetpp", "xalancbmk"]
 apps = vp + parsec + spec
-apps = ["bfs", "dedup"]
 
 # INPUTS
 datasets = ["Kronecker_25", "Twitter", "Sd1_Arc"]
@@ -71,6 +70,7 @@ def parse_args():
 
 def exec_run(cmd, tmp_output, output):
   print(cmd)
+  '''
   exit = os.system(cmd)
   if not exit and "screen" not in cmd:
     if tmp_output != output:
@@ -79,6 +79,7 @@ def exec_run(cmd, tmp_output, output):
     print("Done! Navigate to " + output + "results.txt to see the results!")
   else:
     print("Experiment failed!")
+  '''
 
 def run(exp_type, config, size=PCC_SIZE, access_time=ACCESS_TIME, num_threads=1, policy=0, demotion=False): 
   if "pcc" in exp_type:
@@ -116,11 +117,13 @@ def run(exp_type, config, size=PCC_SIZE, access_time=ACCESS_TIME, num_threads=1,
         app_dir_name = app if app in vp else "other"
 
         single_thread = "single_thread/" + exp_type + "/" + str(access_time) + "_sec/" + app_dir_name 
-        multithread = app_dir_name + "/promotion_" + exp_type + "_" + str(size) + "_" + str(num_threads) + "_" + str(config) + "_" + str(policy)
+        multithread = "multithread/" + exp_type + "_" + str(num_threads) + "/" + str(access_time) + "_sec/" + app_dir_name
 
         promotion_dir = multithread if num_threads > 1 else single_thread
         demotion_dir = multithread if num_threads > 1 else single_thread
         promotion_data = PROMOTION_CACHE_DIR + promotion_dir + "/" + dataset_names[input] + "_" + str(config)
+        if multithread:
+          promotion_data += "_" + str(policy)
         demotion_data = DEMOTION_CACHE_DIR + demotion_dir + "/" + dataset_names[input]
 
         cmd_args = ["time python measure.py", "-s", source, "-d", data, "-o", tmp_output, "-ma", madvise]
@@ -195,6 +198,7 @@ def main():
 
   elif args.experiment == "sensitivity":
     apps = vp
+    RESULT_DIR += "single_thread/"
     if (not is_thp):
       for i in range(NUM_SIZES):
         size = int(math.pow(2, i+2))
@@ -208,15 +212,14 @@ def main():
     for policy in range(NUM_POLICIES):
       for t in range(1, NUM_THREADS+1):
         num_threads = int(math.pow(2, t))
-        run("pcc", 0, PCC_SIZE, num_threads, policy) # baseline
+        run("pcc", 0, PCC_SIZE, ACCESS_TIME, num_threads, policy) # baseline
         if (not is_thp):
           for i in range(NUM_PERCENTAGES):
             percentage = int(math.pow(2, i))
-            run("pcc", percentage, PCC_SIZE, num_threads, policy)
-          run("pcc", 100, PCC_SIZE, num_threads, policy)
+            run("pcc", percentage, PCC_SIZE, ACCESS_TIME, num_threads, policy)
+          run("pcc", 100, PCC_SIZE, ACCESS_TIME, num_threads, policy)
 
   elif args.experiment == "frag":
-    apps = vp
     RESULT_DIR += "frag" + str(args.frag_level) + "/"
     run("pcc", 0, PCC_SIZE)
     if (not is_thp):

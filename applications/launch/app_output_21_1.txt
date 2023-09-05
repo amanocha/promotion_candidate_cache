@@ -1,0 +1,18 @@
+dedup/dedup /home/aninda/promotion_candidate_cache/data/dedup/dedup_native.in
+
+
+starting kernel
+KEY: 2602817674
+Promotion process spawned! cpid 0 waiting to run
+cpid 0 running
+THP tracking process spawned! cpid 0 waiting to run
+cpid 0 running
+Perf process spawned! cpid 0 waiting to run perf stat -p 10155 -B -v -o perf_output_21_1.txt -e instructions:u -e cpu-cycles:u -e L1-dcache-loads:u -e L1-dcache-load-misses:u -e L1-dcache-stores:u -e LLC-loads:u -e LLC-load-misses:u -e LLC-stores:u -e LLC-store-misses:u -e dTLB-loads:u -e dTLB-stores:u -e page-faults:u -e dtlb_load_misses.stlb_hit:u -e dtlb_load_misses.miss_causes_a_walk:u -e dtlb_load_misses.walk_completed:u -e dtlb_load_misses.walk_completed_1g:u -e dtlb_load_misses.walk_completed_2m_4m:u -e dtlb_load_misses.walk_completed_4k:u -e dtlb_store_misses.stlb_hit:u -e dtlb_store_misses.miss_causes_a_walk:u -e dtlb_store_misses.walk_completed:u -e dtlb_store_misses.walk_completed_1g:u -e dtlb_store_misses.walk_completed_2m_4m:u -e dtlb_store_misses.walk_completed_4k:u -e dtlb_load_misses.walk_duration:u -e dtlb_store_misses.walk_duration:u -e dtlb_load_misses.stlb_hit_4k:u -e dtlb_load_misses.stlb_hit_2m:u -e dtlb_store_misses.stlb_hit_4k:u -e dtlb_store_misses.stlb_hit_2m:u -e page_walker_loads.dtlb_l1:u -e page_walker_loads.dtlb_l2:u -e page_walker_loads.dtlb_l3:u -e page_walker_loads.dtlb_memory:u
+PROMOTING: 2 2 --> SUCCESSFUL!
+PROMOTING: 67108204 58 --> SUCCESSFUL!
+PROMOTING: 67108268 58 --> SUCCESSFUL!
+PROMOTING: 67108635 1 --> SUCCESSFUL!
+PROMOTING: 67108638 1 --> SUCCESSFUL!
+PROMOTING: 67108640 5 --> SUCCESSFUL!
+PROMOTING: 67108798 2 --> SUCCESSFUL!
+PROMOTING: 67108863 1Process 10155 finished running!

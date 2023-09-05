@@ -62,11 +62,41 @@ Priyank Faldu, Jeff Diamond, and Boris Grot. [A Closer Look at Lightweight Graph
 
 ### Prerequisites
  - Bash
+ - C++ Boost libraries
  - Python3
  - Linux v5.15
  - Linux Perf
  - numactl (and NUMA support)
  - Root access
+
+### Linux Environment
+
+You will need to build, install, and use a version of Linux kernel v5.15 we have modified to support support synchronous huge page promotion after pages fault in. The system call we introduced takes as input a range of data (formatted as a base address and offset) to synchronously promote, i.e. try to promote immediately. This is invoked in a similar fashion to madvise(), but is distinct in how the kernel operates; the kernel asynchronously scans ranges of data provided by madvise() and may not attempt to promote the data immediately after the system call is invoked. This new support is similar to a [recent kernel patchset from Google](https://lore.kernel.org/linux-mm/d098c392-273a-36a4-1a29-59731cdf5d3d@google.com/) allowing userspace promotions for experimental purposes.
+
+First, clone the following repository:
+`git clone https://github.com/amanocha/graphs_thp_linux.git`
+
+Then compile and install the code:
+$ cd graphs_thp_linux
+$ cp config . config
+$ sudo yum group install " Development
+Tools "
+$ sudo yum install ncurses - devel bison
+flex elfutils - libelf - devel openssl -
+devel
+$ make -j $ ( num_cores )
+$ sudo make modules_install
+$ sudo make install
+$ sudo reboot
+After reboot verify that the code was installed correctly (you
+should see 5.15.0-rc6+ as the kernel version):
+$ uname -r
+5.15.0 - rc6 +
+Perf Linux’s perf tool is needed to measure TLB miss and page
+table walk rates. To install it, run the following commands:
+$ cd graphs_thp_linux / tools / perf /
+$ make -j $ ( num_cores )
+$ cp perf / usr / bin / perf
 
 ### NUMA Effects
 

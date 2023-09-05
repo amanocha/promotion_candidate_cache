@@ -59,6 +59,7 @@ def execute(run_kernel, iteration=""):
     cmd_args = ["numactl", "-C", cpu_list, "--membind", str(NUMA_NODE), "sudo", "./main"] if threads > 1 else ["numactl", "-C", str(CPU_LIST[start_idx]), "--membind", str(NUMA_NODE), "sudo", "./main"]
     if app_name.replace("_multiprocess", "") not in vp:
       os.chdir(LAUNCH_DIR)
+      os.system("make")
       cmd_args += ["/".join(source.split("/")[1:3])]
     cmd_args += [input_path] 
     if threads > 1:
