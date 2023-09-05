@@ -110,11 +110,7 @@ In order to avoid NUMA latency effects, e.g. a combination of local and remote a
 
 ### Data Setup
 
-All data must be stored in tmpfs to eliminate page cache effects. We have provided a script to automate the process of downloading the data and setting it up accordingly. First, the home directory (where this workflow code is located) needs to be configured. Edit line 3 in `setup.sh` to specify the full path of where this file is located:
-
-    HOME_DIR=/home/aninda/promotion_candidate_cache # EDIT THIS VALUE (WORKFLOW DIRECTORY)
-
-To configure the tmpfs data to be pinned on a NUMA node other than node 0, edit line 4 in `setup.sh`:
+All data must be stored in tmpfs to eliminate page cache effects. We have provided a script to automate the process of downloading the data and setting it up accordingly. To configure the tmpfs data to be pinned on a NUMA node other than node 0, edit line 4 in `setup.sh`:
 
     NUMA_NODE=0 # EDIT THIS VALUE (NUMA NODE) 
 

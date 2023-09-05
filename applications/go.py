@@ -43,7 +43,7 @@ dataset_names = {"DBG_Kronecker_25/": "dbg_kron25",
 vp_inputs = []
 for dataset in datasets:
   vp_inputs += [dataset + "/", "DBG_" + dataset + "/"]
-vp_inputs = ["Kronecker_21/"]
+#vp_inputs = ["Kronecker_21/"]
 
 inputs = {
          "bfs": vp_inputs,
@@ -220,7 +220,6 @@ def main():
           run("pcc", 100, PCC_SIZE, ACCESS_TIME, num_threads, policy)
 
   elif args.experiment == "frag":
-    apps = vp
     RESULT_DIR += "frag" + str(args.frag_level) + "/"
     run("pcc", 0, PCC_SIZE)
     if (not is_thp):
