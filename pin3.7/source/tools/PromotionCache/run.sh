@@ -66,6 +66,8 @@ compile_apps() {
   done
 
   echo ""
+
+  cd $current_dir
 }
 
 compile_mt_apps() {
@@ -84,6 +86,8 @@ compile_mt_apps() {
   done
 
   echo ""
+
+  cd $current_dir
 }
 
 clean_apps() {
@@ -111,6 +115,8 @@ clean_apps() {
   done
 
   echo ""
+
+  cd $current_dir
 }
 
 clean_mt_apps() {
@@ -127,6 +133,8 @@ clean_mt_apps() {
   done
 
   echo ""
+
+  cd $current_dir
 }
 
 run_pin() {

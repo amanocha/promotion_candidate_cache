@@ -136,7 +136,7 @@ if __name__ == "__main__":
     dataset = filename.split("/")[-1]
 
     mode = "cache" if "pcc" in filename else "other"
-    offset = get_offset(app, dataset)
+    offset = get_offset(app, dataset, mode)
     policy = 0
 
     if (len(sys.argv) > 2):

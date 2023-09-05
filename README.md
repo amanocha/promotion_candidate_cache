@@ -189,7 +189,7 @@ Running `single_thread.sh` will automate the process of running all of these com
 
 #### Realistic Scenario: Fragmented Memory
 
-To demonstrate how the utility curves translate to a realistic scenario, e.g. where memory compaction often takes place to form contiguous physical memory regions for promotions, we evaluate the PCC approach when system memory is 50% and 90% fragmented and compare it to HawkEye and Linux. We provide infrastructure to fragment memory by allocating one non-movable page in every 2MB-aligned region. To run fragmented memory experiments independently, execute `sudo bash run_frag.sh`.
+To demonstrate how the utility curves translate to a realistic scenario, e.g. where memory compaction often takes place to form contiguous physical memory regions for promotions, we evaluate the PCC approach when system memory is 50% and 90% fragmented and compare it to HawkEye and Linux. We provide infrastructure to fragment memory by allocating one non-movable page in every 2MB-aligned region. To run fragmented memory experiments, execute `sudo bash run_frag.sh`.
 
 #### Sensitivity Analysis: PCC Size
 

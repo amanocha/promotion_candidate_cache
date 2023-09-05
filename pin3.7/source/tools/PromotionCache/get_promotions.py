@@ -98,12 +98,12 @@ if __name__ == "__main__":
     dataset = filename.split("/")[-1]
 
     mode = "cache" if "pcc" in filename else "other"
-    offset = get_offset(app, dataset)
+    offset = get_offset(app, dataset, mode)
 
     if (len(sys.argv) > 2):
         percent = int(sys.argv[2])
         if (len(sys.argv) > 3):
-            offset = int(sys.argv[4])
+            offset = int(sys.argv[3])
 
     PROMOTION_DIR = filename.replace("output/", "output/promotion_data/").replace(dataset, "")
 

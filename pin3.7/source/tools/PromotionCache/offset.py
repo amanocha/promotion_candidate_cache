@@ -24,7 +24,7 @@ promotion_limit = 0
 MAX_DIST = 0
 MAX_FREQ = 0
 
-def get_offset(app, dataset):
+def get_offset(app, dataset, mode):
     if app in vp:
         if app == "sssp":
             if "web" in dataset:
@@ -38,7 +38,7 @@ def get_offset(app, dataset):
                 offset = 190
         if app == "multiphase":
             offset = 190
-    elif dataset == "canneal" and MODE == "cache":
+    elif dataset == "canneal" and mode == "cache":
         offset = 397426688
         offset = 0
     elif dataset == "canneal":

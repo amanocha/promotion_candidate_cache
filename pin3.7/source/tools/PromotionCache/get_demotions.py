@@ -16,7 +16,7 @@ def write_demotions(candidates):
                     to_demote.append(addr)
         to_demote.sort()
         for addr in to_demote:
-            demotion_file.write(str(time) + "," + str(addr+OFFSET) + "\n")
+            demotion_file.write(str(time) + "," + str(addr+offset) + "\n")
         stats_file.write("\n")
         to_demote = []
 
@@ -93,42 +93,12 @@ if __name__ == "__main__":
     dataset = filename.split("/")[-1]
 
     mode = "cache" if "pcc" in filename else "other"
-
-    offset = get_offset(app, dataset)
-    
-    if app in vp:
-        if app == "sssp":
-            if "web" in dataset:
-                OFFSET = 190
-            else:
-                OFFSET = 189
-        if app == "bfs" or app == "pagerank":
-            if "kron" in dataset:
-                OFFSET = 189
-            else:
-                OFFSET = 190
-        if app == "multiphase":
-            OFFSET = 190
-    elif dataset == "canneal" and MODE == "cache":
-        OFFSET = 397426688
-        OFFSET = 0
-    elif dataset == "canneal":
-        OFFSET = 397234176 #67100397
-    elif dataset == "omnetpp":
-        OFFSET = -368
-        OFFSET = 0
-    elif dataset == "xalancbmk":
-        OFFSET = -352
-        OFFSET = 0
-    else: # dedup, mcf
-        OFFSET = 0
+    offset = get_offset(app, dataset, mode)
 
     if (len(sys.argv) > 2):
-        PERCENT = int(sys.argv[2])
+        percent = int(sys.argv[2])
         if (len(sys.argv) > 3):
-            promote_all = sys.argv[3]
-            if (len(sys.argv) > 4):
-                OFFSET = int(sys.argv[4])
+            offset = int(sys.argv[3])
 
     DEMOTION_DIR = filename.replace("output/", "output/demotion_data/").replace(dataset, "")
     

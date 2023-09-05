@@ -70,7 +70,6 @@ def parse_args():
 
 def exec_run(cmd, tmp_output, output):
   print(cmd)
-  '''
   exit = os.system(cmd)
   if not exit and "screen" not in cmd:
     if tmp_output != output:
@@ -79,7 +78,6 @@ def exec_run(cmd, tmp_output, output):
     print("Done! Navigate to " + output + "results.txt to see the results!")
   else:
     print("Experiment failed!")
-  '''
 
 def run(exp_type, config, size=PCC_SIZE, access_time=ACCESS_TIME, num_threads=0, policy=0, demotion=False): 
   if "pcc" in exp_type:
