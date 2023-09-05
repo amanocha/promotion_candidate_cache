@@ -124,7 +124,7 @@ Then execute `sudo bash setup.sh`.
 
 To perform characterizations of page data and determine which are best served by huge pages, navigate to `applications/reuse/`. To match the characterization to your machine (to approximate which data would incur TLB misses), you can run `cpuid | grep -i tlb` to determine the number of L2 TLB entries. You can then configure the L2 TLB size (number of entries) by modifying line 4 in `run.sh`:
 
-    TLB_SIZE=1024
+`TLB_SIZE=1024`
 
 Then execute `bash run.sh`. This will generate a `data/` folder within each graph application folder, which will store data tracking reuse distance at the 4KB, 2MB, and 1GB page granularities for each application/dataset configuration. There will also be a `figs/` folder generated for each graph application, which will store figures illustrating the categorization of page data for each application/dataset configuration overall and by data structure.
 
