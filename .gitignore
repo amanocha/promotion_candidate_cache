@@ -7,3 +7,4 @@ applications/launch/xalancbmk/
 __pycache__/
 *.pyc
 pin3.7/source/tools/PromotionCache/out*
+out.*
