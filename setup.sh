@@ -11,6 +11,9 @@ DATA_URL="https://decades.cs.princeton.edu/datasets/big"
 datasets=(Kronecker_25 Twitter Sd1_Arc DBG_Kronecker_25 DBG_Twitter DBG_Sd1_Arc)
 files=(num_nodes_edges.txt node_array.bin edge_array.bin edge_values.bin)
 
+#DATA_URL="https://decades.cs.princeton.edu/datasets/medium"
+#datasets=(Kronecker_21)
+
 # DATASET PREPARATION
 download_files() {
     dataset=$1

@@ -9,6 +9,10 @@ datasets=(Kronecker_25 Twitter Sd1_Arc DBG_Kronecker_25 DBG_Twitter DBG_Sd1_Arc)
 dataset_names=(kron25 twit web dbg_kron25 dbg_twit dbg_web)
 start_seed=(0 0 0 3287496 15994127 18290613)
 
+#datasets=(Kronecker_21)
+#dataset_names=(kron21)
+#start_seeds=(0)
+
 num_nodes=(1 512 262144)
 page_sizes=(4096 2097152 1073741824)
 reuse_suffix=("4kb" "2mb" "1gb")

@@ -7,7 +7,7 @@ THP_ENABLED=$4
 
 ORDER=9
 FILE="done.txt"
-ITER=5
+ITER=4
 
 levels=(50 90)
 

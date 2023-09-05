@@ -202,7 +202,7 @@ To gather simulation data, execute the following:
 
 `sudo bash ../pin3.7/source/tools/run.sh pcc sensitivity`
 
-This will collect PCC promotion data for PCCs with 4, 8, 16, ..., 1024 entries for each of the three graph applications executing on each of the six datasets. If executed serially, these simulations can take a few weeks to complete. We suggest you launch this script multiple times on multiple cores to parallelize simulations (the script checks for duplicate simulations of the same configuration). If you would like to reduce the scope of this analysis, you can add a new, shortened dataset list (with the appropriate dataset data) after line 29 in `run.sh`. For example:
+This will collect PCC promotion data for PCCs with 4, 8, 16, ..., 1024 entries for each of the three graph applications executing on each of the six datasets. If executed serially, these simulations can take a few weeks to complete. We suggest you launch this script multiple times on multiple cores to parallelize simulations (the script checks for duplicate simulations of the same configuration). If you would like to reduce the scope of this analysis, you can add a new, shortened dataset list (with the appropriate dataset data) after line 29 in `run.sh`, following the example in lines 31-34:
 
 ```
 datasets=(Kronecker_25)
@@ -234,18 +234,28 @@ If the experiment scripts were used, all results are stored in the `results/` fo
             - pcc_N_P (N = PCC size [4, 8, 16, ..., 1024], P = percentage of memory footprint promoted [1, 2, 4, ..., 64, 100])
             - hawkeye_P (P = percentage of memory footprint promoted [1, 2, 4, ..., 64, 100])
             - thp (all data backed with huge pages)
-    - frag50
+    - frag50 (50% memory fragmentation)
         - 30_sec
-    - frag90
+            - none (baseline)
+            - hawkeye (HawkEye, trying to promote as many huge pages as possible)
+            - pcc_128_100 (128-entry PCC, trying to promote as many huge pages as possible)
+            - pcc_128_100_demote (128-entry PCC, trying to promote as many huge pages as possible with demotion in place)
+            - thp (Linux THP)
+    - frag90 (90% memory fragmentation)
         - 30_sec
+            - none (baseline)
+            - hawkeye (HawkEye, trying to promote as many huge pages as possible)
+            - pcc_128_100 (128-entry PCC, trying to promote as many huge pages as possible)
+            - pcc_128_100_demote (128-entry PCC, trying to promote as many huge pages as possible with demotion in place)
+            - thp (Linux THP)
     - multithread
         - 30_sec
             - T_threads (T = number of threads [2, 4, 8, 16])
-                - none
+                - none (baseline)
                 - pcc_N_P_X (N = PCC size [128], P = percentage of memory footprint promoted [1, 2, 4, ..., 64, 100], X = huge page distribution policy [0, 1])
-                - thp
+                - thp (all data backed with huge pages)
 
-Within each application/dataset experiment folder, the following files are generated:
+Within each folder, there are application/dataset experiment folders named as application_dataset. Within each application/dataset experiment folder, the following files are generated:
 
     - compiler_output.txt (compilation standard output)
     - compiler_err.txt (compilation standard error output)

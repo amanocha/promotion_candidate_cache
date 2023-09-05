@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# NOTE: check NUM_ITER in go.py and make sure it is set to 4 (1st run is for noise)
-
 footprints=(8634 8634 16123 16123 16611 16611 16984 16984 31863 31863 32776 32776 8952 8952 16987 16987 18407 18407) # MB
 footprints=(8634)
 datasets=(Kronecker_25 DBG_Kronecker_25 Twitter DBG_Twitter Sd1_Arc DBG_Sd1_Arc)
@@ -36,7 +34,7 @@ do
 	d=$(( i % num_datasets ))
 	dataset=${datasets[$d]}
 
-	for t in {0..2}
+	for t in {0..1}
 	do
 		cmd="sudo bash frag.sh $dataset $app $NUMA_NODE $t"
 		echo $cmd
