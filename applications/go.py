@@ -81,16 +81,16 @@ def exec_run(cmd, tmp_output, output):
     print("Experiment failed!")
   '''
 
-def run(exp_type, config, size=PCC_SIZE, access_time=ACCESS_TIME, num_threads=1, policy=0, demotion=False): 
+def run(exp_type, config, size=PCC_SIZE, access_time=ACCESS_TIME, num_threads=0, policy=0, demotion=False): 
   if "pcc" in exp_type:
     exp_type += "_" + str(size) 
-  exp_name = str(num_threads) + "_threads/" if num_threads > 1 else ""
+  exp_name = str(num_threads) + "_threads/" if num_threads > 0 else ""
   if config == 0:
     exp_name += "thp" if is_thp == 1 else "none"
     madvise = "0"
   else:
     exp_name += exp_type + "_" + str(config)
-    if num_threads > 1:
+    if num_threads > 0:
       exp_name += "_" + str(policy)
     if demotion:
       exp_name += "_demote"
@@ -101,7 +101,7 @@ def run(exp_type, config, size=PCC_SIZE, access_time=ACCESS_TIME, num_threads=1,
   
   for app in apps:
     if app in vp:
-      source = "launch/parallel/" + app + "/main.cpp" if num_threads > 1 else "launch/" + app + "/main.cpp" 
+      source = "launch/parallel/" + app + "/main.cpp" if num_threads > 0 else "launch/" + app + "/main.cpp" 
     else:
       source = "launch/" + app + "/" + app
     for input in inputs[app]:
@@ -119,10 +119,10 @@ def run(exp_type, config, size=PCC_SIZE, access_time=ACCESS_TIME, num_threads=1,
         single_thread = "single_thread/" + exp_type + "/" + str(access_time) + "_sec/" + app_dir_name 
         multithread = "multithread/" + exp_type + "_" + str(num_threads) + "/" + str(access_time) + "_sec/" + app_dir_name
 
-        promotion_dir = multithread if num_threads > 1 else single_thread
-        demotion_dir = multithread if num_threads > 1 else single_thread
+        promotion_dir = multithread if num_threads > 0 else single_thread
+        demotion_dir = multithread if num_threads > 0 else single_thread
         promotion_data = PROMOTION_CACHE_DIR + promotion_dir + "/" + dataset_names[input] + "_" + str(config)
-        if multithread:
+        if num_threads > 0:
           promotion_data += "_" + str(policy)
         demotion_data = DEMOTION_CACHE_DIR + demotion_dir + "/" + dataset_names[input]
 
@@ -132,7 +132,7 @@ def run(exp_type, config, size=PCC_SIZE, access_time=ACCESS_TIME, num_threads=1,
         if demotion:
           cmd_args += ["-dd", demotion_data]
 
-        if num_threads > 1:
+        if num_threads > 0:
           cmd_args += ["-t", str(num_threads)]
         
         if "bfs" in app or "sssp" in app:
@@ -198,10 +198,7 @@ def main():
 
   elif args.experiment == "sensitivity":
     apps = vp
-<<<<<<< HEAD
     RESULT_DIR += "single_thread/"
-=======
->>>>>>> d0bd15075b78b17f79d53be091ff180ada01f1a0
     if (not is_thp):
       for i in range(NUM_SIZES):
         size = int(math.pow(2, i+2))
@@ -215,21 +212,12 @@ def main():
     for policy in range(NUM_POLICIES):
       for t in range(1, NUM_THREADS+1):
         num_threads = int(math.pow(2, t))
-<<<<<<< HEAD
         run("pcc", 0, PCC_SIZE, ACCESS_TIME, num_threads, policy) # baseline
         if (not is_thp):
           for i in range(NUM_PERCENTAGES):
             percentage = int(math.pow(2, i))
             run("pcc", percentage, PCC_SIZE, ACCESS_TIME, num_threads, policy)
           run("pcc", 100, PCC_SIZE, ACCESS_TIME, num_threads, policy)
-=======
-        run("pcc", 0, PCC_SIZE, num_threads, policy) # baseline
-        if (not is_thp):
-          for i in range(NUM_PERCENTAGES):
-            percentage = int(math.pow(2, i))
-            run("pcc", percentage, PCC_SIZE, num_threads, policy)
-          run("pcc", 100, PCC_SIZE, num_threads, policy)
->>>>>>> d0bd15075b78b17f79d53be091ff180ada01f1a0
 
   elif args.experiment == "frag":
     apps = vp

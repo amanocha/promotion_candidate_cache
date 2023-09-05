@@ -143,7 +143,7 @@ run_pin() {
   if [ ! -f $filename ]
   then
     echo "sudo ${PIN_HOME}pin -t ${EXP_DIR}obj-intel64/${toolname} -- ${app_command} > $filename"
-    #sudo ${PIN_HOME}pin -t ${EXP_DIR}obj-intel64/${toolname} -- ${app_command} > $filename
+    sudo ${PIN_HOME}pin -t ${EXP_DIR}obj-intel64/${toolname} -- ${app_command} > $filename
   fi
 }
 
@@ -412,7 +412,7 @@ measure_accesses_per_sec() {
 if [[ "${EXP_TYPE}" == "measure_accesses" ]]; then
   measure_accesses_per_sec
 elif [[ "${EXP_TYPE}" == "single_thread" ]]; then
-  #compile_apps
+  compile_apps
   launch
 elif [[ "${EXP_TYPE}" == "sensitivity" ]]; then
   compile_apps

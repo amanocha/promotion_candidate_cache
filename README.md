@@ -233,13 +233,17 @@ If the experiment scripts were used, all results are stored in the `results/` fo
             - none (baseline)
             - pcc_N_P (N = PCC size [4, 8, 16, ..., 1024], P = percentage of memory footprint promoted [1, 2, 4, ..., 64, 100])
             - hawkeye_P (P = percentage of memory footprint promoted [1, 2, 4, ..., 64, 100])
-            - thp 
+            - thp (all data backed with huge pages)
     - frag50
         - 30_sec
     - frag90
         - 30_sec
     - multithread
         - 30_sec
+            - T_threads (T = number of threads [2, 4, 8, 16])
+                - none
+                - pcc_N_P_X (N = PCC size [128], P = percentage of memory footprint promoted [1, 2, 4, ..., 64, 100], X = huge page distribution policy [0, 1])
+                - thp
 
 Within each application/dataset experiment folder, the following files are generated:
 

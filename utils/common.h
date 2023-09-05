@@ -298,7 +298,7 @@ void read_promotions_over_time(map<unsigned long, vector<pair<unsigned long, uns
 }
 
 // Promotion thread
-void launch_promoter(int cpid, const char* promotion_filename, const char* demotion_filename, const char* new_filename="") {
+void launch_promoter(int cpid, const char* promotion_filename, const char* demotion_filename="", const char* new_filename="") {
   struct stat done_buffer;
   unsigned long time, base, offset;
   struct iovec iov;

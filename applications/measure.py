@@ -13,7 +13,7 @@ def parse_args():
     parser.add_argument("-d", "--data", type=str, required=True, help="Path to data file")
     parser.add_argument("-rp", "--relative_path", type=int, default=0, help="Use relative data file path")
     parser.add_argument("-ss", "--start_seed", type=int, default=-1, help="Start seed for BFS and SSSP")
-    parser.add_argument("-t", "--num_threads", type=int, default=1, help="Number of threads")
+    parser.add_argument("-t", "--num_threads", type=int, default=0, help="Number of threads")
     parser.add_argument("-o", "--output", type=str, help="Output path")
     parser.add_argument("-mo", "--measure_only", type=int, default=0, help="Perform parsing of results only (no compilation or application execution)")
     parser.add_argument("-ma", "--madvise", type=str, default="0", help="Madvise mode")
@@ -25,8 +25,9 @@ def parse_args():
 
 def compile():
     print("Compiling application...\n")
+    os.system("pwd")
 
-    if app_name in vp and threads == 1:
+    if app_name in vp and threads == 0:
         cmd_args = ["g++", "-O3", "-o", "main", "-std=c++11", "-Wno-unused-result", filename]
     else:
         cmd_args = ["make"]
@@ -55,14 +56,14 @@ def execute(run_kernel, iteration=""):
     perf_cmd = " ".join(cmd_args) + "\""
 
     start_idx = multiprocess_id if "multiprocess" in source else 0
-    cpu_list = ",".join([str(t) for t in CPU_LIST[start_idx:start_idx+threads]])
-    cmd_args = ["numactl", "-C", cpu_list, "--membind", str(NUMA_NODE), "sudo", "./main"] if threads > 1 else ["numactl", "-C", str(CPU_LIST[start_idx]), "--membind", str(NUMA_NODE), "sudo", "./main"]
+    cpu_list = ",".join([str(t) for t in CPU_LIST[start_idx:start_idx+threads+1]])
+    cmd_args = ["numactl", "-C", cpu_list, "--membind", str(NUMA_NODE), "sudo", "./main"] if threads > 0 else ["numactl", "-C", str(CPU_LIST[start_idx]), "--membind", str(NUMA_NODE), "sudo", "./main"]
     if app_name.replace("_multiprocess", "") not in vp:
       os.chdir(LAUNCH_DIR)
       os.system("make")
       cmd_args += ["/".join(source.split("/")[1:3])]
     cmd_args += [input_path] 
-    if threads > 1:
+    if threads > 0:
       cmd_args += [str(threads)]
     cmd_args += [run_kernel]
 

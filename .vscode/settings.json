@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "bitset": "cpp",
-        "*.ph": "cpp",
-        "ostream": "cpp"
-    }
-}
