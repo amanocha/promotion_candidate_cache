@@ -7,10 +7,8 @@ NUMA_NODE=0 # EDIT THIS VALUE (NUMA NODE)
 
 DATA_DIR=data
 DATA_URL="https://decades.cs.princeton.edu/datasets/big"
-DATA_URL="https://decades.cs.princeton.edu/datasets/medium"
 
 datasets=(Kronecker_25 Twitter Sd1_Arc DBG_Kronecker_25 DBG_Twitter DBG_Sd1_Arc)
-datasets=(Kronecker_21)
 files=(num_nodes_edges.txt node_array.bin edge_array.bin edge_values.bin)
 
 # DATASET PREPARATION

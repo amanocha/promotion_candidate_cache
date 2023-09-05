@@ -9,7 +9,7 @@ ORDER=9
 FILE="done.txt"
 ITER=5
 
-levels=(50)
+levels=(50 90)
 
 for frag_level in ${levels[@]}
 do
@@ -68,7 +68,7 @@ do
 		echo always > /sys/kernel/mm/transparent_hugepage/defrag
 	fi
 
-        cmd="sudo python3 go.py --experiment=frag --dataset=$DATASET --app=$APP --num_iter=$ITER"
+        cmd="sudo python3 go.py --experiment=frag --dataset=$DATASET --app=$APP --num_iter=$ITER --frag_level=$frag_level"
 		echo $cmd
         sleep 10
  	$cmd

@@ -25,7 +25,6 @@ def parse_args():
 
 def compile():
     print("Compiling application...\n")
-    os.system("pwd")
 
     if app_name in vp and threads == 0:
         cmd_args = ["g++", "-O3", "-o", "main", "-std=c++11", "-Wno-unused-result", filename]

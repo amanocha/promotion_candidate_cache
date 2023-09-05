@@ -28,11 +28,6 @@ dataset_names=(kron25 twit web dbg_kron25 dbg_twit dbg_web)
 start_seeds=(0 0 0 3287496 15994127 18290613)
 intervals=(732856447 1093269888 827860087 1379256614 1096522560 902036450 1613872676 1604682443)
 
-datasets=(Kronecker_21)
-dataset_names=(kron21)
-start_seeds=(0)
-intervals=(73285644)
-
 other_datasets=(canneal_native.in dedup_native.in mcf_speed_inp.in omnetpp.ini t5.xml)
 other_intervals=(1174268969 2602817674 981555542 1023238603 1362895757)
 
