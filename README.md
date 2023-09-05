@@ -251,7 +251,7 @@ If the experiment scripts were used, all results are stored in the `results/` fo
                 - pcc_N_P_X (N = PCC size [128], P = percentage of memory footprint promoted [1, 2, 4, ..., 64, 100], X = huge page distribution policy [0, 1])
                 - thp (all data backed with huge pages)
 
-Within each folder, there are application/dataset experiment folders named as application_dataset. Within each application/dataset experiment folder, the following files are generated:
+Within each folder, there are application/dataset experiment folders named as `application_dataset/`. When an experiment is in progress or not completed, the folder name will be `tmp_application_dataset/` until the experiment fully completes, i.e. all application executions complete and their results are parsed and aggregated. Within each complete application/dataset experiment folder, the following files are generated:
 
     - compiler_output.txt (compilation standard output)
     - compiler_err.txt (compilation standard error output)
