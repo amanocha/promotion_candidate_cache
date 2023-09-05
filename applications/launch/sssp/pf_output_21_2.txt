@@ -1,0 +1,2 @@
+0.000017 sec: 0 soft pf, 0 hard pf
+3.019434 sec: 7835 soft pf, 0 hard pf

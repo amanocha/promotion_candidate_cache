@@ -17,7 +17,6 @@ void launch_app(string graph_fname, int run_kernel, unsigned long start_seed) {
   data_structs.push_back((void*) in_wl);
   data_structs.push_back((void*) out_wl);
 
-  cout << "set up app" << endl;
   setup_app();
 
   bfs(G, ret, in_wl, &in_index, out_wl, &out_index, 0, 1); // part of program to perf stat

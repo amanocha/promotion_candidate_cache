@@ -1,4 +1,5 @@
 data/
+results/
 applications/launch/mcf/
 applications/launch/omnetpp/
 applications/launch/xalancbmk/

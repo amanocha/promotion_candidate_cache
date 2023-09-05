@@ -17,6 +17,7 @@ reuse_dist() {
   # Reuse Distance
   echo "REUSE DISTANCE"
 
+  echo "make"
   make
 
   for a in ${!apps[@]}

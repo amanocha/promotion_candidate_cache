@@ -139,6 +139,20 @@ And to measure real-system performance for HawkEye, execute the following:
 
 `sudo python go.py -x hawkeye`
 
+These real-system performance runs need to be repeated with Linux THP enabled. To enable this policy, execute the following commands:
+
+```
+echo always > /sys/kernel/mm/transparent_hugepage/enabled
+echo always > /sys/kernel/mm/transparent_hugepage/defrag
+```
+
+Once those experiments complete, Linux THP needs to be disabled, which can be done using the following commands:
+
+```
+echo madvise > /sys/kernel/mm/transparent_hugepage/enabled
+echo madvise > /sys/kernel/mm/transparent_hugepage/defrag
+```
+
 Running `single_thread.sh` will automate the process of running all of these commands.
 
 #### Realistic Scenario: Fragmented Memory
@@ -179,9 +193,17 @@ To perform evaluations of multi-threaded applications, execute `sudo bash multit
 If the experiment scripts were used, all results are stored in the `results/` folder. The folder organization can be summarized as follows:
 
 	- single_thread
-     	- frag50
-      	- frag90
-       	- multithread
+        - 30_sec
+            - none (baseline)
+            - pcc_N_P (N = PCC size, P = percentage of memory footprint promoted)
+            - hawkeye_P (P = percentage of memory footprint promoted)
+            - thp 
+    - frag50
+        - 30_sec
+    - frag90
+        - 30_sec
+    - multithread
+        - 30_sec
 
 Within each application/dataset experiment folder, the following files are generated:
 
