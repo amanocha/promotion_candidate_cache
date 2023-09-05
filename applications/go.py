@@ -198,7 +198,10 @@ def main():
 
   elif args.experiment == "sensitivity":
     apps = vp
+<<<<<<< HEAD
     RESULT_DIR += "single_thread/"
+=======
+>>>>>>> d0bd15075b78b17f79d53be091ff180ada01f1a0
     if (not is_thp):
       for i in range(NUM_SIZES):
         size = int(math.pow(2, i+2))
@@ -212,14 +215,24 @@ def main():
     for policy in range(NUM_POLICIES):
       for t in range(1, NUM_THREADS+1):
         num_threads = int(math.pow(2, t))
+<<<<<<< HEAD
         run("pcc", 0, PCC_SIZE, ACCESS_TIME, num_threads, policy) # baseline
         if (not is_thp):
           for i in range(NUM_PERCENTAGES):
             percentage = int(math.pow(2, i))
             run("pcc", percentage, PCC_SIZE, ACCESS_TIME, num_threads, policy)
           run("pcc", 100, PCC_SIZE, ACCESS_TIME, num_threads, policy)
+=======
+        run("pcc", 0, PCC_SIZE, num_threads, policy) # baseline
+        if (not is_thp):
+          for i in range(NUM_PERCENTAGES):
+            percentage = int(math.pow(2, i))
+            run("pcc", percentage, PCC_SIZE, num_threads, policy)
+          run("pcc", 100, PCC_SIZE, num_threads, policy)
+>>>>>>> d0bd15075b78b17f79d53be091ff180ada01f1a0
 
   elif args.experiment == "frag":
+    apps = vp
     RESULT_DIR += "frag" + str(args.frag_level) + "/"
     run("pcc", 0, PCC_SIZE)
     if (not is_thp):
