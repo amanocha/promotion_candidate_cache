@@ -1,8 +1,0 @@
-0.000003 sec: VM size = 700280KB, 2KB, 0 soft pf, 0 hard pf
-3.000318 sec: VM size = 833588KB, 201KB, 522346 soft pf, 0 hard pf
-6.008591 sec: VM size = 835976KB, 201KB, 926203 soft pf, 0 hard pf
-9.016881 sec: VM size = 838404KB, 202KB, 1349214 soft pf, 0 hard pf
-12.025153 sec: VM size = 840572KB, 195KB, 1764498 soft pf, 0 hard pf
-15.033091 sec: VM size = 842932KB, 203KB, 2163473 soft pf, 0 hard pf
-18.041524 sec: VM size = 845308KB, 204KB, 2587626 soft pf, 0 hard pf
-21.049869 sec: VM size = 0KB, 0KB, 2893221 soft pf, 0 hard pf
