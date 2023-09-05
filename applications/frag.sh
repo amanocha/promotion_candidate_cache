@@ -61,12 +61,12 @@ do
 	echo "-----------"
 
         if [ $THP_ENABLED -eq 1 ]; then
-			echo "echo always > /sys/kernel/mm/transparent_hugepage/enabled"
-			echo always > /sys/kernel/mm/transparent_hugepage/enabled
+		echo "echo always > /sys/kernel/mm/transparent_hugepage/enabled"
+		echo always > /sys/kernel/mm/transparent_hugepage/enabled
 
-			echo "echo always > /sys/kernel/mm/transparent_hugepage/defrag"
-			echo always > /sys/kernel/mm/transparent_hugepage/defrag
-		fi
+		echo "echo always > /sys/kernel/mm/transparent_hugepage/defrag"
+		echo always > /sys/kernel/mm/transparent_hugepage/defrag
+	fi
 
         cmd="sudo python3 go.py --experiment=frag --dataset=$DATASET --app=$APP --num_iter=$ITER"
 		echo $cmd

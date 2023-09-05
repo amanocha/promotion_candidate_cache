@@ -9,7 +9,7 @@ CXX_TARGETS= dbg
 all: $(C_TARGETS) $(CXX_TARGETS)
 
 $(C_TARGETS):
-	$(C) $(CFLAGS) -o $@ $@.c
+	$(C) -o $@ $@.c $(CFLAGS)
 
 $(CXX_TARGETS):
 	$(CXX) $(CXXFLAGS) -o $@ $@.cpp

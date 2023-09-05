@@ -1,6 +1,7 @@
 import argparse
 import math
 import os
+import re
 import sys
 import time
 
@@ -10,7 +11,7 @@ KB_PER_THP = 2048
 PCC_SIZE = 128
 ACCESS_TIME = 30
 
-PROMOTION = 1
+PROMOTION = 21
 
 NUM_PERCENTAGES = 7
 NUM_THREADS = 4
@@ -23,12 +24,14 @@ vp = ["bfs", "sssp", "pagerank"]
 parsec = ["canneal", "dedup"]
 spec = ["mcf", "omnetpp", "xalancbmk"]
 apps = vp + parsec + spec
+apps = ["bfs", "dedup"]
 
 # INPUTS
 datasets = ["Kronecker_25", "Twitter", "Sd1_Arc"]
 dataset_names = {"DBG_Kronecker_25/": "dbg_kron25",
             "DBG_Twitter/": "dbg_twit",
             "DBG_Sd1_Arc/": "dbg_web",
+            "Kronecker_21/": "kron21",
             "Kronecker_25/": "kron25",
             "Twitter/": "twit",
             "Sd1_Arc/": "web",
@@ -41,6 +44,7 @@ dataset_names = {"DBG_Kronecker_25/": "dbg_kron25",
 vp_inputs = []
 for dataset in datasets:
   vp_inputs += [dataset + "/", "DBG_" + dataset + "/"]
+vp_inputs = ["Kronecker_21/"]
 
 inputs = {
          "bfs": vp_inputs,
@@ -53,7 +57,7 @@ inputs = {
          "xalancbmk": ["t5.xml"]
        }
 
-start_seed = {"Kronecker_25/": "0", "Twitter/": "0", "Sd1_Arc/": "0", "DBG_Kronecker_25/": "3287496", "DBG_Twitter/": "15994127", "DBG_Sd1_Arc/": "18290613"}
+start_seed = {"Kronecker_21/": "0", "Kronecker_25/": "0", "Twitter/": "0", "Sd1_Arc/": "0", "DBG_Kronecker_25/": "3287496", "DBG_Twitter/": "15994127", "DBG_Sd1_Arc/": "18290613"}
 
 def parse_args():
   parser = argparse.ArgumentParser()
@@ -67,8 +71,6 @@ def parse_args():
 
 def exec_run(cmd, tmp_output, output):
   print(cmd)
-'''
-  return
   exit = os.system(cmd)
   if not exit and "screen" not in cmd:
     if tmp_output != output:
@@ -77,10 +79,9 @@ def exec_run(cmd, tmp_output, output):
     print("Done! Navigate to " + output + "results.txt to see the results!")
   else:
     print("Experiment failed!")
-'''
 
 def run(exp_type, config, size=PCC_SIZE, access_time=ACCESS_TIME, num_threads=1, policy=0, demotion=False): 
-  if "cache" in exp_type:
+  if "pcc" in exp_type:
     exp_type += "_" + str(size) 
   exp_name = str(num_threads) + "_threads/" if num_threads > 1 else ""
   if config == 0:
@@ -185,12 +186,12 @@ def main():
 
   elif args.experiment == "single_thread_pcc":
     RESULT_DIR += "single_thread/"
-    run("cache", 0) # baseline
+    run("pcc", 0) # baseline
     if (not is_thp):
       for i in range(NUM_PERCENTAGES):
         percentage = int(math.pow(2, i))
-        run("cache", percentage)
-      run("cache", 100)
+        run("pcc", percentage)
+      run("pcc", 100)
 
   elif args.experiment == "sensitivity":
     apps = vp
@@ -198,8 +199,8 @@ def main():
       for i in range(NUM_SIZES):
         size = int(math.pow(2, i+2))
         for f in range(NUM_PERCENTAGES):
-          run("cache", int(math.pow(2, f)), size)
-        run("cache", 100, size)
+          run("pcc", int(math.pow(2, f)), size)
+        run("pcc", 100, size)
 
   elif args.experiment == "multithread":
     apps = vp
@@ -207,21 +208,21 @@ def main():
     for policy in range(NUM_POLICIES):
       for t in range(1, NUM_THREADS+1):
         num_threads = int(math.pow(2, t))
-        run("cache", 0, PCC_SIZE, num_threads, policy) # baseline
+        run("pcc", 0, PCC_SIZE, num_threads, policy) # baseline
         if (not is_thp):
           for i in range(NUM_PERCENTAGES):
             percentage = int(math.pow(2, i))
-            run("cache", percentage, PCC_SIZE, num_threads, policy)
-          run("cache", 100, PCC_SIZE, num_threads, policy)
+            run("pcc", percentage, PCC_SIZE, num_threads, policy)
+          run("pcc", 100, PCC_SIZE, num_threads, policy)
 
   elif args.experiment == "frag":
     apps = vp
     RESULT_DIR += "frag" + str(args.frag_level) + "/"
-    run("cache", 0, PCC_SIZE)
+    run("pcc", 0, PCC_SIZE)
     if (not is_thp):
       run("hawkeye", 100, PCC_SIZE)
-      run("cache", 100, PCC_SIZE)
-      run("cache", 100, PCC_SIZE, demotion=True)
+      run("pcc", 100, PCC_SIZE)
+      run("pcc", 100, PCC_SIZE, demotion=True)
     
 if __name__ == "__main__":
   main()
