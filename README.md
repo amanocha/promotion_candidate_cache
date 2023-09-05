@@ -231,8 +231,8 @@ If the experiment scripts were used, all results are stored in the `results/` fo
 	- single_thread
         - 30_sec
             - none (baseline)
-            - pcc_N_P (N = PCC size, P = percentage of memory footprint promoted)
-            - hawkeye_P (P = percentage of memory footprint promoted)
+            - pcc_N_P (N = PCC size [4, 8, 16, ..., 1024], P = percentage of memory footprint promoted [1, 2, 4, ..., 64, 100])
+            - hawkeye_P (P = percentage of memory footprint promoted [1, 2, 4, ..., 64, 100])
             - thp 
     - frag50
         - 30_sec
