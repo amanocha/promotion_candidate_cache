@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Run simulations for PCC promotion data 
-echo "sudo bash ../pin3.7/source/tools/run.sh pcc single_thread"
-sudo bash ../pin3.7/source/tools/run.sh pcc single_thread
+echo "sudo bash ../pin3.7/source/tools/PromotionCache/run.sh pcc single_thread"
+sudo bash ../pin3.7/source/tools/PromotionCache/run.sh pcc single_thread
 
 # Run simulations for HawkEye promotion data
 echo "sudo bash ../pin3.7/source/tools/run.sh hawkeye single_thread"
