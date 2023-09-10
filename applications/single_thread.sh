@@ -5,8 +5,8 @@ echo "sudo bash ../pin3.7/source/tools/PromotionCache/run.sh pcc single_thread"
 sudo bash ../pin3.7/source/tools/PromotionCache/run.sh pcc single_thread
 
 # Run simulations for HawkEye promotion data
-echo "sudo bash ../pin3.7/source/tools/run.sh hawkeye single_thread"
-sudo bash ../pin3.7/source/tools/run.sh hawkeye single_thread
+echo "sudo bash ../pin3.7/source/tools/PromotionCache/run.sh hawkeye single_thread"
+sudo bash ../pin3.7/source/tools/PromotionCache/run.sh hawkeye single_thread
 
 # Huge Page Utility for PCC
 echo "sudo python go.py -x single_thread_pcc"
