@@ -63,7 +63,7 @@ Priyank Faldu, Jeff Diamond, and Boris Grot. [A Closer Look at Lightweight Graph
 ### Prerequisites
  - Bash
  - C++ Boost libraries
- - Python3
+ - Python3, matplotlib, and numpy
  - Linux v5.15
  - Linux Perf
  - numactl (and NUMA support)
