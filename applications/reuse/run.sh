@@ -39,6 +39,11 @@ reuse_dist() {
         mkdir $app/data
       fi
 
+      if [[ ! -d $app/figs ]]; then
+        echo "Creating $app/figs"
+        mkdir $app/figs
+      fi
+
       if [ ! -d $app/data/${dataset_names[$d]} ]
       then
         echo "Creating $app/data/${dataset_names[$d]}/"
