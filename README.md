@@ -58,6 +58,10 @@ For details on the DBG algorithm, see the reference below.
 **Reference:**
 Priyank Faldu, Jeff Diamond, and Boris Grot. [A Closer Look at Lightweight Graph Reordering](https://doi.org/10.1109/IISWC47752.2019.9041948). In *Proceedings of the 19th IEEE International Symposium on Workload Characterization (IISWC)*. IEEE, 2020, pages 1–13. 
 
+## Other Applications
+
+We also use memory-intensive applications *canneal* and *dedup* from the [PARSEC](https://parsec.cs.princeton.edu/) benchmark suite and *mcf*, *omnetpp*, and *xalancbmk* from the [SPEC2017](https://www.spec.org/cpu2017/) benchmark suite. For the PARSEC benchmarks, we use the *native* inputs and for the SPEC2017 benchmarks, we use the workload-specific datasets provided to measure runtime speed. We made modest modifications, e.g. argument parsing, to these applications to fit our workflow. If you would like these modified workloads to use with our workflow, please contact us.
+
 ## Experiments
 
 ### Prerequisites
